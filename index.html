@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MTOU 브리핑 아카이브 · 디자인 &amp; AI 데일리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--wrap:960px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-ivoire);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+a{color:inherit;}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.topbar-inner{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:15px 24px;}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-en);font-weight:900;letter-spacing:.02em;font-size:16px;color:var(--mr-ivoire);}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--mr-rouge);}
+.top-links{display:flex;gap:22px;font-size:13.5px;font-weight:500;}
+.top-links a{color:rgba(247,243,236,.6);text-decoration:none;transition:.16s;}
+.top-links a:hover{color:var(--mr-ivoire);}
+.hero{max-width:var(--wrap);margin:0 auto;padding:74px 24px 54px;border-bottom:1px solid rgba(226,220,210,.10);}
+.hero .kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:22px;}
+.hero h1{font-size:56px;font-weight:800;line-height:1.06;letter-spacing:-.02em;color:var(--mr-ivoire);margin-bottom:22px;}
+.hero h1 .em{color:var(--mr-rouge);}
+.hero p{max-width:560px;font-size:16px;line-height:1.7;color:rgba(247,243,236,.66);}
+.hero-stats{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap;}
+.stat .n{font-family:var(--font-en);font-size:30px;font-weight:900;color:var(--mr-ivoire);letter-spacing:-.01em;}
+.stat .n .em{color:var(--mr-rouge);}
+.stat .l{font-size:12px;color:var(--mr-gris);letter-spacing:.02em;margin-top:2px;}
+.controls{max-width:var(--wrap);margin:0 auto;padding:26px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.search{flex:1;min-width:240px;position:relative;}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--mr-gris);}
+.search input{width:100%;background:rgba(247,243,236,.05);border:1px solid rgba(226,220,210,.16);border-radius:999px;color:var(--mr-ivoire);font-family:var(--font-ko);font-size:14.5px;padding:13px 18px 13px 44px;outline:none;transition:.16s;}
+.search input::placeholder{color:var(--mr-gris);}
+.search input:focus{border-color:var(--mr-rouge);background:rgba(200,16,46,.05);}
+.filters{display:flex;gap:8px;}
+.chip{background:transparent;border:1px solid rgba(226,220,210,.18);color:rgba(247,243,236,.7);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:11px 18px;border-radius:999px;cursor:pointer;transition:.16s;}
+.chip:hover{border-color:rgba(226,220,210,.4);color:var(--mr-ivoire);}
+.chip.active{background:var(--mr-rouge);border-color:var(--mr-rouge);color:#fff;}
+.archive{max-width:var(--wrap);margin:0 auto;padding:8px 24px 90px;}
+.month-label{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.2em;font-size:11px;font-weight:700;color:var(--mr-gris);padding:26px 0 14px;border-bottom:1px solid rgba(226,220,210,.10);margin-bottom:8px;}
+.card{display:grid;grid-template-columns:112px 1fr auto;gap:26px;align-items:center;padding:24px 4px;border-bottom:1px solid rgba(226,220,210,.10);text-decoration:none;transition:.18s;position:relative;}
+.card::before{content:"";position:absolute;left:-24px;top:0;bottom:0;width:2px;background:var(--mr-rouge);transform:scaleY(0);transform-origin:top;transition:.22s;}
+.card:hover{background:rgba(247,243,236,.03);}
+.card:hover::before{transform:scaleY(1);}
+.card-date .d{font-family:var(--font-en);font-size:34px;font-weight:900;color:var(--mr-ivoire);line-height:1;letter-spacing:-.02em;}
+.card-date .my{font-family:var(--font-en);font-size:11.5px;font-weight:600;color:var(--mr-gris);letter-spacing:.06em;margin-top:6px;}
+.card-date .dow{color:var(--mr-rouge);}
+.card-body .titles{display:flex;flex-direction:column;gap:9px;}
+.tl{display:flex;align-items:baseline;gap:9px;}
+.tl .ico{font-size:14px;line-height:1.4;flex:none;}
+.tl .h{font-size:15px;font-weight:600;color:var(--mr-ivoire);line-height:1.45;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
+.card-body .tags{display:flex;gap:8px;margin-top:13px;}
+.tag-pill{font-family:var(--font-en);font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:4px 11px;border-radius:999px;}
+.tag-pill.design{background:rgba(247,243,236,.08);color:rgba(247,243,236,.72);}
+.tag-pill.ai{background:rgba(200,16,46,.14);color:#f0889a;}
+.card-arrow{width:40px;height:40px;border-radius:50%;border:1px solid rgba(226,220,210,.18);display:flex;align-items:center;justify-content:center;flex:none;transition:.18s;}
+.card:hover .card-arrow{border-color:var(--mr-rouge);background:var(--mr-rouge);}
+.card-arrow svg{width:16px;height:16px;color:rgba(247,243,236,.7);transition:.18s;}
+.card:hover .card-arrow svg{color:#fff;}
+.today-badge{display:inline-block;font-family:var(--font-en);font-size:9.5px;font-weight:700;letter-spacing:.12em;color:var(--mr-rouge);border:1px solid rgba(200,16,46,.4);padding:2px 8px;border-radius:999px;margin-bottom:8px;}
+.foot{border-top:1px solid rgba(226,220,210,.10);max-width:var(--wrap);margin:0 auto;padding:34px 24px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.foot .sig{font-size:13px;color:var(--mr-gris);}
+.foot .sig b{font-family:var(--font-en);font-weight:900;color:var(--mr-ivoire);letter-spacing:.02em;}
+.foot .sig .em{color:var(--mr-rouge);}
+.foot .slogan{font-size:11.5px;color:var(--mr-gris);letter-spacing:.02em;}
+@media (max-width:720px){
+  .hero{padding:48px 20px 40px;}
+  .hero h1{font-size:36px;}
+  .hero-stats{gap:26px;}
+  .top-links{display:none;}
+  .archive,.controls,.foot{padding-left:20px;padding-right:20px;}
+  .card{grid-template-columns:64px 1fr;gap:16px;}
+  .card-arrow{display:none;}
+  .card-date .d{font-size:26px;}
+  .tl .h{-webkit-line-clamp:2;}
+  .card::before{left:-20px;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>MTOU BRIEFING</a>
+    <nav class="top-links">
+      <a href="index.html">아카이브</a>
+      <a href="#">소개</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="kicker en">MTOU · Daily Design &amp; AI Digest · Busan</div>
+  <h1>디자인과 <span class="em">AI</span>,<br>매일 아침 한 장으로.</h1>
+  <p>부산 디자이너 297인이 매일 08:00에 받아보는 디자인·AI 뉴스 다이제스트. 흘러간 브리핑을 모두 이곳에 아카이브합니다. 날짜로 넘겨보고, 검색하고, 공유하세요.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="n en">08:00</div><div class="l">매일 발행</div></div>
+    <div class="stat"><div class="n en">10<span class="em">건</span></div><div class="l">디자인 5 · AI 5</div></div>
+    <div class="stat"><div class="n en">4<span class="em">일</span></div><div class="l">아카이브</div></div>
+  </div>
+</section>
+
+<div class="controls">
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+    <input type="text" id="q" placeholder="키워드로 브리핑 검색 (예: 타이포그래피, TTS, 리테일)">
+  </div>
+  <div class="filters">
+    <button class="chip active" data-f="all">전체</button>
+    <button class="chip" data-f="design">🎨 디자인</button>
+    <button class="chip" data-f="ai">🤖 AI</button>
+  </div>
+</div>
+
+<main class="archive">
+  <div class="month-label en">2026 · July</div>
+
+  <a class="card" href="briefing-2026-07-22.html" data-kw="네이버지도와 함께, 로컬의 시선으로 완성한 부산 &#x27;be local&#x27; 캠페인 알바 알토가 추구한 웰빙의 형태, 〈aalto design – shapes of wellbeing〉전 공간을 입은 패션쇼 — 기억에 남는 런웨이의 비밀 다음 세대의 편의점을 실험하는 패밀리마트, &#x27;파미마 파크 아자부다이&#x27; 타이포그래피를 이미지로 다루는 스튜디오, 쉬페르시스템(supersystème) &quot;4년 걸릴 일을 3개월에&quot; — 노코드 웹빌더 아임웹의 ai 활용법 알리바바, 16개 언어 tts &#x27;큐원-오디오-3.0&#x27; 공개…음성 생성 벤치 1위 미세조정 없이 토큰 38% 절감 — 라이터의 &#x27;에이전트 하네스&#x27; 비용 혁신 서브스택, ai 작성 여부 탐지기 도입 ai가 부르는 &#x27;만능 엔터테인먼트 앱&#x27;의 부상">
+    <div class="card-date">
+      <div class="d en">22</div>
+      <div class="my en">JUL · <span class="dow">WED</span></div>
+    </div>
+    <div class="card-body">
+        <span class="today-badge en">TODAY</span>
+      <div class="titles">
+        <div class="tl"><span class="ico">🎨</span><span class="h">네이버지도와 함께, 로컬의 시선으로 완성한 부산 &#x27;BE LOCAL&#x27; 캠페인</span></div>
+        <div class="tl"><span class="ico">🤖</span><span class="h">&quot;4년 걸릴 일을 3개월에&quot; — 노코드 웹빌더 아임웹의 AI 활용법</span></div>
+      </div>
+      <div class="tags">
+        <span class="tag-pill design en">DESIGN · 5</span>
+        <span class="tag-pill ai en">AI · 5</span>
+      </div>
+    </div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </a>
+
+  <a class="card" href="briefing-2026-07-21.html" data-kw="기억이 머무는 사적인 공간, 연진영 개인전 〈이불집〉 디올부터 발렌시아가까지, 웰니스에 빠진 명품 브랜드 민속 상징의 현대적 재해석, &#x27;해브 어 굿 피쉬&#x27; 이미지를 다시 설계한 예술가, 데이비드 호크니 코카콜라, &quot;더 코카콜라답게&quot; 리뉴얼 오픈ai, 베스트셀러 작가 불러 &#x27;ai 창작 쓴소리&#x27; 들었다 어도비 카메라 앱, ai가 당신 사진을 &#x27;비평&#x27;한다 유튜브, &#x27;ai 슬롭&#x27; 수익화 정책 명확화 퍼플렉시티, 연구 에이전트 벤치마크 &#x27;wandr&#x27; 공개…&quot;최고 ai도 실무는 한계&quot; 팀스파르타 초경량 언어모델, &#x27;k-ai 리더보드&#x27; 초고난도 추론 1위">
+    <div class="card-date">
+      <div class="d en">21</div>
+      <div class="my en">JUL · <span class="dow">TUE</span></div>
+    </div>
+    <div class="card-body">
+      <div class="titles">
+        <div class="tl"><span class="ico">🎨</span><span class="h">기억이 머무는 사적인 공간, 연진영 개인전 〈이불집〉</span></div>
+        <div class="tl"><span class="ico">🤖</span><span class="h">오픈AI, 베스트셀러 작가 불러 &#x27;AI 창작 쓴소리&#x27; 들었다</span></div>
+      </div>
+      <div class="tags">
+        <span class="tag-pill design en">DESIGN · 5</span>
+        <span class="tag-pill ai en">AI · 5</span>
+      </div>
+    </div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </a>
+
+  <a class="card" href="briefing-2026-07-20.html" data-kw="거미줄로 읽는 생태계, 토마스 사라세노 〈얽힌 세계들〉 지금 가봐야 할 연희동 새 공간 6 경쟁 대신 &#x27;코브랜딩&#x27;으로, 2026년 브랜드들의 선택 비 오는 날, 일부러 가고 싶은 공간 5 노르딕 노츠, 테니스 코트를 그래픽 러그로 씽킹ai, 한국 진출 후 고객사 60곳 확보 삼성, 폴드8 울트라·ai 안경으로 갤럭시 언팩 예고 넷플릭스, 벤 애플렉의 ai 영화제작 스타트업 5.87억 달러에 인수 &quot;이 곡, 안 싫어하는 게 싫다&quot; — suno로 만든 ai 음악 논쟁 미라 무라티의 씽킹머신즈랩, 美 오픈모델 &#x27;잉클링&#x27; 공개">
+    <div class="card-date">
+      <div class="d en">20</div>
+      <div class="my en">JUL · <span class="dow">MON</span></div>
+    </div>
+    <div class="card-body">
+      <div class="titles">
+        <div class="tl"><span class="ico">🎨</span><span class="h">거미줄로 읽는 생태계, 토마스 사라세노 〈얽힌 세계들〉</span></div>
+        <div class="tl"><span class="ico">🤖</span><span class="h">씽킹AI, 한국 진출 후 고객사 60곳 확보</span></div>
+      </div>
+      <div class="tags">
+        <span class="tag-pill design en">DESIGN · 5</span>
+        <span class="tag-pill ai en">AI · 5</span>
+      </div>
+    </div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </a>
+
+  <a class="card" href="briefing-2026-07-19.html" data-kw="삼성·현대차·기아, 레드닷 디자인 어워드 2026 대거 수상 5년 만의 반란, &#x27;꼬깔콘&#x27; 패키지 리뉴얼 삼성 &#x27;플렉스 티타늄&#x27;, 폴더블 디스플레이 새 기준 if 디자인 트렌드 리포트 2026, 미래 읽는 4개 키워드 틴더(tinder), 10년 만의 첫 리브랜드 생성 ai + &#x27;캔바(canva)&#x27;로 배우는 진로 포트폴리오 구글 딥마인드 × 영화사 a24, 업계 첫 ai 파트너십 메타(meta), 크리에이터용 ai 툴 폐기 논란 애플, 오픈ai &#x27;하드웨어 이직자&#x27; 40명에 경고 서한 &quot;한국어 쓰는 클로드, 더 다정하다&quot;…앤트로픽, 언어별 가치 분석 공개">
+    <div class="card-date">
+      <div class="d en">19</div>
+      <div class="my en">JUL · <span class="dow">SUN</span></div>
+    </div>
+    <div class="card-body">
+      <div class="titles">
+        <div class="tl"><span class="ico">🎨</span><span class="h">삼성·현대차·기아, 레드닷 디자인 어워드 2026 대거 수상</span></div>
+        <div class="tl"><span class="ico">🤖</span><span class="h">생성 AI + &#x27;캔바(Canva)&#x27;로 배우는 진로 포트폴리오</span></div>
+      </div>
+      <div class="tags">
+        <span class="tag-pill design en">DESIGN · 5</span>
+        <span class="tag-pill ai en">AI · 5</span>
+      </div>
+    </div>
+    <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  </a>
+
+  <div id="empty" style="display:none;padding:48px 4px;color:var(--mr-gris);font-size:14.5px;">
+    검색 결과가 없습니다. 다른 키워드로 시도해보세요.
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="sig"><b>MTOU</b> BRIEFING <span class="em">·</span> 부산 디자이너를 위한 디자인 &amp; AI 데일리</div>
+  <div class="slogan en">Every morning, one sheet. Design &amp; AI, curated in Busan.</div>
+</footer>
+
+<script>
+var q=document.getElementById('q');
+var cards=Array.prototype.slice.call(document.querySelectorAll('.card'));
+var chips=Array.prototype.slice.call(document.querySelectorAll('.chip'));
+var empty=document.getElementById('empty');
+function apply(){
+  var term=(q.value||'').trim().toLowerCase();
+  var shown=0;
+  cards.forEach(function(c){
+    var kw=(c.getAttribute('data-kw')||'').toLowerCase();
+    var text=c.textContent.toLowerCase();
+    var matchTerm=!term||kw.indexOf(term)>-1||text.indexOf(term)>-1;
+    var ok=matchTerm;
+    c.style.display=ok?'':'none';
+    if(ok)shown++;
+  });
+  empty.style.display=shown?'none':'block';
+}
+q.addEventListener('input',apply);
+chips.forEach(function(ch){
+  ch.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active');});
+    ch.classList.add('active');
+    apply();
+  });
+});
+</script>
+</body>
+</html>
