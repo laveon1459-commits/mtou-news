@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MTOU 브리핑 아카이브 · 디자인 &amp; AI 데일리</title>
+<title>Daily Brief 아카이브 · Design · AI · AX · FDE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@ a{color:inherit;}
 .hero .kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:22px;}
 .hero h1{font-size:56px;font-weight:800;line-height:1.06;letter-spacing:-.02em;color:var(--mr-ivoire);margin-bottom:22px;}
 .hero h1 .em{color:var(--mr-rouge);}
-.hero p{max-width:560px;font-size:16px;line-height:1.7;color:rgba(247,243,236,.66);}
+.hero p{max-width:600px;font-size:16px;line-height:1.7;color:rgba(247,243,236,.66);}
 .hero-stats{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap;}
 .stat .n{font-family:var(--font-en);font-size:30px;font-weight:900;color:var(--mr-ivoire);letter-spacing:-.01em;}
 .stat .n .em{color:var(--mr-rouge);}
@@ -42,8 +42,8 @@ a{color:inherit;}
 .search input{width:100%;background:rgba(247,243,236,.05);border:1px solid rgba(226,220,210,.16);border-radius:999px;color:var(--mr-ivoire);font-family:var(--font-ko);font-size:14.5px;padding:13px 18px 13px 44px;outline:none;transition:.16s;}
 .search input::placeholder{color:var(--mr-gris);}
 .search input:focus{border-color:var(--mr-rouge);background:rgba(200,16,46,.05);}
-.filters{display:flex;gap:8px;}
-.chip{background:transparent;border:1px solid rgba(226,220,210,.18);color:rgba(247,243,236,.7);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:11px 18px;border-radius:999px;cursor:pointer;transition:.16s;}
+.filters{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{background:transparent;border:1px solid rgba(226,220,210,.18);color:rgba(247,243,236,.7);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:11px 16px;border-radius:999px;cursor:pointer;transition:.16s;}
 .chip:hover{border-color:rgba(226,220,210,.4);color:var(--mr-ivoire);}
 .chip.active{background:var(--mr-rouge);border-color:var(--mr-rouge);color:#fff;}
 .archive{max-width:var(--wrap);margin:0 auto;padding:8px 24px 90px;}
@@ -59,10 +59,12 @@ a{color:inherit;}
 .tl{display:flex;align-items:baseline;gap:9px;}
 .tl .ico{font-size:14px;line-height:1.4;flex:none;}
 .tl .h{font-size:15px;font-weight:600;color:var(--mr-ivoire);line-height:1.45;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
-.card-body .tags{display:flex;gap:8px;margin-top:13px;}
-.tag-pill{font-family:var(--font-en);font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:4px 11px;border-radius:999px;}
+.card-body .tags{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap;}
+.tag-pill{font-family:var(--font-en);font-size:10.5px;font-weight:700;letter-spacing:.05em;padding:4px 11px;border-radius:999px;}
 .tag-pill.design{background:rgba(247,243,236,.08);color:rgba(247,243,236,.72);}
 .tag-pill.ai{background:rgba(200,16,46,.14);color:#f0889a;}
+.tag-pill.ax{background:rgba(64,160,160,.15);color:#7fd4d4;}
+.tag-pill.fde{background:rgba(210,150,40,.16);color:#e6b662;}
 .card-arrow{width:40px;height:40px;border-radius:50%;border:1px solid rgba(226,220,210,.18);display:flex;align-items:center;justify-content:center;flex:none;transition:.18s;}
 .card:hover .card-arrow{border-color:var(--mr-rouge);background:var(--mr-rouge);}
 .card-arrow svg{width:16px;height:16px;color:rgba(247,243,236,.7);transition:.18s;}
@@ -91,21 +93,20 @@ a{color:inherit;}
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a class="brand" href="index.html"><span class="dot"></span>MTOU BRIEFING</a>
+    <a class="brand" href="index.html"><span class="dot"></span>DAILY BRIEF</a>
     <nav class="top-links">
       <a href="index.html">아카이브</a>
-      <a href="#">소개</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="kicker en">MTOU · Daily Design &amp; AI Digest · Busan</div>
-  <h1>디자인과 <span class="em">AI</span>,<br>매일 아침 한 장으로.</h1>
-  <p>부산 디자이너 297인이 매일 08:00에 받아보는 디자인·AI 뉴스 다이제스트. 흘러간 브리핑을 모두 이곳에 아카이브합니다. 날짜로 넘겨보고, 검색하고, 공유하세요.</p>
+  <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+  <h1>매일 아침,<br>한 장으로 <span class="em">읽는다.</span></h1>
+  <p>디자인 · AI · AX(AI 전환) · FDE(포워드 디플로이드 엔지니어링). 매일 아침 큐레이션한 네 갈래 뉴스 다이제스트를 이곳에 아카이브합니다. 날짜로 넘겨보고, 검색하고, 공유하세요.</p>
   <div class="hero-stats">
-    <div class="stat"><div class="n en">08:00</div><div class="l">매일 발행</div></div>
-    <div class="stat"><div class="n en">10<span class="em">건</span></div><div class="l">디자인 5 · AI 5</div></div>
+    <div class="stat"><div class="n en">4</div><div class="l">트랙 · 디자인·AI·AX·FDE</div></div>
+    <div class="stat"><div class="n en">AM</div><div class="l">매일 아침 발행</div></div>
     <div class="stat"><div class="n en">21<span class="em">일</span></div><div class="l">아카이브</div></div>
   </div>
 </section>
@@ -113,19 +114,21 @@ a{color:inherit;}
 <div class="controls">
   <div class="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-    <input type="text" id="q" placeholder="키워드로 브리핑 검색 (예: 타이포그래피, TTS, 리테일)">
+    <input type="text" id="q" placeholder="키워드로 브리핑 검색 (예: 에이전트, 타이포그래피, 배포)">
   </div>
   <div class="filters">
     <button class="chip active" data-f="all">전체</button>
     <button class="chip" data-f="design">🎨 디자인</button>
     <button class="chip" data-f="ai">🤖 AI</button>
+    <button class="chip" data-f="ax">🛠️ AX</button>
+    <button class="chip" data-f="fde">🚀 FDE</button>
   </div>
 </div>
 
 <main class="archive">
   <div class="month-label en">2026 · August</div>
 
-  <a class="card" href="briefing-2026-08-14.html" data-kw="한글 로고에서 출발한 디자인 언어 — 비로소커피 bi 도서관의 정체성이 뒤바뀐 두 공간 — 영국과 체코 새로운 유로화를 위한 10가지 디자인 재규어 타입 01 인테리어 공개 — 실내를 가르는 &#x27;스파인&#x27; 인스타그램, 10여 년 만의 워드마크 교체 오픈ai, 챗gpt 광고 시범 도입 — 한국 포함 5개국 페이스북, 크리에이터 전용 앱 출시 — ai가 댓글 읽고 답글 초안까지 유럽 서점가 &#x27;5000권 주문 미스터리&#x27; — ai 학습용 수집 의혹 생성형 ai·스마트글래스도 수사 대상이 된다 x, 랭킹 알고리즘 오픈소스 공개 — &#x27;섀도밴&#x27; 여부 직접 확인">
+  <a class="card" href="briefing-2026-08-14.html" data-kw="한글 로고에서 출발한 디자인 언어 — 비로소커피 bi 도서관의 정체성이 뒤바뀐 두 공간 — 영국과 체코 새로운 유로화를 위한 10가지 디자인 재규어 타입 01 인테리어 공개 — 실내를 가르는 &#x27;스파인&#x27; 인스타그램, 10여 년 만의 워드마크 교체 오픈ai, 챗gpt 광고 시범 도입 — 한국 포함 5개국 페이스북, 크리에이터 전용 앱 출시 — ai가 댓글 읽고 답글 초안까지 유럽 서점가 &#x27;5000권 주문 미스터리&#x27; — ai 학습용 수집 의혹 생성형 ai·스마트글래스도 수사 대상이 된다 x, 랭킹 알고리즘 오픈소스 공개 — &#x27;섀도밴&#x27; 여부 직접 확인" data-track="design ai">
     <div class="card-date">
       <div class="d en">14</div>
       <div class="my en">AUG · <span class="dow">FRI</span></div>
@@ -137,14 +140,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">오픈AI, 챗GPT 광고 시범 도입 — 한국 포함 5개국</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-13.html" data-kw="63빌딩의 새 얼굴 — studio fnt의 브랜드 아이덴티티 접었다 펴는 &#x27;리-플랫팩 소파&#x27; — 형상기억합금 니티놀 자연에서 출발한 스몰 브랜드 넷 세자르 펠리의 &#x27;마지막 건축&#x27; — 로라 모라 미술관 아트스테이션·스케치팹 매각 — 디지털 아티스트에게 무슨 의미인가 소비자 gpu·맥에서도 돌아가는 오픈 영상 생성 모델 &#x27;ltx-2.5&#x27; 앤트로픽 ai, 160년 난제 &#x27;리만 가설&#x27;서 대기록 국내 구글 앱, 네이버를 넘어서다 — &#x27;제미나이&#x27; 효과 트위치 스트리머, 아마존 ai 학습에서 &#x27;빼기&#x27; 가능 — 단, 기본값은 학습 &quot;ai는 열려 있어야 한다&quot; — 힌턴·페이페이 리·응 우의 오픈소스 논쟁">
+  <a class="card" href="briefing-2026-08-13.html" data-kw="63빌딩의 새 얼굴 — studio fnt의 브랜드 아이덴티티 접었다 펴는 &#x27;리-플랫팩 소파&#x27; — 형상기억합금 니티놀 자연에서 출발한 스몰 브랜드 넷 세자르 펠리의 &#x27;마지막 건축&#x27; — 로라 모라 미술관 아트스테이션·스케치팹 매각 — 디지털 아티스트에게 무슨 의미인가 소비자 gpu·맥에서도 돌아가는 오픈 영상 생성 모델 &#x27;ltx-2.5&#x27; 앤트로픽 ai, 160년 난제 &#x27;리만 가설&#x27;서 대기록 국내 구글 앱, 네이버를 넘어서다 — &#x27;제미나이&#x27; 효과 트위치 스트리머, 아마존 ai 학습에서 &#x27;빼기&#x27; 가능 — 단, 기본값은 학습 &quot;ai는 열려 있어야 한다&quot; — 힌턴·페이페이 리·응 우의 오픈소스 논쟁 엔터프라이즈 ai 에이전트 — &#x27;파일럿은 보편, 확장은 소수&#x27; 프로덕션 ai 엔지니어링 = 모델보다 &#x27;가드레일·거버넌스&#x27; 가트너 &quot;에이전틱 ai 프로젝트 40%, 2027년까지 폐기될 것&quot; &#x27;포워드 디플로이드 엔지니어(fde)&#x27;, 2026년 가장 어려운 채용 fde의 시간은 &#x27;코딩&#x27;이 아니다 — 1,500명 서베이 fde의 정의가 흔들린다 — &quot;역할의 모양보다 &#x27;고객 책임&#x27;&quot;" data-track="design ai ax fde">
     <div class="card-date">
       <div class="d en">13</div>
       <div class="my en">AUG · <span class="dow">THU</span></div>
@@ -155,14 +158,16 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">소비자 GPU·맥에서도 돌아가는 오픈 영상 생성 모델 &#x27;LTX-2.5&#x27;</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
+        <span class="tag-pill ax en">AX·3</span>
+        <span class="tag-pill fde en">FDE·3</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-12.html" data-kw="유러피안 디자인 어워드 2026, 금메달 수상작 5선 올리브영 &#x27;뷰티맨션&#x27; — 취향을 담은 새로운 공간 문법 부산 영도 〈울트라백화점 부산: 텍스트 쇼핑클럽〉 — 물건 대신 영감을 파는 백화점 7up 리브랜드 — 맛은 15년 만, 로고는 3년 만의 재수정 〈type around town〉 — 매일 지나치는 글자들을 다시 보게 하는 아카이브 앤트로픽, &#x27;클로드&#x27; 생성물에 눈에 보이지 않는 워터마크 도입 &#x27;matraix&#x27; — 가상 인간이 ai를 먼저 써보는 시뮬레이션 환경 애플, &quot;이 사진은 ai가 만든 게 아니다&quot;를 증명하는 기능 개발 정황 제미나이도 월 10억 명 — 챗gpt에 이어 기업의 ai 이용 비용, 올해 최저치로 하락">
+  <a class="card" href="briefing-2026-08-12.html" data-kw="유러피안 디자인 어워드 2026, 금메달 수상작 5선 올리브영 &#x27;뷰티맨션&#x27; — 취향을 담은 새로운 공간 문법 부산 영도 〈울트라백화점 부산: 텍스트 쇼핑클럽〉 — 물건 대신 영감을 파는 백화점 7up 리브랜드 — 맛은 15년 만, 로고는 3년 만의 재수정 〈type around town〉 — 매일 지나치는 글자들을 다시 보게 하는 아카이브 앤트로픽, &#x27;클로드&#x27; 생성물에 눈에 보이지 않는 워터마크 도입 &#x27;matraix&#x27; — 가상 인간이 ai를 먼저 써보는 시뮬레이션 환경 애플, &quot;이 사진은 ai가 만든 게 아니다&quot;를 증명하는 기능 개발 정황 제미나이도 월 10억 명 — 챗gpt에 이어 기업의 ai 이용 비용, 올해 최저치로 하락" data-track="design ai">
     <div class="card-date">
       <div class="d en">12</div>
       <div class="my en">AUG · <span class="dow">WED</span></div>
@@ -173,14 +178,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">앤트로픽, &#x27;클로드&#x27; 생성물에 눈에 보이지 않는 워터마크 도입</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-11.html" data-kw="1930년대 건물에 깃든 다섯 브랜드 — 정동길 신아기념관 프랭크 게리의 새 랜드마크 — &#x27;구겐하임 아부다비&#x27; 12월 개관 위험한 일을 대신하는 &#x27;켄타우로스 로봇&#x27; — satyress의 threehalves 버려진 옷이 &#x27;건축 구조재&#x27;로 — 열로 뭉친 섬유 폐기물 미코노스 호텔 예배당의 흑백 비잔틴 프레스코 — &#x27;세인트 오브 아테네&#x27; 100% ai로 만든 공룡 다큐 영화 &#x27;백악기 공룡쟁투&#x27; ai 에이전트 3만7000개가 &#x27;제약회사처럼&#x27; 협업해 신약을 설계하다 덩치 두 배 ai를 이긴 &#x27;꼬마 로봇&#x27; — 비결은 &#x27;미리 그려보기&#x27; 유튜브, 수익화 문턱을 2배로 — 창작자 돈 벌기 더 어려워진다 저커버그의 6,500단어 &#x27;ai 선언문&#x27; — 오히려 반감을 키우다">
+  <a class="card" href="briefing-2026-08-11.html" data-kw="1930년대 건물에 깃든 다섯 브랜드 — 정동길 신아기념관 프랭크 게리의 새 랜드마크 — &#x27;구겐하임 아부다비&#x27; 12월 개관 위험한 일을 대신하는 &#x27;켄타우로스 로봇&#x27; — satyress의 threehalves 버려진 옷이 &#x27;건축 구조재&#x27;로 — 열로 뭉친 섬유 폐기물 미코노스 호텔 예배당의 흑백 비잔틴 프레스코 — &#x27;세인트 오브 아테네&#x27; 100% ai로 만든 공룡 다큐 영화 &#x27;백악기 공룡쟁투&#x27; ai 에이전트 3만7000개가 &#x27;제약회사처럼&#x27; 협업해 신약을 설계하다 덩치 두 배 ai를 이긴 &#x27;꼬마 로봇&#x27; — 비결은 &#x27;미리 그려보기&#x27; 유튜브, 수익화 문턱을 2배로 — 창작자 돈 벌기 더 어려워진다 저커버그의 6,500단어 &#x27;ai 선언문&#x27; — 오히려 반감을 키우다" data-track="design ai">
     <div class="card-date">
       <div class="d en">11</div>
       <div class="my en">AUG · <span class="dow">TUE</span></div>
@@ -191,14 +196,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">100% AI로 만든 공룡 다큐 영화 &#x27;백악기 공룡쟁투&#x27;</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-10.html" data-kw="청계천 풍경을 통째로 끌어들인 공간 — &#x27;운치(wnch) 청계천&#x27; 온양민속박물관 정원의 작은 집 &#x27;사잇집&#x27; — 공예의 시간과 건축의 시간 나이고의 &#x27;휴먼메이드&#x27; 서울 매장을 한국 &#x27;청자&#x27;로 감싸다 — 스튜디오 i in 뛰어들 수 있는 &#x27;백만 개 구슬&#x27; — cj 헨드리의 설치 &#x27;pastel&#x27; 쓰는 것보다 더 만든다 — 태양광 &#x27;스킨&#x27; 입은 학생 ev 배민, 부산 사장님에게 &#x27;ai 메뉴판&#x27;을 가르친다 오픈ai, 프레젠테이션 스타트업 &#x27;넥스트슬라이드&#x27; 인수 — 챗gpt가 슬라이드까지 인터넷 없이 작동하는 손바닥 ai 번역기 — 구글 &#x27;젬마 트랜슬레이터&#x27; &#x27;ai 감지기&#x27;가 만든 불신의 시대 — 사람이 쓴 것도 &#x27;ai&#x27;로 몰린다 앤트로픽, &#x27;클로드 코드&#x27; 자동 모드를 기본값으로">
+  <a class="card" href="briefing-2026-08-10.html" data-kw="청계천 풍경을 통째로 끌어들인 공간 — &#x27;운치(wnch) 청계천&#x27; 온양민속박물관 정원의 작은 집 &#x27;사잇집&#x27; — 공예의 시간과 건축의 시간 나이고의 &#x27;휴먼메이드&#x27; 서울 매장을 한국 &#x27;청자&#x27;로 감싸다 — 스튜디오 i in 뛰어들 수 있는 &#x27;백만 개 구슬&#x27; — cj 헨드리의 설치 &#x27;pastel&#x27; 쓰는 것보다 더 만든다 — 태양광 &#x27;스킨&#x27; 입은 학생 ev 배민, 부산 사장님에게 &#x27;ai 메뉴판&#x27;을 가르친다 오픈ai, 프레젠테이션 스타트업 &#x27;넥스트슬라이드&#x27; 인수 — 챗gpt가 슬라이드까지 인터넷 없이 작동하는 손바닥 ai 번역기 — 구글 &#x27;젬마 트랜슬레이터&#x27; &#x27;ai 감지기&#x27;가 만든 불신의 시대 — 사람이 쓴 것도 &#x27;ai&#x27;로 몰린다 앤트로픽, &#x27;클로드 코드&#x27; 자동 모드를 기본값으로" data-track="design ai">
     <div class="card-date">
       <div class="d en">10</div>
       <div class="my en">AUG · <span class="dow">MON</span></div>
@@ -209,14 +214,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">배민, 부산 사장님에게 &#x27;AI 메뉴판&#x27;을 가르친다</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-07.html" data-kw="당근의 디자인 시스템 &#x27;seed&#x27;, v3로 리브랜딩 블랙핑크 × 뮷즈 &#x27;헤리티지 컬렉션&#x27; — 대한제국 황후 예복에서 빚은 100년 된 디자인 뮤지엄이 &#x27;로봇&#x27;을 수집하는 이유 — 디 노이에 잠룽 〈로보틱 월드〉 반경 40마일 안의 재료·도구로만 만든 테이블 &#x27;harvest moon&#x27; 카를로 라티, 모데나 옛 병원 안뜰에 &#x27;접히는 캐노피&#x27; 조니 아이브의 첫 openai 기기, &#x27;화면 없는 스마트 스피커&#x27;로 가닥 수노, &#x27;ai 음악 스팸&#x27;에 브레이크 — 워터마킹·다운로드 정책 도입 &quot;카톡 대화가 곧 주문·결제로&quot; — 카카오의 &#x27;에이전틱 ai&#x27; 딥시크, 초저가 시대 접나 — ai 서비스 가격 &#x27;대폭 인상&#x27; 예고 같은 실수 반복하던 ai, &#x27;오답노트&#x27; 200개 쌓자 합격률 62→85%">
+  <a class="card" href="briefing-2026-08-07.html" data-kw="당근의 디자인 시스템 &#x27;seed&#x27;, v3로 리브랜딩 블랙핑크 × 뮷즈 &#x27;헤리티지 컬렉션&#x27; — 대한제국 황후 예복에서 빚은 100년 된 디자인 뮤지엄이 &#x27;로봇&#x27;을 수집하는 이유 — 디 노이에 잠룽 〈로보틱 월드〉 반경 40마일 안의 재료·도구로만 만든 테이블 &#x27;harvest moon&#x27; 카를로 라티, 모데나 옛 병원 안뜰에 &#x27;접히는 캐노피&#x27; 조니 아이브의 첫 openai 기기, &#x27;화면 없는 스마트 스피커&#x27;로 가닥 수노, &#x27;ai 음악 스팸&#x27;에 브레이크 — 워터마킹·다운로드 정책 도입 &quot;카톡 대화가 곧 주문·결제로&quot; — 카카오의 &#x27;에이전틱 ai&#x27; 딥시크, 초저가 시대 접나 — ai 서비스 가격 &#x27;대폭 인상&#x27; 예고 같은 실수 반복하던 ai, &#x27;오답노트&#x27; 200개 쌓자 합격률 62→85%" data-track="design ai">
     <div class="card-date">
       <div class="d en">07</div>
       <div class="my en">AUG · <span class="dow">FRI</span></div>
@@ -227,14 +232,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">조니 아이브의 첫 OpenAI 기기, &#x27;화면 없는 스마트 스피커&#x27;로 가닥</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-06.html" data-kw="세계 최북단 파인다이닝 &#x27;후세트&#x27; — 노르웨이 스발바르, 마을의 심장이던 건물 설화수가 공예로 빚은 &#x27;여름의 미학&#x27; 초록 지붕 위 &#x27;바위 갤러리&#x27; — mad의 선전만 문화광장 디자인 뮤지엄 스스로 자라고 수선되는 &#x27;살아있는 균사체&#x27; 드레스 로고를 하나로 정하지 않는다 — 베를린 한 미술관의 &#x27;81개 로고&#x27; 실험 미니맥스, 오픈소스 영상 생성 모델 &#x27;h3&#x27; 공개 — 한·미·eu·영국은 사용 제한 ai 에이전트가 10시간 만에 &#x27;엔비디아 cuda 대체&#x27; 소프트웨어를 짰다 위버스, 제미나이 기반 대화형 &#x27;위버스 ai&#x27; 베타 출시 메타, 대규모 코드베이스용 ai 에이전트 &#x27;뮤즈 코드&#x27; 출시 레딧, 규칙 집행을 돕는 ai 도구 &#x27;룰스 허브&#x27; 도입">
+  <a class="card" href="briefing-2026-08-06.html" data-kw="세계 최북단 파인다이닝 &#x27;후세트&#x27; — 노르웨이 스발바르, 마을의 심장이던 건물 설화수가 공예로 빚은 &#x27;여름의 미학&#x27; 초록 지붕 위 &#x27;바위 갤러리&#x27; — mad의 선전만 문화광장 디자인 뮤지엄 스스로 자라고 수선되는 &#x27;살아있는 균사체&#x27; 드레스 로고를 하나로 정하지 않는다 — 베를린 한 미술관의 &#x27;81개 로고&#x27; 실험 미니맥스, 오픈소스 영상 생성 모델 &#x27;h3&#x27; 공개 — 한·미·eu·영국은 사용 제한 ai 에이전트가 10시간 만에 &#x27;엔비디아 cuda 대체&#x27; 소프트웨어를 짰다 위버스, 제미나이 기반 대화형 &#x27;위버스 ai&#x27; 베타 출시 메타, 대규모 코드베이스용 ai 에이전트 &#x27;뮤즈 코드&#x27; 출시 레딧, 규칙 집행을 돕는 ai 도구 &#x27;룰스 허브&#x27; 도입" data-track="design ai">
     <div class="card-date">
       <div class="d en">06</div>
       <div class="my en">AUG · <span class="dow">THU</span></div>
@@ -245,14 +250,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">미니맥스, 오픈소스 영상 생성 모델 &#x27;H3&#x27; 공개 — 한·미·EU·영국은 사용 제한</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-05.html" data-kw="디자인 뮤지엄이 된 탄약 벙커 — 네덜란드 icoon &#x27;shelter for design&#x27; 타버린 나무 앞, 공간의 근원을 사유하다 — 박선기 〈the origin of space〉 파예 투굿의 소재 실험을 집약한 가구 컬렉션 — bone·roll·slump 버몬트주의 새 로고, &quot;코믹 산스 아니다&quot; 일본의 과일 모양 버스정류장 오토데스크, ai 영화 제작 최대 난제를 &#x27;3d 제어&#x27;로 푼다 오픈ai, 컴투스와 세계 최초 &#x27;ai 게임 개발 해커톤&#x27; 서울 개최 애딧앤아크, ai 인스타 광고 효율화 솔루션으로 시드 투자 유치 &quot;건강하지 않은 ai 사용, 생각보다 흔하다&quot; — 크리에이터들의 고민 ai 자율 해킹, 책임은 누구에게 — 법적 논쟁 본격화">
+  <a class="card" href="briefing-2026-08-05.html" data-kw="디자인 뮤지엄이 된 탄약 벙커 — 네덜란드 icoon &#x27;shelter for design&#x27; 타버린 나무 앞, 공간의 근원을 사유하다 — 박선기 〈the origin of space〉 파예 투굿의 소재 실험을 집약한 가구 컬렉션 — bone·roll·slump 버몬트주의 새 로고, &quot;코믹 산스 아니다&quot; 일본의 과일 모양 버스정류장 오토데스크, ai 영화 제작 최대 난제를 &#x27;3d 제어&#x27;로 푼다 오픈ai, 컴투스와 세계 최초 &#x27;ai 게임 개발 해커톤&#x27; 서울 개최 애딧앤아크, ai 인스타 광고 효율화 솔루션으로 시드 투자 유치 &quot;건강하지 않은 ai 사용, 생각보다 흔하다&quot; — 크리에이터들의 고민 ai 자율 해킹, 책임은 누구에게 — 법적 논쟁 본격화" data-track="design ai">
     <div class="card-date">
       <div class="d en">05</div>
       <div class="my en">AUG · <span class="dow">WED</span></div>
@@ -263,14 +268,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">오토데스크, AI 영화 제작 최대 난제를 &#x27;3D 제어&#x27;로 푼다</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-04.html" data-kw="니코앤드가 &#x27;잘 쉬는 법&#x27;을 공간으로 — 웰니스 공간 &#x27;니코앤드 사우나&#x27; 2030 동계올림픽 엠블럼 — 프랑스 알프스, &#x27;빛 속에서 솟는 산&#x27; ai 감시에 맞서는 &#x27;디지털 카무플라주&#x27; 의류 이중 외피로 &#x27;사이 공간&#x27;을 지은 베트남 다세대 주택 — 100 windows 뉴욕 시영 식료품점의 &#x27;공공 브랜딩&#x27;이라는 숙제 &#x27;ai에 안목을 입힌다&#x27; — 디자인 아레나, 790만 달러 유치 &quot;ai시대 몸값은 능력이 아니라 &#x27;복제 가능성&#x27;이 가른다&quot; 중국 저비용 ai에 맞서는 미국 오픈소스 스타트업들 — &quot;투자 난항이 최대 난제&quot; 애플, 드디어 시리를 고쳤다 — 그런데 왜 김이 빠질까 네이버, &#x27;ai팩토리&#x27; 사업 방식 공개">
+  <a class="card" href="briefing-2026-08-04.html" data-kw="니코앤드가 &#x27;잘 쉬는 법&#x27;을 공간으로 — 웰니스 공간 &#x27;니코앤드 사우나&#x27; 2030 동계올림픽 엠블럼 — 프랑스 알프스, &#x27;빛 속에서 솟는 산&#x27; ai 감시에 맞서는 &#x27;디지털 카무플라주&#x27; 의류 이중 외피로 &#x27;사이 공간&#x27;을 지은 베트남 다세대 주택 — 100 windows 뉴욕 시영 식료품점의 &#x27;공공 브랜딩&#x27;이라는 숙제 &#x27;ai에 안목을 입힌다&#x27; — 디자인 아레나, 790만 달러 유치 &quot;ai시대 몸값은 능력이 아니라 &#x27;복제 가능성&#x27;이 가른다&quot; 중국 저비용 ai에 맞서는 미국 오픈소스 스타트업들 — &quot;투자 난항이 최대 난제&quot; 애플, 드디어 시리를 고쳤다 — 그런데 왜 김이 빠질까 네이버, &#x27;ai팩토리&#x27; 사업 방식 공개" data-track="design ai">
     <div class="card-date">
       <div class="d en">04</div>
       <div class="my en">AUG · <span class="dow">TUE</span></div>
@@ -281,14 +286,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">&#x27;AI에 안목을 입힌다&#x27; — 디자인 아레나, 790만 달러 유치</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-08-03.html" data-kw="도자기의 미학을 입은 하이퍼카 — 부가티 × kpm 로드스터 한지·강철로 빚은 &#x27;기억의 그릇&#x27; — 서울 냉전 벙커 속 설치 바비칸을 &#x27;움직이는 도시 놀이터&#x27;로 — 파이비 라이비오의 basic forms 악기처럼 설계된 구릿빛 콘서트홀 — 에비앙 &#x27;라 소스 비브&#x27; 서브버타이징 — 담배에서 테슬라까지, 브랜드에 들이댄 거울 eu, ai 챗봇·딥페이크 표기 의무화 — &#x27;ai 라벨링&#x27; 규제 본격화 구글, 크롬에 ai 에이전트 &#x27;제미나이 스파크&#x27; 통합 — 웹 자동화 xai &#x27;그록 이매진&#x27; 대규모 업그레이드 — 1080p 영상·음성 일관성 펜더 ceo &quot;밴드메이트도 결국 아날로그 ai&quot; — ai·음악 논쟁 전 세계 메모리 대란, 맥북 에어까지 강타">
+  <a class="card" href="briefing-2026-08-03.html" data-kw="도자기의 미학을 입은 하이퍼카 — 부가티 × kpm 로드스터 한지·강철로 빚은 &#x27;기억의 그릇&#x27; — 서울 냉전 벙커 속 설치 바비칸을 &#x27;움직이는 도시 놀이터&#x27;로 — 파이비 라이비오의 basic forms 악기처럼 설계된 구릿빛 콘서트홀 — 에비앙 &#x27;라 소스 비브&#x27; 서브버타이징 — 담배에서 테슬라까지, 브랜드에 들이댄 거울 eu, ai 챗봇·딥페이크 표기 의무화 — &#x27;ai 라벨링&#x27; 규제 본격화 구글, 크롬에 ai 에이전트 &#x27;제미나이 스파크&#x27; 통합 — 웹 자동화 xai &#x27;그록 이매진&#x27; 대규모 업그레이드 — 1080p 영상·음성 일관성 펜더 ceo &quot;밴드메이트도 결국 아날로그 ai&quot; — ai·음악 논쟁 전 세계 메모리 대란, 맥북 에어까지 강타" data-track="design ai">
     <div class="card-date">
       <div class="d en">03</div>
       <div class="my en">AUG · <span class="dow">MON</span></div>
@@ -299,14 +304,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">EU, AI 챗봇·딥페이크 표기 의무화 — &#x27;AI 라벨링&#x27; 규제 본격화</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-31.html" data-kw="750년 된 런던 시장, 새 아이덴티티를 입다 라네즈가 경험을 설계하는 법 — 플래그십 &#x27;라네즈 서울&#x27; 한글 창제 정신을 담은 헤리티지 조명 &#x27;천지인&#x27; 국립현대미술관 과천 40주년 〈빛의 상상들〉 타입 디자이너들이 만든 &#x27;ai를 오염시키는&#x27; 무료 서체 링크드인, &#x27;이건 ai 슬롭 같다&#x27; 신고 버튼 추가 &quot;이제는 기계가 인간에 맞춘다&quot; — 오픈ai가 &#x27;음성&#x27;에 집중하는 이유 네이버 클립, 가로·롱폼 영상까지 품는다 xai, &#x27;딥페이크 금지법은 위헌&#x27; 미네소타주 상대 소송 구글 딥마인드, 로봇 &#x27;전신&#x27;을 제어하는 새 ai 공개">
+  <a class="card" href="briefing-2026-07-31.html" data-kw="750년 된 런던 시장, 새 아이덴티티를 입다 라네즈가 경험을 설계하는 법 — 플래그십 &#x27;라네즈 서울&#x27; 한글 창제 정신을 담은 헤리티지 조명 &#x27;천지인&#x27; 국립현대미술관 과천 40주년 〈빛의 상상들〉 타입 디자이너들이 만든 &#x27;ai를 오염시키는&#x27; 무료 서체 링크드인, &#x27;이건 ai 슬롭 같다&#x27; 신고 버튼 추가 &quot;이제는 기계가 인간에 맞춘다&quot; — 오픈ai가 &#x27;음성&#x27;에 집중하는 이유 네이버 클립, 가로·롱폼 영상까지 품는다 xai, &#x27;딥페이크 금지법은 위헌&#x27; 미네소타주 상대 소송 구글 딥마인드, 로봇 &#x27;전신&#x27;을 제어하는 새 ai 공개" data-track="design ai">
     <div class="card-date">
       <div class="d en">31</div>
       <div class="my en">JUL · <span class="dow">FRI</span></div>
@@ -317,14 +322,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">링크드인, &#x27;이건 AI 슬롭 같다&#x27; 신고 버튼 추가</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-30.html" data-kw="장 누벨, 자신의 건축 안에서 첫 개인전 레드닷 수상작 &#x27;컬티브&#x27; — 문화적 맥락을 익히는 학습 플랫폼 디자인 퍼레이드 2026 — 차세대 디자이너의 무대 accept &amp; proceed의 반스(vans) 리브랜드 — 아이코닉 브랜드에 &#x27;명료함&#x27;을 심다 september collective — 반투 매듭을 유리로 빚은 조각적 화병 &quot;포털 말고 챗gpt에 물어봐&quot; — 내 브랜드의 ai 경쟁력은 몇 점? 크래프톤, 21b 음성 ai &#x27;라온 스피치&#x27; 공개 — &quot;30b 이하 한국어 성능 1위&quot; amd, 엔비디아 &#x27;cuda 해자&#x27;를 바이브코딩으로 넘는다 ai 안경, 폰을 이길 수 있을까 — 판매량 1년 새 167%↑ 마이크로소프트, 올해 copilot &#x27;super app&#x27; 출시 확정">
+  <a class="card" href="briefing-2026-07-30.html" data-kw="장 누벨, 자신의 건축 안에서 첫 개인전 레드닷 수상작 &#x27;컬티브&#x27; — 문화적 맥락을 익히는 학습 플랫폼 디자인 퍼레이드 2026 — 차세대 디자이너의 무대 accept &amp; proceed의 반스(vans) 리브랜드 — 아이코닉 브랜드에 &#x27;명료함&#x27;을 심다 september collective — 반투 매듭을 유리로 빚은 조각적 화병 &quot;포털 말고 챗gpt에 물어봐&quot; — 내 브랜드의 ai 경쟁력은 몇 점? 크래프톤, 21b 음성 ai &#x27;라온 스피치&#x27; 공개 — &quot;30b 이하 한국어 성능 1위&quot; amd, 엔비디아 &#x27;cuda 해자&#x27;를 바이브코딩으로 넘는다 ai 안경, 폰을 이길 수 있을까 — 판매량 1년 새 167%↑ 마이크로소프트, 올해 copilot &#x27;super app&#x27; 출시 확정" data-track="design ai">
     <div class="card-date">
       <div class="d en">30</div>
       <div class="my en">JUL · <span class="dow">THU</span></div>
@@ -335,14 +340,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">&quot;포털 말고 챗GPT에 물어봐&quot; — 내 브랜드의 AI 경쟁력은 몇 점?</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-29.html" data-kw="빛이 아니라 &#x27;그림자&#x27;로 집을 설계한다 — 국제 공모전서 한국 건축가 대상 &quot;이케아 제품을 샀더니 디자이너가 따라왔다&quot; — 이케아 뒤의 디자이너들 왜 경기장 디자인은 점점 더 대담해지는가 한 번 쓸면 렌즈 색이 바뀌는 아이웨어 — sutyo 버려진 철도 부지가 핑크빛 복합문화공간으로 — 레미세 로사, 취리히 오픈ai 미공개 모델, 테스트 중 &#x27;샌드박스&#x27; 탈출…ai 안전 논쟁 점화 국산 ai 채팅앱 &#x27;제타&#x27;, 글로벌 가입자 1000만 돌파 정부, cctv 1만8000대 &#x27;ai 전환&#x27;…국산 npu 대거 투입 ai 데이터센터, 정전 막으려 &#x27;전력 일시 차단&#x27; 확정 &quot;ai 시대에도 좋은 소프트웨어의 자리는 있다&quot;">
+  <a class="card" href="briefing-2026-07-29.html" data-kw="빛이 아니라 &#x27;그림자&#x27;로 집을 설계한다 — 국제 공모전서 한국 건축가 대상 &quot;이케아 제품을 샀더니 디자이너가 따라왔다&quot; — 이케아 뒤의 디자이너들 왜 경기장 디자인은 점점 더 대담해지는가 한 번 쓸면 렌즈 색이 바뀌는 아이웨어 — sutyo 버려진 철도 부지가 핑크빛 복합문화공간으로 — 레미세 로사, 취리히 오픈ai 미공개 모델, 테스트 중 &#x27;샌드박스&#x27; 탈출…ai 안전 논쟁 점화 국산 ai 채팅앱 &#x27;제타&#x27;, 글로벌 가입자 1000만 돌파 정부, cctv 1만8000대 &#x27;ai 전환&#x27;…국산 npu 대거 투입 ai 데이터센터, 정전 막으려 &#x27;전력 일시 차단&#x27; 확정 &quot;ai 시대에도 좋은 소프트웨어의 자리는 있다&quot;" data-track="design ai">
     <div class="card-date">
       <div class="d en">29</div>
       <div class="my en">JUL · <span class="dow">WED</span></div>
@@ -353,14 +358,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">오픈AI 미공개 모델, 테스트 중 &#x27;샌드박스&#x27; 탈출…AI 안전 논쟁 점화</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-28.html" data-kw="‘mr eternity’, 단 하나의 단어로 시드니를 디자인하다 불가리, 베니스 비엔날레에 입주한 첫 럭셔리 브랜드 프라다 × 젠틀몬스터, 지적인 절제와 창의적 위트의 결합 2026 레드닷 디자인 어워드 — 올해의 제품 디자인 트렌드 fsb, 디터 람스의 1986년 도어 핸들을 40년 만에 재출시 “ai가 위협하는 건 창의성이 아니라 ‘독창성’이다” — 혁신 이론가의 경고 국내 2인 스튜디오 운무, ai 단편영화로 유럽 전통 영화제 본선 진출 보고서 쓰던 챗봇, 이제 ‘대화’까지 돕는다 — ai ‘대화 코치’의 부상 흰 글씨로 숨긴 ‘ai 함정’ — 미 교수 중간고사서 35명 중 32명 낙제 사티아 나델라 “하나의 ai에 모든 걸 맡기는 기업은 살아남지 못한다”">
+  <a class="card" href="briefing-2026-07-28.html" data-kw="‘mr eternity’, 단 하나의 단어로 시드니를 디자인하다 불가리, 베니스 비엔날레에 입주한 첫 럭셔리 브랜드 프라다 × 젠틀몬스터, 지적인 절제와 창의적 위트의 결합 2026 레드닷 디자인 어워드 — 올해의 제품 디자인 트렌드 fsb, 디터 람스의 1986년 도어 핸들을 40년 만에 재출시 “ai가 위협하는 건 창의성이 아니라 ‘독창성’이다” — 혁신 이론가의 경고 국내 2인 스튜디오 운무, ai 단편영화로 유럽 전통 영화제 본선 진출 보고서 쓰던 챗봇, 이제 ‘대화’까지 돕는다 — ai ‘대화 코치’의 부상 흰 글씨로 숨긴 ‘ai 함정’ — 미 교수 중간고사서 35명 중 32명 낙제 사티아 나델라 “하나의 ai에 모든 걸 맡기는 기업은 살아남지 못한다”" data-track="design ai">
     <div class="card-date">
       <div class="d en">28</div>
       <div class="my en">JUL · <span class="dow">TUE</span></div>
@@ -371,14 +376,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">“AI가 위협하는 건 창의성이 아니라 ‘독창성’이다” — 혁신 이론가의 경고</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-27.html" data-kw="타이포그래피가 브랜드 경험을 떠받친다 — 브랜드톡 코리아 2026 제품보다 경험을 먼저 제안하는 노이스(noice) 플래그십 스토어 공간을 입은 패션쇼 — 루이비통 2027 ss 런웨이의 비밀 완벽을 넘어서 — 아너(honor)의 새 로고 디지털 툴이 만드는 새 타이포그래피 — gridtype vol.1 앤트로픽, 클로드5용 &#x27;컨텍스트 엔지니어링&#x27; 원칙 공개 — 규칙 줄여야 성능 오른다 젠스파크, 슈퍼에이전트 기반 &#x27;ai 워크스페이스 6.0&#x27; 공개 제로클릭 위기? 구글은 ai 광고로 더 번다 &#x27;ai는 도구&#x27; vs &#x27;품질 위협&#x27; — 오픈소스 진영, ai 코딩 대립 &#x27;ai 피하기&#x27; 워크숍이 뜬다 — 빅테크 피로의 반작용">
+  <a class="card" href="briefing-2026-07-27.html" data-kw="타이포그래피가 브랜드 경험을 떠받친다 — 브랜드톡 코리아 2026 제품보다 경험을 먼저 제안하는 노이스(noice) 플래그십 스토어 공간을 입은 패션쇼 — 루이비통 2027 ss 런웨이의 비밀 완벽을 넘어서 — 아너(honor)의 새 로고 디지털 툴이 만드는 새 타이포그래피 — gridtype vol.1 앤트로픽, 클로드5용 &#x27;컨텍스트 엔지니어링&#x27; 원칙 공개 — 규칙 줄여야 성능 오른다 젠스파크, 슈퍼에이전트 기반 &#x27;ai 워크스페이스 6.0&#x27; 공개 제로클릭 위기? 구글은 ai 광고로 더 번다 &#x27;ai는 도구&#x27; vs &#x27;품질 위협&#x27; — 오픈소스 진영, ai 코딩 대립 &#x27;ai 피하기&#x27; 워크숍이 뜬다 — 빅테크 피로의 반작용" data-track="design ai">
     <div class="card-date">
       <div class="d en">27</div>
       <div class="my en">JUL · <span class="dow">MON</span></div>
@@ -389,14 +394,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">앤트로픽, 클로드5용 &#x27;컨텍스트 엔지니어링&#x27; 원칙 공개 — 규칙 줄여야 성능 오른다</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-24.html" data-kw="그라피티에서 미술관까지 — 카우스(kaws) 국내 첫 미술관 개인전 서울에서 만나는 가우디의 건축 세계 — 서거 100주기 공식전 마음을 포장하는 브랜드 &#x27;가위(kawi)&#x27; — 5년의 브랜딩 여정 세계 최고 목조 타워, 시드니에서 최고 높이 도달 &#x27;뉴욕 최대 만화경&#x27; — 엣지 nyc 전망대의 몰입형 설치 7종 일레븐랩스, ai 음악생성 &#x27;보컬·레퍼런스&#x27; 공개 — &quot;내 목소리로 노래&quot; 런웨이, ai &#x27;미디어 라우터&#x27; 출시 — 생성 모델 자동 선택 하루 9만 곡 ai 음원 — 디저, 신규 업로드 절반 첫 돌파 문체부 &#x27;ai 문화강국&#x27; 영상·방송 간담회 — cj 4dplex ai-vfx 조명 클로드 음성 모드, opus·sonnet로 확대 + gmail·슬랙·캔바 연동">
+  <a class="card" href="briefing-2026-07-24.html" data-kw="그라피티에서 미술관까지 — 카우스(kaws) 국내 첫 미술관 개인전 서울에서 만나는 가우디의 건축 세계 — 서거 100주기 공식전 마음을 포장하는 브랜드 &#x27;가위(kawi)&#x27; — 5년의 브랜딩 여정 세계 최고 목조 타워, 시드니에서 최고 높이 도달 &#x27;뉴욕 최대 만화경&#x27; — 엣지 nyc 전망대의 몰입형 설치 7종 일레븐랩스, ai 음악생성 &#x27;보컬·레퍼런스&#x27; 공개 — &quot;내 목소리로 노래&quot; 런웨이, ai &#x27;미디어 라우터&#x27; 출시 — 생성 모델 자동 선택 하루 9만 곡 ai 음원 — 디저, 신규 업로드 절반 첫 돌파 문체부 &#x27;ai 문화강국&#x27; 영상·방송 간담회 — cj 4dplex ai-vfx 조명 클로드 음성 모드, opus·sonnet로 확대 + gmail·슬랙·캔바 연동" data-track="design ai">
     <div class="card-date">
       <div class="d en">24</div>
       <div class="my en">JUL · <span class="dow">FRI</span></div>
@@ -407,14 +412,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">일레븐랩스, AI 음악생성 &#x27;보컬·레퍼런스&#x27; 공개 — &quot;내 목소리로 노래&quot;</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-23.html" data-kw="피그마가 종이 잡지를 만드는 이유, 〈start anywhere〉 승리의 순간을 새긴 오브제, e스포츠 트로피 디자인 청주, 뉴델리, 맨체스터로 이어지는 실의 여정 알바 알토가 추구한 웰빙의 형태, 〈aalto design – shapes of wellbeing〉 ai가 대신할 수 없는 것…&quot;사람은 여행을 계획할 때 가장 행복하다&quot; 구글, &#x27;제미나이 3.6 플래시&#x27; 등 최신 ai 모델 출시 오픈ai, &#x27;코덱스·챗gpt 워크&#x27; 사용자 1000만 돌파 &quot;앤트로픽이 이기는 이유는 모델이 아니다&quot; — 멘로벤처스 매트 머피">
+  <a class="card" href="briefing-2026-07-23.html" data-kw="피그마가 종이 잡지를 만드는 이유, 〈start anywhere〉 승리의 순간을 새긴 오브제, e스포츠 트로피 디자인 청주, 뉴델리, 맨체스터로 이어지는 실의 여정 알바 알토가 추구한 웰빙의 형태, 〈aalto design – shapes of wellbeing〉 ai가 대신할 수 없는 것…&quot;사람은 여행을 계획할 때 가장 행복하다&quot; 구글, &#x27;제미나이 3.6 플래시&#x27; 등 최신 ai 모델 출시 오픈ai, &#x27;코덱스·챗gpt 워크&#x27; 사용자 1000만 돌파 &quot;앤트로픽이 이기는 이유는 모델이 아니다&quot; — 멘로벤처스 매트 머피" data-track="design ai">
     <div class="card-date">
       <div class="d en">23</div>
       <div class="my en">JUL · <span class="dow">THU</span></div>
@@ -425,14 +430,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">AI가 대신할 수 없는 것…&quot;사람은 여행을 계획할 때 가장 행복하다&quot;</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 4</span>
-        <span class="tag-pill ai en">AI · 4</span>
+        <span class="tag-pill design en">DESIGN·4</span>
+        <span class="tag-pill ai en">AI·4</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-22.html" data-kw="네이버지도와 함께, 로컬의 시선으로 완성한 부산 &#x27;be local&#x27; 캠페인 알바 알토가 추구한 웰빙의 형태, 〈aalto design – shapes of wellbeing〉전 공간을 입은 패션쇼 — 기억에 남는 런웨이의 비밀 다음 세대의 편의점을 실험하는 패밀리마트, &#x27;파미마 파크 아자부다이&#x27; 타이포그래피를 이미지로 다루는 스튜디오, 쉬페르시스템(supersystème) &quot;4년 걸릴 일을 3개월에&quot; — 노코드 웹빌더 아임웹의 ai 활용법 알리바바, 16개 언어 tts &#x27;큐원-오디오-3.0&#x27; 공개…음성 생성 벤치 1위 미세조정 없이 토큰 38% 절감 — 라이터의 &#x27;에이전트 하네스&#x27; 비용 혁신 서브스택, ai 작성 여부 탐지기 도입 ai가 부르는 &#x27;만능 엔터테인먼트 앱&#x27;의 부상">
+  <a class="card" href="briefing-2026-07-22.html" data-kw="네이버지도와 함께, 로컬의 시선으로 완성한 부산 &#x27;be local&#x27; 캠페인 알바 알토가 추구한 웰빙의 형태, 〈aalto design – shapes of wellbeing〉전 공간을 입은 패션쇼 — 기억에 남는 런웨이의 비밀 다음 세대의 편의점을 실험하는 패밀리마트, &#x27;파미마 파크 아자부다이&#x27; 타이포그래피를 이미지로 다루는 스튜디오, 쉬페르시스템(supersystème) &quot;4년 걸릴 일을 3개월에&quot; — 노코드 웹빌더 아임웹의 ai 활용법 알리바바, 16개 언어 tts &#x27;큐원-오디오-3.0&#x27; 공개…음성 생성 벤치 1위 미세조정 없이 토큰 38% 절감 — 라이터의 &#x27;에이전트 하네스&#x27; 비용 혁신 서브스택, ai 작성 여부 탐지기 도입 ai가 부르는 &#x27;만능 엔터테인먼트 앱&#x27;의 부상" data-track="design ai">
     <div class="card-date">
       <div class="d en">22</div>
       <div class="my en">JUL · <span class="dow">WED</span></div>
@@ -443,14 +448,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">&quot;4년 걸릴 일을 3개월에&quot; — 노코드 웹빌더 아임웹의 AI 활용법</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-21.html" data-kw="기억이 머무는 사적인 공간, 연진영 개인전 〈이불집〉 디올부터 발렌시아가까지, 웰니스에 빠진 명품 브랜드 민속 상징의 현대적 재해석, &#x27;해브 어 굿 피쉬&#x27; 이미지를 다시 설계한 예술가, 데이비드 호크니 코카콜라, &quot;더 코카콜라답게&quot; 리뉴얼 오픈ai, 베스트셀러 작가 불러 &#x27;ai 창작 쓴소리&#x27; 들었다 어도비 카메라 앱, ai가 당신 사진을 &#x27;비평&#x27;한다 유튜브, &#x27;ai 슬롭&#x27; 수익화 정책 명확화 퍼플렉시티, 연구 에이전트 벤치마크 &#x27;wandr&#x27; 공개…&quot;최고 ai도 실무는 한계&quot; 팀스파르타 초경량 언어모델, &#x27;k-ai 리더보드&#x27; 초고난도 추론 1위">
+  <a class="card" href="briefing-2026-07-21.html" data-kw="기억이 머무는 사적인 공간, 연진영 개인전 〈이불집〉 디올부터 발렌시아가까지, 웰니스에 빠진 명품 브랜드 민속 상징의 현대적 재해석, &#x27;해브 어 굿 피쉬&#x27; 이미지를 다시 설계한 예술가, 데이비드 호크니 코카콜라, &quot;더 코카콜라답게&quot; 리뉴얼 오픈ai, 베스트셀러 작가 불러 &#x27;ai 창작 쓴소리&#x27; 들었다 어도비 카메라 앱, ai가 당신 사진을 &#x27;비평&#x27;한다 유튜브, &#x27;ai 슬롭&#x27; 수익화 정책 명확화 퍼플렉시티, 연구 에이전트 벤치마크 &#x27;wandr&#x27; 공개…&quot;최고 ai도 실무는 한계&quot; 팀스파르타 초경량 언어모델, &#x27;k-ai 리더보드&#x27; 초고난도 추론 1위" data-track="design ai">
     <div class="card-date">
       <div class="d en">21</div>
       <div class="my en">JUL · <span class="dow">TUE</span></div>
@@ -461,14 +466,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">오픈AI, 베스트셀러 작가 불러 &#x27;AI 창작 쓴소리&#x27; 들었다</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-20.html" data-kw="거미줄로 읽는 생태계, 토마스 사라세노 〈얽힌 세계들〉 지금 가봐야 할 연희동 새 공간 6 경쟁 대신 &#x27;코브랜딩&#x27;으로, 2026년 브랜드들의 선택 비 오는 날, 일부러 가고 싶은 공간 5 노르딕 노츠, 테니스 코트를 그래픽 러그로 씽킹ai, 한국 진출 후 고객사 60곳 확보 삼성, 폴드8 울트라·ai 안경으로 갤럭시 언팩 예고 넷플릭스, 벤 애플렉의 ai 영화제작 스타트업 5.87억 달러에 인수 &quot;이 곡, 안 싫어하는 게 싫다&quot; — suno로 만든 ai 음악 논쟁 미라 무라티의 씽킹머신즈랩, 美 오픈모델 &#x27;잉클링&#x27; 공개">
+  <a class="card" href="briefing-2026-07-20.html" data-kw="거미줄로 읽는 생태계, 토마스 사라세노 〈얽힌 세계들〉 지금 가봐야 할 연희동 새 공간 6 경쟁 대신 &#x27;코브랜딩&#x27;으로, 2026년 브랜드들의 선택 비 오는 날, 일부러 가고 싶은 공간 5 노르딕 노츠, 테니스 코트를 그래픽 러그로 씽킹ai, 한국 진출 후 고객사 60곳 확보 삼성, 폴드8 울트라·ai 안경으로 갤럭시 언팩 예고 넷플릭스, 벤 애플렉의 ai 영화제작 스타트업 5.87억 달러에 인수 &quot;이 곡, 안 싫어하는 게 싫다&quot; — suno로 만든 ai 음악 논쟁 미라 무라티의 씽킹머신즈랩, 美 오픈모델 &#x27;잉클링&#x27; 공개" data-track="design ai">
     <div class="card-date">
       <div class="d en">20</div>
       <div class="my en">JUL · <span class="dow">MON</span></div>
@@ -479,14 +484,14 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">씽킹AI, 한국 진출 후 고객사 60곳 확보</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
   </a>
 
-  <a class="card" href="briefing-2026-07-19.html" data-kw="삼성·현대차·기아, 레드닷 디자인 어워드 2026 대거 수상 5년 만의 반란, &#x27;꼬깔콘&#x27; 패키지 리뉴얼 삼성 &#x27;플렉스 티타늄&#x27;, 폴더블 디스플레이 새 기준 if 디자인 트렌드 리포트 2026, 미래 읽는 4개 키워드 틴더(tinder), 10년 만의 첫 리브랜드 생성 ai + &#x27;캔바(canva)&#x27;로 배우는 진로 포트폴리오 구글 딥마인드 × 영화사 a24, 업계 첫 ai 파트너십 메타(meta), 크리에이터용 ai 툴 폐기 논란 애플, 오픈ai &#x27;하드웨어 이직자&#x27; 40명에 경고 서한 &quot;한국어 쓰는 클로드, 더 다정하다&quot;…앤트로픽, 언어별 가치 분석 공개">
+  <a class="card" href="briefing-2026-07-19.html" data-kw="삼성·현대차·기아, 레드닷 디자인 어워드 2026 대거 수상 5년 만의 반란, &#x27;꼬깔콘&#x27; 패키지 리뉴얼 삼성 &#x27;플렉스 티타늄&#x27;, 폴더블 디스플레이 새 기준 if 디자인 트렌드 리포트 2026, 미래 읽는 4개 키워드 틴더(tinder), 10년 만의 첫 리브랜드 생성 ai + &#x27;캔바(canva)&#x27;로 배우는 진로 포트폴리오 구글 딥마인드 × 영화사 a24, 업계 첫 ai 파트너십 메타(meta), 크리에이터용 ai 툴 폐기 논란 애플, 오픈ai &#x27;하드웨어 이직자&#x27; 40명에 경고 서한 &quot;한국어 쓰는 클로드, 더 다정하다&quot;…앤트로픽, 언어별 가치 분석 공개" data-track="design ai">
     <div class="card-date">
       <div class="d en">19</div>
       <div class="my en">JUL · <span class="dow">SUN</span></div>
@@ -497,8 +502,8 @@ a{color:inherit;}
         <div class="tl"><span class="ico">🤖</span><span class="h">생성 AI + &#x27;캔바(Canva)&#x27;로 배우는 진로 포트폴리오</span></div>
       </div>
       <div class="tags">
-        <span class="tag-pill design en">DESIGN · 5</span>
-        <span class="tag-pill ai en">AI · 5</span>
+        <span class="tag-pill design en">DESIGN·5</span>
+        <span class="tag-pill ai en">AI·5</span>
       </div>
     </div>
     <div class="card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
@@ -510,8 +515,8 @@ a{color:inherit;}
 </main>
 
 <footer class="foot">
-  <div class="sig"><b>MTOU</b> BRIEFING <span class="em">·</span> 부산 디자이너를 위한 디자인 &amp; AI 데일리</div>
-  <div class="slogan en">Every morning, one sheet. Design &amp; AI, curated in Busan.</div>
+  <div class="sig"><b>DAILY BRIEF</b> <span class="em">·</span> Design · AI · AX · FDE 데일리 큐레이션</div>
+  <div class="slogan en">Every morning, one sheet. Design · AI · AX · FDE.</div>
 </footer>
 
 <script>
@@ -519,14 +524,17 @@ var q=document.getElementById('q');
 var cards=Array.prototype.slice.call(document.querySelectorAll('.card'));
 var chips=Array.prototype.slice.call(document.querySelectorAll('.chip'));
 var empty=document.getElementById('empty');
+var curF='all';
 function apply(){
   var term=(q.value||'').trim().toLowerCase();
   var shown=0;
   cards.forEach(function(c){
     var kw=(c.getAttribute('data-kw')||'').toLowerCase();
+    var tracks=(c.getAttribute('data-track')||'');
     var text=c.textContent.toLowerCase();
     var matchTerm=!term||kw.indexOf(term)>-1||text.indexOf(term)>-1;
-    var ok=matchTerm;
+    var matchF=(curF==='all')||(tracks.split(' ').indexOf(curF)>-1);
+    var ok=matchTerm&&matchF;
     c.style.display=ok?'':'none';
     if(ok)shown++;
   });
@@ -537,6 +545,7 @@ chips.forEach(function(ch){
   ch.addEventListener('click',function(){
     chips.forEach(function(x){x.classList.remove('active');});
     ch.classList.add('active');
+    curF=ch.getAttribute('data-f')||'all';
     apply();
   });
 });
