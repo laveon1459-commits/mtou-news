@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-08-27 (목)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-08-26.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 08.26 (수)
+  </a>
+  <span class="today en">TODAY · 2026-08-27</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-08-27 <span class="dow">(목)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://design.co.kr/article/171667/" target="_blank" rel="noopener">신윤복 &#x27;미인도&#x27;만을 위한 방 — 대구간송미술관 &#x27;미인도실&#x27;</a></h3>
+        <p class="item-summary">대구간송미술관이 혜원 신윤복의 &#x27;미인도&#x27;를 위한 단독 상설 공간 &#x27;아름다운 사람이 있는 방, 미인도실&#x27;을 열었다. 공간 디자인 스튜디오 WGNB가 조선시대 문방(文房)의 사적 감상 방식을 현대적으로 재해석해, 옻칠한 한지와 1분 주기로 변하는 조명, 눈높이 설계로 그림과 홀로 마주하는 경험을 만들었다. 한 점의 작품을 위해 공간 전체를 설계하는, 감상의 밀도를 높이는 디자인이다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인 · 2026-08-26 · https://design.co.kr/article/171667/</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://design.co.kr/article/171667/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224391402608" target="_blank" rel="noopener">9월의 서울은 다시 미술 도시가 된다 — 키아프 &amp; 프리즈 서울 2026</a></h3>
+        <p class="item-summary">9월 2일, 코엑스에서 국내 최대 아트페어 키아프와 세계적 아트페어 프리즈 서울이 나란히 막을 올린다. 올해 키아프는 25주년, 프리즈 서울은 다섯 번째다. 페어를 중심으로 삼청·한남·청담·을지로 등 서울 전역이 &#x27;아트 위크&#x27;로 함께 달아오른다. 도시 하나가 통째로 전시장이 되는, 한 해 디자인·미술 현장의 가장 뜨거운 한 주다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스 · 2026-08-26 · https://blog.naver.com/designpress2016/224391402608</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224391402608" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://www.dezeen.com/2026/08/26/xbox-ikea-gaming-furniture-yxstaby/" target="_blank" rel="noopener">엑스박스와 이케아가 함께 만든 첫 &#x27;게이밍 가구&#x27;</a></h3>
+        <p class="item-summary">게임 브랜드 엑스박스와 가구 기업 이케아가 처음으로 손잡고 게이밍 전용 가구 컬렉션을 내놨다. 두 회사의 디자이너가 짝을 이뤄, 거대한 조이스틱처럼 기울어지는 스툴 같은 물건들을 만들었다. 게임이 하나의 라이프스타일이 된 시대에, 가구가 &#x27;어떻게 노는가&#x27;까지 설계하기 시작했음을 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen · 2026-08-26 · https://www.dezeen.com/2026/08/26/xbox-ikea-gaming-furniture-yxstaby/</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://www.dezeen.com/2026/08/26/xbox-ikea-gaming-furniture-yxstaby/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.dezeen.com/2026/08/26/riksbyggen-swedens-smallest-apartments-housing-crisis-tangible/" target="_blank" rel="noopener">25살이 살 수 있는 집의 크기 — 스웨덴이 지은 &#x27;가장 작은 아파트&#x27;</a></h3>
+        <p class="item-summary">스웨덴의 개발사 리크스뷔겐이 &#x27;오늘날 25세가 살 수 있는 집&#x27;을 기준으로, 나라에서 가장 작은 아파트 세 채를 실제로 지었다. 주거 위기를 말이 아니라 눈에 보이는 크기로 &#x27;실감하게&#x27; 만든 프로젝트다. 디자인이 문제를 예쁘게 푸는 것을 넘어, 사회적 현실을 날카롭게 드러내는 도구가 될 수 있음을 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen · 2026-08-26 · https://www.dezeen.com/2026/08/26/riksbyggen-swedens-smallest-apartments-housing-crisis-tangible/</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://www.dezeen.com/2026/08/26/riksbyggen-swedens-smallest-apartments-housing-crisis-tangible/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://design.co.kr/article/171687/" target="_blank" rel="noopener">120년 된 축구 클럽이 새로 그린 얼굴 — 스포르팅 CP</a></h3>
+        <p class="item-summary">포르투갈 명문 축구 클럽 스포르팅 CP가 창립 120주년을 맞아 새 브랜드 아이덴티티를 공개했다. 오랜 역사와 상징을 지키면서도, 지금의 팬과 미디어 환경에 맞게 로고와 시각 언어를 다시 벼렸다. 100년이 넘은 정체성을 &#x27;버리지 않으면서 새롭게&#x27; 하는 리브랜딩의 숙제를 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인 · 2026-08-25 · https://design.co.kr/article/171687/</span><span class="sep">·</span><span class="date en">2026-08-25</span><a class="readmore en" href="https://design.co.kr/article/171687/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://byline.network/2026/08/34892842420/" target="_blank" rel="noopener">제미나이도 틀리는 &#x27;경복궁 그림&#x27; — AI에게 한국 역사를 제대로 그리게 하려면</a></h3>
+        <p class="item-summary">최신 이미지 AI인 제미나이에게 &#x27;조선시대 경복궁 연회&#x27;를 그려달라고 하면, 전공자가 아니어도 어색함을 알아챌 만큼 엉뚱한 그림이 나온다. AI가 한국의 역사·전통을 자꾸 틀리게 그리는 이유와, 정확한 레퍼런스로 제대로 그리게 하는 방법을 짚은 기사다. 생성 AI를 쓰는 디자이너에게 &#x27;무엇을, 어떻게 넣어야 하는가&#x27;가 실력이 되는 시대를 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크 · 2026-08-26 · https://byline.network/2026/08/34892842420/</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://byline.network/2026/08/34892842420/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://byline.network/2026/08/skild-ai/" target="_blank" rel="noopener">영상 한 번 보고 로봇이 배운다 — 스킬드AI</a></h3>
+        <p class="item-summary">사람이 화분을 옮겨 심는 영상을 딱 한 번 찍자, 11분 뒤 로봇 팔이 스스로 화분을 옮기고 흙을 파고 식물을 심었다. 미국 로봇 스타트업 스킬드AI가 공개한 이 장면은, 로봇이 수많은 반복 학습 없이 &#x27;한 번 본 것&#x27;을 따라 하도록 만든 결과다. 사람의 시연을 곧바로 로봇의 능력으로 옮기는, 로봇 학습의 문턱이 빠르게 낮아지고 있음을 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크 · 2026-08-26 · https://byline.network/2026/08/skild-ai/</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://byline.network/2026/08/skild-ai/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://byline.network/2026/08/mac-mini-2/" target="_blank" rel="noopener">애플, 새 맥미니 공개 — &quot;AI 성능 최대 4배&quot;</a></h3>
+        <p class="item-summary">애플이 새 칩 M6과 M5 프로를 얹은 맥미니를 공개했다. 초소형 데스크톱이라는 정체성은 그대로 두면서, AI 작업 성능을 최대 4배까지 끌어올렸다. 사전예약은 시작됐고 제품은 9월 22일부터 배송된다. 큰 장비 없이 작은 컴퓨터 한 대로 AI를 돌리는 일이 점점 더 일상 가까이 오고 있음을 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크 · 2026-08-26 · https://byline.network/2026/08/mac-mini-2/</span><span class="sep">·</span><span class="date en">2026-08-26</span><a class="readmore en" href="https://byline.network/2026/08/mac-mini-2/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=214415" target="_blank" rel="noopener">&quot;자율주행 켜고 낮잠&quot; — 테슬라 과신이 부른 위험 논란</a></h3>
+        <p class="item-summary">테슬라의 자율주행 기능(FSD·오토파일럿)을 켜둔 채 운전석에서 잠을 자는 운전자들의 영상이 잇따라 퍼지며 논란이 일고 있다. 기술을 지나치게 믿은 행동이 안전과 규제의 사각지대를 그대로 드러낸 것이다. &#x27;보조&#x27;를 &#x27;완전 자율&#x27;로 착각하는 순간 어떤 위험이 생기는지, AI 기술의 사용자 오해라는 과제를 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스 · 2026-08-27 · https://www.aitimes.com/news/articleView.html?idxno=214415</span><span class="sep">·</span><span class="date en">2026-08-27</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=214415" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/" target="_blank" rel="noopener">구글 제미나이의 &#x27;브랜딩 문제&#x27; — AI 앱들이 겪는 이름의 혼란</a></h3>
+        <p class="item-summary">구글 제미나이를 비롯한 소비자용 AI 앱들이, 정작 사용자에게 &#x27;제품 구조부터 공부하라&#x27;고 요구하는 방식으로 이름과 버전을 붙이고 있다는 비판이 나왔다. 무엇이 무엇인지 알기 어려운 명명이 오히려 사용을 가로막는다는 것이다. 아무리 강력한 기술도 &#x27;이름과 설명이 어려우면 안 쓰인다&#x27;는, 브랜딩의 기본을 다시 일깨우는 지적이다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch · 2026-08-27 · https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/</span><span class="sep">·</span><span class="date en">2026-08-27</span><a class="readmore en" href="https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-08-27</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-08-26.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-08-26 (수)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
