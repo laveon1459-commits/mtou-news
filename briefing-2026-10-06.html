@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-10-06 (화)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-10-02.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 10.02 (금)
+  </a>
+  <span class="today en">TODAY · 2026-10-06</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-10-06 <span class="dow">(화)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://design.co.kr/article/175559/" target="_blank" rel="noopener">한글날 제정 100주년, 디자인으로 다시 보는 한글</a></h3>
+        <p class="item-summary">2026년 10월 9일, 올해 한글날은 제정 100주년을 맞는다. 디자인플러스의 [위클리 디자인]은 이를 맞아 한글 &#x27;비로소&#x27;의 획을 설계한 그리드를 브랜드 고유 패턴으로 발전시킨 비로소커피 BI, 디자인 스튜디오 취그라프가 운영하는 출판사 아크루파이가 동시대 한글 로고를 모은 〈한글로고 Vol. 1〉, 블랙레터를 한글로 재해석해 OTF와 TTF로 무료 배포한 블랙핑크 제니의 &#x27;젠 세리프(ZEN SERIF)&#x27;를 묶어 소개했다. 글자의 획이 그래픽·패턴·서체로 확장되는 사례들이라 한글 레터링과 BI 작업의 레퍼런스로 챙겨볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://design.co.kr/article/175559/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://design.co.kr/article/175604/" target="_blank" rel="noopener">이솝, 향수 컬렉션·보틀·한국 매장까지 새 단장</a></h3>
+        <p class="item-summary">이솝(Aesop)이 10월 1일 기존 향수 라인업을 새롭게 정비한 &#x27;프래그런트 페이블즈(Fragrant Fables)&#x27;를 선보였다. 총 12종 중 8종과 새로운 향 &#x27;언포어신 아에르(Unforeseen Aer)&#x27;를 먼저 공개하며 각 향에 우화 같은 시로 새 이름과 서사를 붙였고, 앰버 글라스는 유지한 채 실루엣을 길고 날렵하게 다듬어 와인병의 펀트를 연상시키는 돔 형태 바닥, 멜버른의 현무암에서 영감을 받은 거친 질감의 캡, 양각 엠블럼을 더했다. 한국에서는 지난 5년간 오피스로 쓰던 공간을 LTH 스튜디오가 1980~90년대 한국 가정집에서 영감을 받아 &#x27;이솝 도산&#x27;으로 바꿔, 오랜 시각 자산을 버리지 않고 촉감과 이야기로 리뉴얼하는 방법을 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-10-06</span><a class="readmore en" href="https://design.co.kr/article/175604/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224432379038?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">나이키랩 서울 2026, 30인이 다시 본 에어 포스 1</a></h3>
+        <p class="item-summary">2023년 시작해 올해로 네 번째를 맞은 나이키랩 서울(NikeLab Seoul)의 중심은 서울 기반 아티스트 30명이 에어 포스 1을 재해석한 〈TEAM NLS’26: ABOUT THE 1〉과, 뉴욕 기반 패션 디자이너 멜리타 바우마이스터(Melitta Baumeister)와 나이키의 두 번째 협업 컬렉션 세계 최초 공개였다. 협업 전시는 &#x27;ARTIST = ATHLETE&#x27; 문장 아래 점토 신체 조각과 김설진이 디렉팅한 퍼포먼스로 협업 모델 &#x27;MB 리프트 록커(MB Rift Rocker)&#x27;를 보여줬다. 한 켤레의 신발을 30가지 시선과 신체·움직임의 공간 연출로 풀어낸 브랜드 경험 설계로 볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224432379038?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.itsnicethat.com/articles/luke-powell-judy-hudson-powell-xsolla-pentagram-graphic-design-project-051026" target="_blank" rel="noopener">펜타그램, 게임 결제 기업 엑솔라에 레트로 퓨처 아이덴티티</a></h3>
+        <p class="item-summary">펜타그램(Pentagram) 파트너 루크 파월(Luke Powell)과 조디 허드슨-파월(Jody Hudson-Powell)이 디지털 결제 기술 기반 게임 기업 엑솔라(Xsolla)의 새 아이덴티티를 맡았다. 브랜드 작가 사운드라 마르셀(Saundra Marcel)과 정한 슬로건 &#x27;All the things&#x27; 아래 모든 게임 아티팩트를 보관하는 공간 &#x27;Xsolla Archive&#x27;를 세계관으로 세우고, Wii나 플레이스테이션 3 시절 콘솔 UI를 떠올리게 하는 프루티거 에어로(Frutiger Aero)풍 별 마스코트 &#x27;솔(Sol)&#x27;과 스큐어모픽 3D 에셋으로 풀었다. B2B와 소비자를 함께 상대하는 기술 브랜드가 세계관·마스코트·UI 문법으로 복잡한 서비스를 설명하는 방법으로 참고할 만하다.</p>
+        <div class="item-meta">
+          <span class="src">It&#x27;s Nice That</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://www.itsnicethat.com/articles/luke-powell-judy-hudson-powell-xsolla-pentagram-graphic-design-project-051026" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.creativebloq.com/design/logos-icons/the-brisbane-2032-olympics-logo-is-hiding-a-triple-design-in-plain-sight" target="_blank" rel="noopener">브리즈번 2032 올림픽 엠블럼, 한 형태에 세 가지 의미</a></h3>
+        <p class="item-summary">브리즈번 2032 올림픽·패럴림픽 엠블럼이 자체 유튜브 채널에 상세 설명 영상이 먼저 올라가는 실수로 공개됐다. 올림픽 성화를 닮은 형태에 호주 토종 코카투의 분홍·빨강 볏을 겹치고, 전체 실루엣은 브리즈번이 속한 퀸즐랜드주의 모양을 담은 &#x27;트리플 디자인&#x27;이다. 브렌트 힐(Brent Hill) 최고마케팅책임자는 의도치 않은 조기 공개에도 반응이 &quot;정말 긍정적&quot;이라고 밝혔는데, 하나의 마크에 여러 층위의 상징을 겹치는 엠블럼 설계의 좋은 예다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://www.creativebloq.com/design/logos-icons/the-brisbane-2032-olympics-logo-is-hiding-a-triple-design-in-plain-sight" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" rel="noopener">챗GPT, 이미지 생성 결과 옆에 비주얼 광고 붙인다</a></h3>
+        <p class="item-summary">오픈AI가 사용자가 챗GPT로 생성한 이미지 옆에 노출되는 비주얼 디스플레이 광고를 도입한다. 이달 하순 미국에서 초기 테스트 광고주 그룹의 상품·서비스로 먼저 시작하며, 광고는 명확히 표시되고 챗GPT의 답변에는 영향을 주지 않는다는 설명이다. 이미지 생성 화면이 곧 광고 지면이 되는 셈이라, AI 대화 맥락에 맞춰 붙는 새로운 비주얼 광고 크리에이티브 수요가 생길 수 있다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=215969" target="_blank" rel="noopener">챗GPT에서 옷 입어보는 &#x27;가상 착용&#x27; 출시</a></h3>
+        <p class="item-summary">오픈AI가 1일(현지시간) 챗GPT에 의류와 액세서리를 가상으로 입어볼 수 있는 &#x27;가상 착용(Try On)&#x27;과 관심 상품을 저장하는 &#x27;즐겨찾기(Favorites)&#x27; 기능을 전 세계에 출시했다. 쇼핑 결과의 트라이 온 버튼을 누르고 셀카나 전신 사진을 올리면 착용 모습을 이미지로 만들어 주며, 등록한 인물 사진은 모델 학습에 활용되지 않는다고 밝혔다. 구글에 이어 오픈AI까지 가세하면서 패션 커머스의 상품 이미지·착용컷 제작 방식에도 변화가 예상된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=215969" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=215979" target="_blank" rel="noopener">하버드 물리학자와 클로드, 3개월간 논문 36편</a></h3>
+        <p class="item-summary">앤트로픽이 매슈 슈워츠 하버드대학교 물리학 교수의 기고문 &#x27;클로드형 과학(Claude-shaped science)&#x27;을 공식 블로그에 게재했다. 슈워츠 교수는 3개월간 클로드와 400여개의 후보 문제를 검토하고 19명의 공동 연구자와 18개 분야에서 총 36편의 논문 원고를 작성했으며, 자신이 수주에 걸쳐 작성했던 코드를 클로드가 약 20분 만에 재현했다고 밝혔다. 그러면서도 &quot;무엇이 흥미롭고 과학적으로 중요한지 판단하는 가치 기준은 여전히 인간 연구자가 제시해야 한다&quot;고 강조해, 문제 선택과 판단이 사람의 몫이라는 점은 디자인 실무에도 그대로 통한다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=215979" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=215973" target="_blank" rel="noopener">a16z &quot;미국 가구 2.2%만 AI 유료 구독&quot;</a></h3>
+        <p class="item-summary">벤처캐피털 앤드리슨 호로위츠(a16z)가 시장 흐름을 100개 이상의 차트로 정리한 보고서 &#x27;시장 현황(State of Markets II)&#x27;을 공개했다. PNC 리서치 데이터 기준 AI 구독료를 내는 미국 가구는 2026년 4월 2.2%에 그쳤고, S&amp;P 500 기업 중 약 30%가 AI의 &#x27;측정 가능한 영향&#x27;을 언급했지만 정량적 지표를 공개한 곳은 2% 수준이었다. 도입은 넓지만 활용은 아직 얕다(shallow)는 진단이라, AI 툴을 들이는 것보다 실제 성과를 숫자로 보여주는 일이 다음 과제다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-10-05</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=215973" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://zdnet.co.kr/view/?no=20261005184857" target="_blank" rel="noopener">AMD &quot;AI PC 다음은 에이전틱 PC&quot;</a></h3>
+        <p class="item-summary">AMD가 지난달 30일 브리핑에서 사용자를 대신해 실제 작업을 수행하는 &#x27;에이전틱 PC&#x27;를 차세대 PC의 방향으로 제시하고 노트북용 프로세서 &#x27;라이젠 AI 맥스+ 프로 400&#x27; 시리즈를 소개했다. 최대 192GB 통합 메모리 가운데 최대 160GB를 GPU에 할당해 3000억 매개변수 규모 모델을 로컬에서 실행할 수 있다는 설명이다. 마이클 노드퀴스트 부사장은 웹사이트 제작과 생성 AI 작업 등 최대 두 개의 대형 에이전트를 동시에 실행할 수 있다고 밝혀, 클라우드 토큰 비용 없이 생성 작업을 로컬에서 돌리는 작업 환경이 가까워지고 있다.</p>
+        <div class="item-meta">
+          <span class="src">ZDNet 코리아</span><span class="sep">·</span><span class="date en">2026-10-06</span><a class="readmore en" href="https://zdnet.co.kr/view/?no=20261005184857" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-10-06</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-10-02.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-10-02 (금)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
