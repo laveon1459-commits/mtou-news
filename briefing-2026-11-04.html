@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-04 (수)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-03.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.03 (화)
+  </a>
+  <span class="today en">TODAY · 2026-11-04</span>
+  <a href="briefing-2026-11-05.html">
+    다음날 · 11.05 (목)
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-04 <span class="dow">(수)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://design.co.kr/article/179860/" target="_blank" rel="noopener">철제 모듈에 우드와 유리를 더한, 레어로우 에디션 반포 쇼룸</a></h3>
+        <p class="item-summary">모듈 가구 브랜드 레어로우(RARERAW)가 지난 10월 4일 서울 반포동 서래마을의 유럽풍 건물 1층에 프리미엄 쇼룸 &#x27;레어로우 에디션(RARERAW EDITION)&#x27;을 열고 기존 철제 가구에 우드와 유리 소재를 더한 컬렉션을 처음 선보였는데, 새 컬렉션은 기존 모듈 시스템의 구조와 기능을 유지하면서 소재 선택의 폭을 넓힌 것으로 현재는 반포 쇼룸에서만 만나볼 수 있다. 쇼룸은 리빙룸(The Living Room), 스터디(The Study), 미들 라운지(The Middle Lounge), 라이브러리(The Library) 네 공간으로 이어지며, 미들 라운지 중앙에는 스위스 디자인 스튜디오 빅게임(BIG-GAME)이 디자인하고 마하람(Maharam)의 원단을 적용한 슬로프 소파(Slope Sofa)가 놓였고, 원오디너리맨션의 빈티지 가구와 고복희의 오브제, 꼬또네(cotone)의 러그, 토와토(towato)의 컵과 코스터도 함께 선보인다. 정해진 형태의 제품을 선택하는 대신 필요한 기능과 구성을 먼저 살피고 디자이너 출신 스태프가 모듈 구성부터 소재와 컬러까지 함께 설계하는 방식이라, 모듈 시스템을 브랜드 경험으로 풀어내려는 가구·공간 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-04</span><a class="readmore en" href="https://design.co.kr/article/179860/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://design.co.kr/article/179671/" target="_blank" rel="noopener">시즌마다 바뀌는 매장, 혜인서 한남 스토어</a></h3>
+        <p class="item-summary">국내 디자이너 브랜드 혜인서(HYEIN SEO)가 서울 한남동에 브랜드의 두 번째 스토어를 열었는데, 일민미술관 〈시대복장〉 전시와 첫 플래그십 스토어 등에서 협업해 온 인테리어 디자이너 조현석과 함께 완성했고, 트러스(Truss) 구조물을 행거로 활용한 기존 신사 스토어와 달리 우드와 화이트를 중심으로 한 뉴트럴 톤으로 한층 차분하고 따뜻한 분위기를 연출했다. 박스 형태의 구조물과 두 개의 문을 활용해 공간을 나누거나 연결할 수 있도록 해, 문을 열면 캐셔 공간이 나타나고 벽면은 전시나 디스플레이 공간으로 활용하며 시즌에 따라 공간의 구성을 달리하도록 설계했고, 레더 소재의 목걸이와 팔찌부터 넥 워머, 가방 등 기존 아카이브를 새롭게 해석한 익스클루시브 아이템과 가변적인 공간 구조에서 착안한 그래픽 티셔츠도 이곳에서만 만날 수 있다. 고정된 인테리어 대신 박스 구조와 문으로 매장을 시즌마다 다시 짜는 방식이라, 리테일 공간과 브랜드 경험을 함께 설계하는 공간·패션 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-03</span><a class="readmore en" href="https://design.co.kr/article/179671/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://design.co.kr/article/179735/" target="_blank" rel="noopener">하트를 구조로 바꾼 알루미늄 의자, 사미 사바틀르의 러브 컬렉션</a></h3>
+        <p class="item-summary">이스탄불을 기반으로 활동하는 디자이너이자 실내 건축가 사미 사바틀르(Sami Savatlı)가 알루미늄 주조 가구 컬렉션 &#x27;러브(LOVE)&#x27;를 선보였는데, 익숙한 하트의 윤곽을 구조적 형태로 재해석한 러브 체어(LOVE Chair)와 러브 사이드 테이블(LOVE Side Table)은 기능성과 조형성 사이의 균형을 모색하며, 의자의 열린 프레임과 테이블의 가지처럼 뻗은 하부 구조는 건축에서 다루는 비례와 덩어리, 빈 공간에 대한 사고를 가구의 스케일로 옮긴 결과다. 모든 제품은 이스탄불의 장인과 전문 공방이 협업해 제작하며 개별 수작업으로 마감하고, 알루미늄 표면에는 제작 과정에서 생긴 미세한 질감과 흔적이 그대로 남아 빛에 따라 다양한 표정을 드러내며, 컬렉션은 이스탄불의 컨템퍼러리 컬렉터블 디자인 및 아트 갤러리 아크오브젝트(ARKOBJECT)에서 만날 수 있다. 산업적 공정과 수공예적 마감이 공존하며 소재의 물성과 제작 방식까지 디자인의 일부로 끌어안은 사례라, 금속 가구와 조형 오브제를 다루는 프로덕트 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-03</span><a class="readmore en" href="https://design.co.kr/article/179735/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.dezeen.com/2026/11/03/sabine-marcelis-exhibition-zurich-museum-fuer-gestaltung/" target="_blank" rel="noopener">15년 작업을 색으로 엮은 첫 미술관 전시, Sabine Marcelis의 Light and Color</a></h3>
+        <p class="item-summary">디자이너 Sabine Marcelis가 스튜디오를 연 지 15년 만에 처음으로 자신의 작업만으로 꾸린 미술관 전시 Light and Color를 취리히 Museum für Gestaltung에서 열었는데, 첫 거울 작업인 Tall Stripe와 2014년 그를 국제적으로 알린 레진 Candy Cubes 등 지난 15년의 주요 작업 17점을 모았다. Marcelis는 연대기적 아카이브 같은 회고전이 아니라 빛과 색을 다루는 서로 다른 방식을 보여주는 프로젝트를 골랐다고 말했고, 전시는 시간순 대신 색으로 배열되며 IKEA &quot;donut lamp&quot;와 Mathmos의 높이 3미터 Column 라바 램프를 끝없이 반사하는 방 크기 설치 두 점도 포함된다. 큐레이터 Damian Fopp은 이미지로 널리 퍼진 작업을 화면이 아닌 실물로 경험하게 하고 차분한 이미지 뒤의 테스트와 프로토타이핑, 생산 과정을 보여주려 했다고 밝혀, 작업이 SNS 이미지로 소비되는 시대에 실물 경험과 제작 과정을 어떻게 전시할지 고민하는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen</span><span class="sep">·</span><span class="date en">2026-11-03</span><a class="readmore en" href="https://www.dezeen.com/2026/11/03/sabine-marcelis-exhibition-zurich-museum-fuer-gestaltung/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.itsnicethat.com/features/intl-poster-competition-graphic-design-spotlight-021126" target="_blank" rel="noopener">텍스처·90년대·비전문성, INTL 포스터 공모전이 짚은 세 가지 흐름</a></h3>
+        <p class="item-summary">Graphic Design Festival Scotland로 알려졌던 INTL의 공동 창립자 James Gilchrist는 It&#x27;s Nice That 인터뷰에서 2014년 시작한 International Poster Competition에 올해 78개국에서 2,670점이 접수됐다고 밝히며, 이미지를 겹겹이 쌓아 포스터를 하나의 표면 질감처럼 만드는 경향, 여러 서체를 다양한 크기·색·각도로 섞은 90년대 에디토리얼풍 콜라주 타이포그래피, 의도적으로 비전문적으로 보이게 만든 장난스럽고 순진한 작업을 세 가지 흐름으로 꼽았다. 그는 웹 링크나 QR 코드 덕분에 포스터가 정보를 직접 전달해야 하는 부담이 줄어 더 자유롭고 예술적인 접근이 가능해졌고, 접근성 높은 도구와 AI로 그래픽 디자인이 균질해지는 흐름이 오히려 인간적이고 영혼이 느껴지는 작업을 하는 이들에게 유리할 수도 있다고 봤다. 200명 넘는 디자이너의 포스터 190점을 보여주는 International Poster Exhibition은 11월 12일부터 22일까지 글래스고에서 열리는 International Assembly 프로그램의 일부라, AI 시대 포스터의 역할과 최신 시각 흐름을 확인하려는 그래픽 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">It&#x27;s Nice That</span><span class="sep">·</span><span class="date en">2026-11-02</span><a class="readmore en" href="https://www.itsnicethat.com/features/intl-poster-competition-graphic-design-spotlight-021126" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=216956" target="_blank" rel="noopener">자극적인 썸네일 대신 영상 중간 화면, 카르파시가 AI로 만든 &#x27;해커튜브&#x27;</a></h3>
+        <p class="item-summary">오픈AI 공동 창립자이자 현재 앤트로픽에 재직 중인 안드레이 카르파시가 31일(현지시간) 블로그를 통해 유튜브의 자극적인 썸네일과 반복적인 추천에 불만을 느껴 개발한 대안 서비스 &#x27;해커튜브(HackerTube)&#x27;를 소개했는데, 2007년부터 2026년까지 축적된 해커뉴스(Hacker News) 댓글 4300만개에서 유튜브 영상이 언급된 댓글 4만건을 추리고 AI로 추천과 단순 언급, 비판 등을 구분해 최종적으로 영상 6454개를 선정해 150개 주제로 분류했다. 해커튜브는 영상 제작자가 지정한 썸네일 대신 영상의 중간 지점에 해당하는 화면을 썸네일로 사용해 자극적인 이미지로 클릭을 유도하는 방식을 피하고, 별도 계정이나 서버에 개인정보를 저장하지 않고 브라우저에 이용 기록을 보관해 &#x27;포 유(For You)&#x27; 추천을 구성하며, 카르파시는 직접 코드를 작성하지 않고 맥용 클로드 코드 데스크톱 앱에 자연어로 작업을 지시해 약 2시간 만에 완성했다고 밝혔다. 썸네일 하나를 바꾸는 설계 결정으로 클릭 유도형 화면을 걷어낸 사례라, 콘텐츠 플랫폼의 탐색 화면과 추천 경험을 설계하는 UX·UI 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-04</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=216956" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=216970" target="_blank" rel="noopener">뤼튼·스캐터랩이 양분한 AI 캐릭터챗 시장에 크래프톤·컴투스 가세</a></h3>
+        <p class="item-summary">뤼튼테크놀로지스의 &#x27;크랙&#x27;과 스캐터랩의 &#x27;제타&#x27;가 주도해 온 AI 캐릭터챗 시장에 게임사들이 진출하고 있는데, 크래프톤은 지난 2일 걸그룹 피프티피프티와 첫 협업해 멤버들이 직접 페르소나와 외형을 구상한 캐릭터와 대화하는 K팝 특화 AI 캐릭터챗 &#x27;키프(Kiff)&#x27;를 월 3900원 무제한 채팅으로 출시했고, 컴투스도 대형언어모델(LLM) 기반 캐릭터 상호작용과 호감도 시스템, 대화 시나리오 등을 개발할 여성향 AI 캐릭터 채팅 플랫폼 개발에 착수했다. 뤼튼은 오는 19~22일 부산 벡스코에서 열리는 &#x27;지스타 2026&#x27; 메인 스폰서를 맡아 게임사가 아닌 AI 기업으로는 처음 지스타 메인 스폰서가 됐지만, 글로벌 업체 캐릭터닷AI가 월간 활성 이용자(MAU) 1200만명을 확보하고도 매월 800만~900만달러의 손실을 기록하다 지난달 미국에서 파산보호를 신청한 것처럼 관건은 수익 구조와 안전성이다. 게임사들이 캐릭터와 세계관을 설계하고 이용자의 참여를 유지하는 데 축적한 경험을 AI 캐릭터챗에 활용할 수 있다는 점에서, 캐릭터와 세계관을 다루는 캐릭터·게임 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-04</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=216970" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://byline.network/2026/11/837492742934/" target="_blank" rel="noopener">공감·진단·시선 전환·목표 세분화, 위버스브레인의 행동 유도 AI 에이전트 플랫폼 &#x27;에이전트맥스&#x27;</a></h3>
+        <p class="item-summary">위버스브레인이 3일 서울 양재 엘타워에서 학습, 구매처럼 이용자가 실제로 행동에 나서도록 이끄는 AI 에이전트를 만드는 플랫폼 &#x27;에이전트맥스&#x27;를 공개했는데, 핵심은 공감(Empathy), 진단(Diagnosis), 시선 전환(Reframe), 목표 세분화(Action)의 네 단계로 대화를 짜는 대화 설계 엔진 &#x27;EDRA&#x27;이며, 위버스브레인에 따르면 이 대화 설계는 10년간 쌓아온 전화 학습 데이터와 누적 회원 123만명의 대화를 토대로 한다. 대표 에이전트는 AI 강사 &#x27;맥스튜터&#x27;와 판매 상담을 맡는 &#x27;맥스세일즈&#x27;로, 시연에서 맥스세일즈는 고객과 대화하면서 웹브라우저 화면도 직접 조작하고 가격 부담을 드러낸 고객에게 월 할부금을 하루 단위로 환산해 설명했으며, 조세원 대표는 2025년 9월~2026년 6월 가입자 가운데 가입 3개월 뒤에도 학습을 이어가는 비율이 63%라고 밝혔다. 성과 기준을 이용자가 실제 행동으로 이어진 비율인 &#x27;행동 전환율&#x27;로 둔 대화 설계라, 대화형 인터페이스와 UX 라이팅을 설계하는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크</span><span class="sep">·</span><span class="date en">2026-11-04</span><a class="readmore en" href="https://byline.network/2026/11/837492742934/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/" target="_blank" rel="noopener">AI 영상·이미지·오디오 모델 구동하는 Fal, 기업가치 160억 달러로 두 배</a></h3>
+        <p class="item-summary">AI 영상·이미지·오디오 모델을 호스팅하고 구동하는 샌프란시스코 스타트업 Fal이 Bessemer Venture Partners가 이끌고 Nvidia, Sound Ventures, T. Rowe Price가 참여한 최신 투자 라운드에서 13억 달러를 유치해 4월의 80억 달러 대비 두 배인 160억 달러의 기업가치를 인정받았다고 Bloomberg가 보도했으며, Fal은 Series E와 F 라운드를 동시에 발표하며 두 라운드 합계 16.5억 달러를 조달했다고 밝혔다. 이번 Series F는 특히 오픈소스 모델을 쓰는 고객을 중심으로 이미 학습된 AI 모델을 돌려 결과물을 생성하는 추론 서비스 수요가 급증하는 가운데 나왔고, Fal은 올해 초 연환산 매출 8억 달러를 넘어섰지만, 추론 업체 사정을 잘 아는 여러 관계자에 따르면 Baseten, Fireworks AI, Modal 등 추론 업체들의 매출총이익률은 연산 자원 비용 탓에 여전히 낮다. 생성형 이미지·영상 도구 뒤에서 모델을 돌리는 인프라에 자금이 몰리고 있다는 신호라, 생성형 AI 도구를 작업에 들이는 디자이너·영상 크리에이터에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-11-03</span><a class="readmore en" href="https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://www.theverge.com/tech/1025745/fake-jeff-bezos-hair-replacement-photos-debunk" target="_blank" rel="noopener">제프 베이조스 모발 이식 사진은 가짜, The Verge가 몇 분 만에 밝혀낸 검증법</a></h3>
+        <p class="item-summary">X, Threads, Bluesky에 Amazon 창업자 Jeff Bezos와 배우 Jason Statham이 평소보다 머리숱이 훨씬 많은 모습의 이미지가 돌며 일부는 두 사람이 모발 이식 수술을 받았다고 주장했지만, The Verge의 Jess Weatherbed는 Google 역 이미지 검색으로 Bezos는 2023년, Statham은 2011년 파파라치가 찍은 보정 전 원본 사진을 찾아 몇 분 만에 가짜임을 확인했다. AI 도구가 쓰였는지는 알 수 없고 테스트한 이미지 어디에서도 Content Credentials나 SynthID 표식은 나오지 않았으며, 기사는 생성형 AI 도구가 이런 사진 조작을 더 쉽고 그럴듯하게 만들었지만 소셜미디어의 AI 라벨링은 이를 제대로 잡아내지 못한다고 지적했다. 그럴듯한 조작 이미지 대부분은 추적 가능한 실제 사진을 바탕으로 한다는 점에서, 이미지를 다루고 출처를 확인해야 하는 사진·비주얼 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-04</span><a class="readmore en" href="https://www.theverge.com/tech/1025745/fake-jeff-bezos-hair-replacement-photos-debunk" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-04</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-03.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-03 (화)</div>
+  </a>
+  <a class="bnav-card next" href="briefing-2026-11-05.html">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">2026-11-05 (목)</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
