@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-10 (화)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-09.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.09 (월)
+  </a>
+  <span class="today en">TODAY · 2026-11-10</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-10 <span class="dow">(화)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224470648313?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">옷걸이 하나에 1년, 파프 플래그십의 옷걸이를 만든 쾨이퍼 하이킹</a></h3>
+        <p class="item-summary">하이엔드 디자이너 브랜드 &#x27;포스트 아카이브 팩션(POST ARCHIVE FACTION)&#x27;, 이른바 &#x27;파프(PAF)&#x27;가 한남동에 연 플래그십 스토어에서 사람들의 시선을 끈 것은 의외의 물건인 옷걸이였는데, 국내 가구·건축 디자인 회사 &#x27;쾨이퍼 하이킹(Körper Hiking)&#x27;이 플래그십 스토어의 공간에 어울리는 옷걸이를 만들기 위해 무려 1년이라는 시간을 들였다. 개발 초기부터 최종 양산품을 완성하기까지 약 200개의 모형 및 목업을 제작하며 종이와 목재, PP, 레진, PLA, 금속, 다이니마, 유리섬유, 콘크리트, 탄소섬유 등을 실험한 끝에 세 가지 유형의 옷걸이로 발전시켰고, 파프의 옷에서 포착한 &#x27;공중에 떠 있는 듯 걸려 있는 모습&#x27;을 바탕으로 &#x27;비행하는 동체와 같은 옷걸이&#x27;를 핵심 개념으로 삼아 나무 글라이더와 전투기, 잠자리 등 비행하는 대상에서 영감을 받았다. 누구도 특별히 관심을 기울이지 않는 일상 사물에도 소재와 구조를 해체·재구성할 여지가 크다는 점에서 프로덕트·공간 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-09</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224470648313?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://design.co.kr/article/180396/" target="_blank" rel="noopener">답 대신 질문을 전시하다, 포니정 디자인 아카데미 〈Quest to Questions〉</a></h3>
+        <p class="item-summary">포마(FOMA) 자동차디자인미술관이 합정동에 연 새로운 디자인 문화 공간 &#x27;까사 포마(Casa FOMA)&#x27;에서 10월 9일부터 24일까지 포니정 디자인 아카데미 5기 장학생 9명이 9개월간 탐구한 결과물을 9개의 질문 아래 선보인 작품전 〈Quest to Questions〉가 열렸다. 종이의 물성과 구조를 실험한 스툴부터 나비 날개의 미세 구조를 확대한 조형물, 소리의 흡수 원리를 활용한 펠트 오브제까지 완성된 결과물보다 탐구와 시행착오의 과정에 무게를 뒀고, 박아람 포마그룹 대표 겸 포마자동차디자인미술관 부관장은 1964년 피카소가 당시의 거대한 계산 기계에 대해 &quot;그것들은 답만 줄 수 있기 때문에 쓸모없다&quot;라고 말한 일화를 들며 무엇을 질문할 것인가는 여전히 인간의 몫이라고 짚었다. 생성형 AI가 순식간에 그럴듯한 결과물을 만들어내는 시대에 직접 재료를 만지고 거듭 실패하는 경험의 가치를 다시 짚는다는 점에서 디자인 교육과 리서치 방법을 고민하는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-09</span><a class="readmore en" href="https://design.co.kr/article/180396/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://design.co.kr/article/180376/" target="_blank" rel="noopener">해가 돌아오는 순서대로 물길이 열린다, AI로 구상한 극야의 목욕탕 &#x27;더 워터 오픈스 더 웨이&#x27;</a></h3>
+        <p class="item-summary">노르웨이 로포텐(Lofoten)의 작은 마을 빈스타드(Vindstad)에서 극야가 끝난 뒤 높은 곳일수록 햇빛이 먼저 닿는 자연 현상에서 착안한 목욕시설 구상 &#x27;더 워터 오픈스 더 웨이(The Water Opens the Way)&#x27;는 경사면의 여섯 고도에 원통형 목조 욕장을 배치해 가을이면 모든 욕장에 물을 채우고, 각 고도에 처음 햇빛이 닿는 날 해당 욕장의 물을 비워 아래로 흘려보내 하나의 물길을 만든다. 영국 AI 건축 플랫폼 젠도(Gendo)가 주최한 4일간의 국제 공모전 &#x27;젠도 48: 솔다겐(GENDO 48: Soldagen)&#x27;에서 아너러블 멘션(Honourable Mention)을 받은 이 프로젝트는 건축을 전공하지 않은 기획자가 단독으로 참가해 AI로 아이디어를 시각화하고 블렌더(Blender)와 스케치업(SketchUp)으로 형태와 규모를 검증해 완성했다. 생성형 AI는 초기 구상과 이미지 제작에, 디지털 모델링은 공간과 구조 검토에 나눠 쓰는 워크플로를 보여준다는 점에서 공간·건축 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-06</span><a class="readmore en" href="https://design.co.kr/article/180376/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.designboom.com/design/smallrevolution-traceable-recycling-furniture-seoul-design-award-2026-special-prize/" target="_blank" rel="noopener">버려진 플라스틱의 이전 삶을 드러내다, Seoul Design Award 2026 designboom 특별상 2위 SMALLrevolution</a></h3>
+        <p class="item-summary">덴마크의 순환 디자인·제조 기업 SMALLrevolution이 Seoul Design Award 2026의 designboom Special Prize에서 2위에 올랐는데, 이들은 폐기물로 제품을 디자인·제조하면서 소재의 이전 삶을 기록하고 화학 첨가제나 안료, 버진 플라스틱으로 균일함을 만드는 대신 플라스틱 원래의 색과 질감을 미학적 원칙으로 살린다. Lufthansa Technik의 GuideU 비상 바닥 표시 띠를 원래 소재의 축광 성질이 남은 가구와 인테리어 제품으로 바꾼 작업이 대표적이며, 2021년 이후 66톤 이상(2025년에만 16톤)의 플라스틱을 상업적 가치사슬에 되돌렸고 Novo Nordisk, Airbus, Roskilde Festival 등과 협업하며 매출의 98%를 기업 파트너십에서 내고 있다. 재활용을 제품 수명의 끝이 아니라 디자인 단계부터 고려하는 접근이라는 점에서 프로덕트·소재 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">designboom</span><span class="sep">·</span><span class="date en">2026-11-09</span><a class="readmore en" href="https://www.designboom.com/design/smallrevolution-traceable-recycling-furniture-seoul-design-award-2026-special-prize/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.dezeen.com/2026/11/09/playfool-studio-data-server-cleaning-game-va/" target="_blank" rel="noopener">60초 안에 AI 서버의 먼지를 빨아들여라, V&amp;A에 선 Playfool의 게임 &#x27;The Server&#x27;</a></h3>
+        <p class="item-summary">디자인 듀오 Playfool이 V&amp;A의 Emerging Designer 프로그램 의뢰로 만든 게임 설치작 &#x27;The Server&#x27;에서 관람객은 실제 데이터센터에서 쓰던 퇴역 진공청소기로 Nvidia의 최신 AI 서버를 본뜬 복제품에서 60초 안에 가능한 한 많은 먼지를 빨아들였고, 화면은 디지털 입자 구름과 플레이어 순위를 보여줬다(전시는 9월 12일부터 18일까지). Amazon 물류센터 작업자들이 하는 게임화된 실적 순위에서 착안한 이 작업은 AI 붐을 떠받치는 인프라 뒤의 보이지 않는 물리적 노동과 유지·관리를 드러내려 했고, 듀오의 Daniel Coppen과 Saki Maruyama는 매끄러운 화면 인터페이스 뒤에 물질 세계와의 복잡한 얽힘이 있다고 설명했다. 보이지 않는 인프라를 게임이라는 형식으로 체감시킨다는 점에서 인터랙션·전시 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen</span><span class="sep">·</span><span class="date en">2026-11-09</span><a class="readmore en" href="https://www.dezeen.com/2026/11/09/playfool-studio-data-server-cleaning-game-va/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://www.creativebloq.com/news/disneys-ai-deal-with-adobe-is-raising-eyebrows" target="_blank" rel="noopener">디즈니, 어도비와 AI 파트너십…자사 IP로 학습한 맞춤 AI 모델 만든다</a></h3>
+        <p class="item-summary">Adobe MAX 2026이 마이애미에서 열리는 가운데 어도비(Adobe)가 The Walt Disney Company의 Official AI Innovation Partner가 됐다고 발표했고, 두 회사는 캐릭터 속성과 환경, 비주얼 스타일 같은 디즈니 고유의 지식으로 학습한 맞춤형 AI 모델을 함께 개발해 디즈니·ESPN 프로덕션과 테마파크의 콘셉트 생성·탐색에 쓴다. 어도비는 Firefly, Premiere, Photoshop 같은 도구와 함께 Firefly Foundry 독점 AI 모델과 전담 엔지니어링·연구 인력을 제공하며, Walt Disney Imagineering Research &amp; Development는 이미 Theme Park Design Toolkit에서 손그림 콘셉트를 2D 콘셉트 아트로 렌더링하는 스케치-투-이미지 모델을 쓰고 있다. Creative Bloq은 2026년 디즈니의 여러 차례 정리해고 이후라 콘셉트 아티스트에게 우려스러운 확장이라고 짚었는데, 범용 모델 대신 자사 자산으로 학습한 비공개 모델로 브랜드 일관성과 출처·소유권을 관리하려는 방식은 크리에이티브 조직이 눈여겨볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-10</span><a class="readmore en" href="https://www.creativebloq.com/news/disneys-ai-deal-with-adobe-is-raising-eyebrows" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters" target="_blank" rel="noopener">프롬프트로 필터를 만든다, 인스타그램 &#x27;Effect Builder&#x27; 공개</a></h3>
+        <p class="item-summary">인스타그램(Instagram)이 AI로 Stories용 맞춤 필터를 생성하는 Effect Builder를 미국 거주 18세 이상 이용자에게 웹으로 내놓았는데, 챗봇에 필터 아이디어를 설명하고 스타일 레퍼런스 이미지를 첨부할 수 있으며 자기 사진으로 효과를 미리 보고 후속 프롬프트로 수정을 요청할 수 있다. The Verge가 인스타그램 AI의 프롬프트 다시 쓰기 옵션으로 한 줄 프롬프트를 여러 문단의 상세한 스타일 요청으로 바꿔 봤지만 결과 필터는 원래 한 줄 프롬프트 때와 거의 같았고, 만든 필터는 안전 검토를 통과하면 누구나 Stories에서 쓸 수 있게 되며 사용될 때마다 제작자 프로필로 링크된다. 필터 제작의 진입 장벽이 프롬프트 수준으로 낮아지는 만큼 AR·소셜 콘텐츠를 만드는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-10</span><a class="readmore en" href="https://www.theverge.com/tech/1030061/instagram-ai-effect-builder-filters" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro" target="_blank" rel="noopener">애플, Logic Pro에 49.99달러 &#x27;Intelligence Usage Packs&#x27; 도입…AI 사용량 유료 추가</a></h3>
+        <p class="item-summary">애플이 9월 초 일부 Apple Intelligence 기능의 사용 한도를 설명하는 지원 문서를 낸 데 이어 Logic Pro에 1회 구매가 49.99달러의 &#x27;Buy More Usage&#x27; 옵션을 추가해, Logic Pro가 Apple Intelligence 확장 사용에 요금을 받는 애플의 첫 앱이 됐다. Intelligence Usage Packs는 OpenAI나 Google Gemini의 클라우드 AI 모델에 의존해 사용 한도가 있는 기능을 계속 쓸 수 있게 해주며, 구매한 Apple Account에서만 쓸 수 있고(Family Sharing 미지원) 남은 사용량은 매달 이월되지만 구매 후 12개월이 지나면 만료된다. 이달 중 Pixelmator Pro, Final Cut Pro, Motion 등 다른 Apple Creator Studio 앱에도 추가될 것으로 예상되는 만큼, 크리에이티브 툴의 AI 기능이 사용량 과금 구조로 옮겨가는 흐름을 살펴볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-10</span><a class="readmore en" href="https://www.theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217179" target="_blank" rel="noopener">설계가 새로운 코드다, 구글 &#x27;코끼리-금붕어&#x27; 플러그인 오픈소스 공개</a></h3>
+        <p class="item-summary">구글이 AI 코딩 에이전트가 코드를 작성하기 전에 상세한 설계 명세서를 만들고 대화 맥락이 없는 별도의 AI 에이전트가 이를 독립적으로 검토하도록 하는 &#x27;코끼리-금붕어 모델(EGM)&#x27; 플러그인을 아파치 2.0 라이선스로 공개했다. 프로젝트 구조와 이전 의사결정을 기억하는 장기 세션 &#x27;코끼리(Elephant)&#x27;가 마크다운 명세서를 작성하면, 이전 대화 이력이 없는 하위 에이전트 &#x27;금붕어(Goldfish)&#x27;들이 명세서와 참조 파일만 받아 잠재적인 오류와 예외 상황, 숨겨진 의존성을 검토해 전달하고 반영 여부와 최종 승인은 개발자의 몫으로 남는다(현재 수천명의 구글 엔지니어가 실제 제품 개발에 활용하지만 정확도 향상을 입증하는 성능 벤치마크는 아직 공개되지 않았다). 공동 저자 데이브 렌신이 &quot;설계가 새로운 코드&quot;라고 강조한 것처럼 생성 속도보다 의도를 명세하고 독립적으로 검토하는 과정이 중요하다는 점에서, AI로 시안을 빠르게 만드는 디자인 팀에게도 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-10</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217179" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://zdnet.co.kr/view/?no=20261109094826" target="_blank" rel="noopener">과학 기사 10만 건 기반 AI 탐구 서비스, 동아사이언스 &#x27;에어노바&#x27; CES 2027 혁신상</a></h3>
+        <p class="item-summary">동아사이언스가 40년간 축적한 과학 기사 10만여 건을 활용한 AI 과학 탐구 솔루션 &#x27;에어노바(AiR NOVA)&#x27;로 &#x27;CES 2027&#x27; 에듀테크 부문 혁신상을 받았다고 10일 밝혔는데, 일반적인 인터넷 검색 결과 대신 자체 과학 콘텐츠에서 답변 근거를 찾고 관련 기사를 출처로 제시하도록 설계했다. &#x27;튜터&#x27;, &#x27;소크라테스&#x27;, &#x27;코치&#x27; 등 세 가지 AI 탐구 기능 가운데 소크라테스는 정답을 바로 알려주는 대신 질문을 던져 학생이 스스로 답을 찾도록 유도하며, 한국어와 영어, 베트남어, 스페인어 등 4개 언어를 지원하고 정식 출시는 내년 1월로 예정됐다. 답 대신 근거와 질문을 보여주는 대화 설계라는 점에서 교육·대화형 서비스의 UX를 설계하는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">ZDNet 코리아</span><span class="sep">·</span><span class="date en">2026-11-10</span><a class="readmore en" href="https://zdnet.co.kr/view/?no=20261109094826" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-10</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-09.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-09 (월)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
