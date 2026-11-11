@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-12 (목)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-11.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.11 (수)
+  </a>
+  <span class="today en">TODAY · 2026-11-12</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-12 <span class="dow">(목)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224473191485?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">붉은 증축과 옷장 모양 집, 아이디어 하나로 완성한 체코의 작은 집 두 채</a></h3>
+        <p class="item-summary">프라하의 건축 스튜디오 파하 아르히텍티(Facha Architekti)는 체코 중부 네친(Nečín) 마을에서 원래 단층짜리 축사 위에 오두막을 올려 조금씩 고쳐 온 집에 목구조 위로 붉은 골함석을 덧댄 증축을 더했는데, 기존 건물을 감추지 않고 형태도 재료도 확연히 다르게 한 &#x27;의도적으로 구별되는&#x27; 증축이다. 한편 프라하 오르제호프카(Ořechovka) 지구의 워드로브 하우스(Wardrobe House)는 셰프카 아르히텍티(Šépka Architekti)의 얀 셰프카(Jan Šépka)가 20세기 초 빌라를 증축하면 원래 모습이 훼손된다고 보고 뒷마당 정원 나무 사이에 따로 지은 집으로, 바닥 면적은 가로 5m, 세로 2.5m, 4개 층을 합친 사용 면적은 34㎡이며 공장에서 미리 만든 목조 층들을 하루 만에 차례로 올렸다. 한정된 색, 좁은 땅, 지켜야 할 옛 건물처럼 걸림돌로 보이던 조건을 오히려 각 집의 개성으로 바꿨다는 점에서 소규모 주거·리모델링 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224473191485?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224473280069?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">광고 대신 매장과 응대로, 한국적인 향 브랜드 그랑핸드</a></h3>
+        <p class="item-summary">디자인프레스가 헤이팝 오리지널 시리즈 [Project Cabinet]로 소개한 향 브랜드 그랑핸드는 2014년 북촌점을 시작으로 처음 7년간 온라인몰 없이 오프라인 매장만 운영했고, 현재 서울에 11개 매장을 운영하고 있다. 패키지는 첫 공간인 북촌점 한옥 창틀의 격자무늬와 닮은 황마에 리넨을 겹친 패브릭 라벨로 만들었고, 향은 탑·미들·베이스 노트로 설명하기보다 향을 맡고 떠오르는 느낌을 문학으로 표현하며, 유가 광고를 하지 않고 백화점이나 편집숍에도 입점하지 않았다. 정해진 가이드 없이 구성원이 &#x27;그랑핸드답다&#x27;라고 느끼는 것을 결정한다는 점에서, 공간·패키지·언어를 하나의 태도로 묶는 브랜딩 사례로 브랜드 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224473280069?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://design.co.kr/article/178122/" target="_blank" rel="noopener">사방의 풍경을 담은 작업실, 장민승 작가의 개방형 스튜디오 뉴스케이프</a></h3>
+        <p class="item-summary">장민승 작가가 지난 10월 김포 한강하구에 개방형 스튜디오 &#x27;뉴스케이프(NEWSCAPE)&#x27;를 열었는데, &#x27;NEWS&#x27;는 동서남북을 뜻하는 North, East, West, South의 약자로 그 이름처럼 사방의 풍경을 담아 지은 공간이다. 오드투에이가 설계한 2개 동 가운데 동관은 별도의 마감 없이 콘크리트 타설 자체로 완성해 양철로 마감한 서관 &#x27;뉴스케이프 스튜디오&#x27;와 시각적 조응을 이루고, 전시 공간과 색 보정 등 영상 작업이 가능한 AV 룸을 갖췄으며, 아이덴티티 디자인은 이경수(워크룸)가 맡았다. 작가가 &#x27;긍정적 퇴행을 경험하는 곳&#x27;으로 쓰겠다는 뜻을 밝힌 이 공간은 강 너머 장항습지와 참나무 숲 사이에 건축을 앉혔다는 점에서, 작업 공간과 풍경의 관계를 고민하는 공간 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-09</span><a class="readmore en" href="https://design.co.kr/article/178122/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.dezeen.com/2026/11/11/zaha-hadid-foundation-stage-design/" target="_blank" rel="noopener">건물 밖의 자하 하디드, 무대·세트 디자인 전시 〈Zaha Hadid: Architecture of Performance〉</a></h3>
+        <p class="item-summary">자하 하디드 재단(Zaha Hadid Foundation)이 런던 클러켄웰의 옛 하디드 사무실로 재개관하며, 그의 무대·세트 디자인을 다룬 첫 소장품 기반 전시 〈Zaha Hadid: Architecture of Performance〉를 2027년 3월 27일까지 열고 있다. 아카이브 모형과 드로잉, 영상, 의상으로 다섯 프로젝트를 보여주는데, 2014년 모차르트 오페라 〈Così fan tutte〉 무대는 구간별로 오르내리는 나선형 흰 플랫폼으로 출연자들의 관계 변화를 반영했고, 1999~2000년 Pet Shop Boys &#x27;Nightlife&#x27; 월드 투어 세트는 공연장에 맞춰 재구성할 수 있는 램프 시스템에 프로젝션 면을 더했다. 큐레이터 Catherine Howe가 상자를 풀다 이 프로젝트들의 기록을 계속 발견했다고 밝힌 만큼, 대표 건축물 바깥에 있던 무대 작업이 무대·전시 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://www.dezeen.com/2026/11/11/zaha-hadid-foundation-stage-design/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.designboom.com/art/yuri-suzuki-amusement-park-rides-acoustic-sculptures-onomatopia/" target="_blank" rel="noopener">놀이기구를 소리 악기로, 유리 스즈키 〈Yuri Suzuki: Onomatopia〉</a></h3>
+        <p class="item-summary">사운드 아티스트 유리 스즈키(Yuri Suzuki)가 런던 이즐링턴 Pentagram 본사 안의 Osh Gallery에서 개인전 〈Yuri Suzuki: Onomatopia〉를 2027년 1월 7일까지 열고 있다. 롤러코스터, 대관람차, 범퍼카, 헬터스켈터, 회전목마를 색을 입힌 산업용 파이프와 수직 깔때기, 방향성 음향 혼으로 다시 짠 다섯 개의 디오라마를 더 큰 공공 음향 설치물을 위한 프로토타입으로 선보이며, 동시대 디자인의 시각 우위를 비판하고 음향 공간을 앞세운다. 작가가 시각 문화가 지배하는 세상에서 소리가 자주 간과된다고 말한 만큼, 공간과 경험을 소리로 설계하는 관점이 공공 공간·전시 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">designboom</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://www.designboom.com/art/yuri-suzuki-amusement-park-rides-acoustic-sculptures-onomatopia/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://www.creativebloq.com/news/5-wild-adobe-sneaks-that-creatives-need-to-know-about" target="_blank" rel="noopener">사진 속을 걷고 캐릭터와 대화한다, Adobe Max 2026 Sneaks의 AI 실험</a></h3>
+        <p class="item-summary">Creative Bloq에 따르면 Adobe Max 2026 마이애미에서 공개된 올해 Adobe Sneaks는 열 가지 혁신 전반에 AI 비중이 컸는데, Project Scene Sweep은 하나의 텍스트 프롬프트나 수정한 프레임 하나로 여러 숏의 영상을 컷과 카메라 앵글 전체에 걸쳐 편집하고, Project Deep Brush는 이미지의 형태·색·조명을 이해해 물리적으로 분해된 레이어로 나눠 병 같은 곡면에 로고를 입혀도 표면의 윤곽과 조명을 따르게 한다. 텍스트 프롬프트를 다시 쓰는 대신 컨트롤 포인트를 드래그해 디테일을 바꾸는 Project Hands On, 캐릭터와 자연어로 대화하며 성격을 탐색하는 Project Screen Test, 이미지를 걸어 들어갈 수 있는 세계로 바꾸는 Project Sight Span도 공개됐다. Sneaks는 언젠가 어도비 앱에 들어올 수 있는 기술의 예고편인 만큼, 프롬프트 중심에서 그래픽 조작 중심으로 옮겨가는 AI 편집 인터페이스를 그래픽·영상 디자이너가 미리 볼 수 있는 자리다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://www.creativebloq.com/news/5-wild-adobe-sneaks-that-creatives-need-to-know-about" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217297" target="_blank" rel="noopener">AI가 기억하는 나를 직접 고친다, 구글 제미나이 &#x27;메모리 요약&#x27; 도입</a></h3>
+        <p class="item-summary">구글이 &#x27;제미나이&#x27;가 이용자에 대해 기억하는 정보를 한눈에 보여주는 &#x27;메모리 요약(Memory summary)&#x27; 기능을 도입했는데, 웹 버전 설정의 &#x27;개인 인텔리전스(Personal Intelligence)&#x27; 항목에서 거주 지역과 주요 인간관계, 직업과 진행 중인 프로젝트, 영화·음악 취향 등을 분야별로 확인할 수 있다. 이용자는 내용을 직접 수정하거나 &quot;예전 전화번호를 기억에서 삭제해 줘&quot;처럼 대화로 바꿀 수 있고 수정 이력으로 정보가 언제 추가되거나 변경됐는지도 볼 수 있지만, 공식 지원 대상은 현재 미국의 18세 이상 구글 AI 유료 구독자로 한국에서 정식 제공되는 기능은 아직 아니다. 개인화 AI 경쟁이 얼마나 많이 기억하느냐에서 기억의 정확성과 관리 편의성으로 옮겨가고 있다는 점에서, AI가 사용자에 대해 아는 것을 보여주고 고치게 하는 인터페이스가 UX 디자이너의 새 과제가 된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217297" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://www.theverge.com/tech/1031526/google-tabletop-ai-experiment-waitlist-availability" target="_blank" rel="noopener">말로 만드는 모임용 앱, 구글 실험 AI 도구 Tabletop</a></h3>
+        <p class="item-summary">구글이 가족·친구와의 일정을 조율하도록 맞춤형 협업 허브를 생성하는 실험적 AI 도구 Tabletop을 내놓았는데, Asana나 Monday 같은 업무 관리 앱과 시각적으로 비슷하지만 원하는 도구를 설명하면 저축 트래커, 집안일 차트, 행사 계획 같은 인터랙티브 도구를 바이브코딩으로 만들어 준다. Google Labs 디자인·엔지니어링 리드 Roman Nurik은 링크와 파일, 아이디어를 넣고 @tabletop에 프롬프트하거나 스타터 템플릿을 고르면 여행 일정, 저녁 투표, 비용 분할, 토너먼트 대진표를 만들 수 있고 초대 링크를 단톡방에 올리면 Google Doc처럼 함께 쓸 수 있다고 설명했으며, 베타는 대기자 명단을 통해 미국의 18세 이상에게만 열리고 있다. 쓰는 사람이 직접 말로 도구를 만들어 나눠 쓰는 방식이라는 점에서, 완성된 앱 대신 템플릿과 생성 규칙을 설계하는 쪽으로 UX·프로덕트 디자이너의 역할이 넓어질 수 있음을 보여준다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://www.theverge.com/tech/1031526/google-tabletop-ai-experiment-waitlist-availability" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://byline.network/2026/11/8349283042934204/" target="_blank" rel="noopener">침대는 천장으로, 벽은 옆으로 — 로보틱스 가구 스타트업 로보톰</a></h3>
+        <p class="item-summary">2022년 창업한 로보톰은 모터와 센서로 스스로 움직이는 로보틱스 가구로 방의 쓰임새를 바꾸는데, 평소 벽처럼 보이는 가구를 옆으로 밀어 가려둔 옷방이나 서재를 드러내는 &#x27;윌리&#x27;와 침대를 위로 올려 바닥 공간을 확보했다가 잘 때 다시 내리는 &#x27;실리&#x27;를 만든다. 윤세용 대표는 집 안에서 200~300㎏이 넘는 물체가 매일 움직이는 만큼 모터 전류와 움직인 기록, 무게가 어느 쪽에 얼마나 실렸는지 같은 구동 데이터를 AI로 모아 고장이 나기 전에 대응하는 예지정비 기술을 개발하고 있다고 밝혔고, 현재 GS건설, 현대건설, 대우건설, 롯데건설, 포스코이앤씨 등 주요 건설사 5곳과 협력하고 있다. 가구에서 시작해 천장과 벽으로 확대하겠다는 구상이라는 점에서, 고정된 평면 대신 시간에 따라 바뀌는 공간을 설계해야 하는 인테리어·가구 디자이너가 지켜볼 흐름이다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://byline.network/2026/11/8349283042934204/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents" target="_blank" rel="noopener">결제는 사람이 직접, 유나이티드항공 AI 에이전트 항공권 예약 차단</a></h3>
+        <p class="item-summary">유나이티드항공이 개인정보와 규제 우려를 이유로 개인 AI 비서가 항공권을 예약하지 못하게 하겠다고 밝혔는데, The Verge가 인용한 The Wall Street Journal 보도에 따르면 에이전트가 고객 정보를 노출하거나 의도하지 않은 구매를 하고, 수하물에 폭발물이 없다는 확인 같은 연방 규정상 절차를 건너뛸 수 있다는 우려 때문이다. 에이전트는 유나이티드 항공편을 보여줄 수는 있지만 사용자를 대신해 거래를 끝낼 수는 없고, Scott Kirby CEO는 또 다른 중개자를 만들고 싶지 않다고 말했으며 회사는 향후 발전에 따라 결정을 재검토할 수 있다고 했다. eBay와 여러 주요 은행도 에이전트를 제한하는 가운데, 결제와 동의처럼 사람이 직접 확인해야 하는 단계를 서비스 흐름에서 어떻게 설계할지가 서비스·UX 디자이너의 과제로 떠오른다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-11</span><a class="readmore en" href="https://www.theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-12</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-11.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-11 (수)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
