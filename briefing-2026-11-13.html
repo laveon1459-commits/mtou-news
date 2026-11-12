@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-13 (금)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-12.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.12 (목)
+  </a>
+  <span class="today en">TODAY · 2026-11-13</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-13 <span class="dow">(금)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://design.co.kr/article/181426/" target="_blank" rel="noopener">1만 4천여 점의 음반이 있는 청음실, 티에스터 게이츠 〈아프리카 정물들〉</a></h3>
+        <p class="item-summary">미국 현대미술가 티에스터 게이츠(Theaster Gates)의 한국 첫 개인전 〈아프리카 정물들(African Still Life)〉이 화이트 큐브 서울(White Cube Seoul)에서 12월 18일까지 열리고 있는데, 대표작 〈아프리카 정물들 #4(African Still Life #4)〉(2026)는 중국 문인들이 감상하던 수석과 오래된 황동 구두닦이 받침대, 추모 깃발, 메종 마르지엘라의 타비 슈즈와 시카고 흑인 공동체의 롤러스케이팅 문화를 결합해 2023년 작가가 직접 디자인한 롤러스케이트 등 서로 다른 시대와 문화의 사물을 하나로 조합했다. 두 번째 전시실은 한국의 리스닝 바 문화에서 영감을 얻어 곽동엽 음향감독과 사운드 시스템을 구축한 청음실로, 2022년 세상을 떠난 프랑스계 베트남인 DJ이자 음반 수집가 딘 응우옌(Dinh Nguyen)이 평생 모은 약 1만 4천여 점의 음반 아카이브를 관람객이 &#x27;딥 리스닝(deep listening)&#x27;으로 감상하도록 꾸몄다. 사물을 조합해 정체성을 드러내고 남겨진 컬렉션을 보관하는 대신 관람객과 공유한다는 점에서, 오브제와 아카이브를 다루는 전시·공간 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-13</span><a class="readmore en" href="https://design.co.kr/article/181426/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://design.co.kr/article/180949/" target="_blank" rel="noopener">〈음예예찬〉을 가구로, 가리모쿠×WAKA WAKA 와게츠 성수 팝업</a></h3>
+        <p class="item-summary">일본 가구 브랜드 가리모쿠(Karimoku)가 로스앤젤레스 기반 디자인 스튜디오 WAKA WAKA와 전개하는 가구 브랜드 &#x27;와게츠(wagetsu わ月)&#x27;가 11월 7일부터 22일까지 성수동 디스이즈네버댓(thisisneverthat®) 플래그십 스토어 지하 2층 T 갤러리에서 팝업을 열고 있는데, 1933년 발표된 다니자키 준이치로의 수필 〈음예예찬〉의 영문 제목 &#x27;In Praise of Shadows&#x27;를 테마로 한다. 브랜드 디자인은 WAKA WAKA의 오쿠다 신이치로가 맡았고 일본 가구 특유의 낮은 실루엣에 WAKA WAKA만의 비례와 색채를 담은 컬렉션이 놓이며, 디스이즈네버댓의 2026년 가을·겨울 컬렉션 비주얼에 등장한 &#x27;버터플라이 로우 테이블(Butterfly Low Table)&#x27; 등을 살펴보고 주문할 수 있고 두 브랜드가 협업한 한정판 티셔츠도 함께 선보인다. 공간의 음영을 살리는 가구라는 콘셉트를 패션 브랜드 공간에 들인 협업이라는 점에서, 전통 미학을 현대 제품 언어로 옮기려는 가구·브랜드 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://design.co.kr/article/180949/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://design.co.kr/article/178463/" target="_blank" rel="noopener">공고문을 쥔 손에서 나온 강연대, 오브젝트 위드 네임 노티스 렉턴 테이블</a></h3>
+        <p class="item-summary">디자인 스튜디오 오브젝트 위드 네임(Object with Name)의 이의주 디자이너가 2024년 오피스 가구 브랜드 캠퍼스라인(CAMFURSLINE)과 협업해 개발한 &#x27;노티스 렉턴 테이블(Notice Lectern Table)&#x27;은 공고문을 손으로 쥔 모습에서 아이디어를 얻어 전면 가림판을 구부리고 입체적인 레이어를 만들어 기업 로고를 더욱 돋보이게 했다. 이 디자인은 2026년 에어비앤비(Airbnb) 서울 이태원 오피스를 위한 &#x27;노티스 렉턴 테이블 포 에어비앤비(Notice Lectern Table for Airbnb)&#x27;로 이어졌는데, 기존 프로토타입에서 아쉬웠던 안정성과 완성도를 보완하고 다양한 키의 사람들이 편리하게 쓸 수 있도록 가스스프링 방식의 높이 조절 기능을 새롭게 적용했다. 투박하고 무거운 형태에 머물던 강연대를 기업의 브랜드 정체성을 전달하는 오브젝트로 바꿨다는 점에서, 오피스 가구와 공간 브랜딩을 함께 다루는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://design.co.kr/article/178463/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.creativebloq.com/news/the-toy-company-tomy-has-a-new-logo-and-people-are-baffled" target="_blank" rel="noopener">20년 만의 리브랜드, 놀이를 기호로 만든 Takara Tomy 새 로고</a></h3>
+        <p class="item-summary">Creative Bloq에 따르면 일본 완구 회사 Tomy가 20년 만의 리브랜드로 아시아에서 이미 쓰던 Takara Tomy로 전 세계 이름을 통일하고, 익숙한 흰색·파란색 워드마크를 청록에서 마젠타로 이어지는 그라데이션의 추상적인 심볼과 결합한 새 로고로 바꾸는데, 회사는 이 색을 &#x27;Quality Blue&#x27;와 &#x27;Quality Gradation&#x27;이라 부른다. 심볼은 놀이로 번역할 수 있는 &#x27;asobi&#x27;의 가타카나 글자를 결합한 것이고 워드마크의 A 세 개는 가로획의 곡선과 세리프를 각기 다르게 그렸지만, 일본에서도 의미를 해독하기 어렵다는 반응이 나오고 새 아이덴티티 적용일이 2027년 4월 1일이라 이른 만우절 장난 아니냐는 말까지 나왔다. 회사가 장난감 회사에서 놀이 회사로 바뀌겠다며 &quot;One Takaratomy&quot;를 내건 만큼, 추상화한 문자 심볼이 브랜드 철학을 얼마나 전달할 수 있는지 브랜드·아이덴티티 디자이너가 살펴볼 사례다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://www.creativebloq.com/news/the-toy-company-tomy-has-a-new-logo-and-people-are-baffled" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.dezeen.com/2026/11/12/finnegan-shannon-conveyor-accessibility-pioneer-works-brooklyn/" target="_blank" rel="noopener">작품이 관람객에게 온다, Finnegan Shannon의 컨베이어 벨트 설치 〈There’s No Me Without You〉</a></h3>
+        <p class="item-summary">뉴욕 기반 아티스트 Finnegan Shannon이 브루클린의 문화센터 Pioneer Works에 미술의 접근성을 다룬 설치 〈There’s No Me Without You〉를 선보였는데, 초밥 식당에서 음식을 컨베이어 벨트로 내보내는 것과 비슷한 식당형 시스템으로 만든 12피트 길이의 폐쇄 루프 장치 주위에 의자를 놓아, 관람객이 앉은 채 움직이는 트레이 위의 전시물과 아카이브 자료, 휴대용 DVD 플레이어를 보고 다룰 수 있게 했다. 태어날 때 뇌성마비 진단을 받은 Shannon은 이 컨베이어 벨트가 미술을 경험할 때 덜 고통스럽게 해주는 도구이며 앉아 있을 때 훨씬 더 인내심 있고 호기심 많은 관람객이 된다고 말했고, 장치는 장애가 있는 작가 Joselia Rebekah Hughes, Ariana Martinez, Alex Dolores Salerno의 신작을 세 차례 연속 전시로 소개하며 12월 20일까지 이어진다. 관람객이 작품 앞으로 걸어가는 대신 앉은 자리 앞으로 작품이 오도록 했다는 점에서, 전시장 인프라부터 접근성을 다시 설계해야 하는 전시·공간 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://www.dezeen.com/2026/11/12/finnegan-shannon-conveyor-accessibility-pioneer-works-brooklyn/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://www.creativebloq.com/features/adobe-max-2026-sneaks-project-link-up-is-making-design-playful-again" target="_blank" rel="noopener">끌어다 놓으면 원근이 맞춰진다, Adobe Sneaks의 벡터 실험 Project Link Up</a></h3>
+        <p class="item-summary">Adobe MAX 2026 Sneaks에서 공개된 Project Link Up은 오브젝트를 끌어다 놓는 단순한 동작을 장면의 원근에 자동으로 맞추는 맥락 인식 결합으로 바꿔, 새 시점에 맞춰 오브젝트를 계속 다시 그리는 수고를 줄이려는 벡터 디자인 실험이다. Adobe의 이미징·디자인 연구 리드 Hailin Jin은 Creative Bloq 인터뷰에서 일러스트 자동차를 주차 공간에 넣을 때 원근·크기·스타일을 따로 조정해야 하는 문제에서 출발했다고 설명했고, 현재 프로토타입에서는 creativity slider로 변형을 얼마나 은은하게 또는 과감하게 할지 정하며 결과물은 편집 가능한 벡터 아트워크로 남는다고 밝혔다. 익숙한 드래그 동작에 원근과 구도에 대한 의도를 싣고 결과를 계속 다듬을 수 있게 한다는 점에서, 생성형 기능과 손의 판단을 함께 쓰려는 일러스트레이터·그래픽 디자이너가 지켜볼 흐름이다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://www.creativebloq.com/features/adobe-max-2026-sneaks-project-link-up-is-making-design-playful-again" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://zdnet.co.kr/view/?no=20261112162741" target="_blank" rel="noopener">젠틀몬스터 16종·워비파커 14종, 삼성·구글 인텔리전트 아이웨어 전체 라인업 공개</a></h3>
+        <p class="item-summary">삼성전자가 구글, 젠틀몬스터, 워비파커와 손잡고 개발한 제미나이 탑재 AI 안경 &#x27;인텔리전트 아이웨어(Intelligent Eyewear)&#x27;의 전체 라인업을 12일(현지시간) 미국 뉴욕에서 공개했는데, 선공개된 4종을 포함해 젠틀몬스터 16종과 워비파커 14종 등 총 30종이며 다음달 10일 한국과 미국에서 공식 출시되고 국내에는 젠틀몬스터 컬렉션이 65만원부터 70만원에 나온다. 젠틀몬스터는 6가지 디자인에 블랙, 그레이, 다크레드 등 과감한 프레임 색상을, 워비파커는 3가지 디자인에 파인, 새들, 제트 블랙 색상을 적용했고, 주요 부품을 약 41g의 프레임 안에 배치했으며 촬영 시 외부 LED 표시등이 작동하고 LED가 가려지면 카메라가 비활성화된다. 웨어러블 AI 기기의 승부가 아이웨어 브랜드의 디자인 정체성과 프레임·렌즈 선택지로 옮겨가고 있다는 점에서, 기술 부품을 일상 패션 제품 안에 녹여야 하는 프로덕트 디자이너가 지켜볼 사례다.</p>
+        <div class="item-meta">
+          <span class="src">ZDNet 코리아</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://zdnet.co.kr/view/?no=20261112162741" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/" target="_blank" rel="noopener">크리에이터 찾고 메시지까지, Nectar의 인플루언서 마케팅 Creator Agent</a></h3>
+        <p class="item-summary">전 Meta 직원인 Misbah·Farah Uraizee 자매가 세운 마케팅용 AI 운영체제 Nectar가 크리에이터 검색부터 콘텐츠와 브랜드 파트너십 확인, 맞춤 메시지 발송, 협업 조율, 캠페인 성과 추적까지 맡는 &#x27;Creator Agent&#x27;를 출시했는데, 300 million이 넘는 크리에이터 프로필을 검색해 영상 내용과 브랜드 적합성, 이전 파트너십을 분석하고 특정 키워드 검색이 아니라 맥락 속 콘텐츠 검토로 브랜드 안전성을 확인한다. Misbah Uraizee CEO는 브랜드가 어떤 형식으로든 보이스 가이드라인을 공유하면 나머지는 이력에서 파악한다며 X의 인용 게시물과 TikTok 댓글 창에서 브랜드가 똑같이 들려서는 안 된다고 말했고, 에이전트는 현재 전 세계에서 Instagram 크리에이터와 TikToker를 대상으로 제공된다. 브랜드 보이스 적용과 크리에이터 매칭까지 에이전트가 맡기 시작했다는 점에서, 톤앤매너 가이드를 사람뿐 아니라 AI가 읽는 문서로 설계해야 하는 브랜드 디자이너·마케터가 지켜볼 흐름이다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-11-12</span><a class="readmore en" href="https://techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery" target="_blank" rel="noopener">AI 에이전트가 찾은 마야 유적, 이미 학술지에 실린 곳이었다</a></h3>
+        <p class="item-summary">The Verge에 따르면 구글 연구원 Pietro Miotti가 48개의 AI 에이전트로 NASA 라이다(lidar) 데이터를 뒤져 멕시코에서 지도에 없을 수 있는 마야 유적을 찾았다고 블로그에 밝혔지만, 이 유적은 이미 발견돼 지난해 학술지에 실린 곳이었다. 그는 개인 사이드 프로젝트였다며 등록되지 않은 것이 지도화되지 않은 것과 같지 않다는 점을 몰랐고 에이전트가 찾은 것을 검증하려면 전문 지식이 필요하다고 인정했으며, 고고학자 Sarah Parcak은 이래서 동료 검토가 있는 것이라고 지적했고 Ivan Šprajc는 아마추어의 AI 발견 주장이 쏟아지는 것과 유적 위치 공개가 도굴을 부를 수 있다는 점을 우려했다. AI가 그럴듯한 결과를 빠르게 내놓을수록 기존 연구와 맥락을 확인하는 부담이 전문가에게 넘어간다는 점에서, AI로 리서치·레퍼런스 조사를 하는 디자이너도 결과의 출처와 선행 작업을 직접 확인해야 한다는 교훈을 준다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-13</span><a class="readmore en" href="https://www.theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217327" target="_blank" rel="noopener">이미지 100억개도 빠르게 묶는다, 메타 군집화 알고리즘 e-민즈 오픈소스 공개</a></h3>
+        <p class="item-summary">메타가 비슷한 특성의 데이터를 묶는 기존 군집화 알고리즘 &#x27;k-민즈(k-means)&#x27;를 개선해 GPU에서 최대 45배 빠르게 작동하는 &#x27;e-민즈(e-means)&#x27;를 오픈소스로 공개했는데, 전체 데이터 대신 일부만 추출해 계산하는 &#x27;미니배치(Mini-batch)&#x27; 방식에 지수이동평균(EMA)을 결합해 k-민즈가 25회 반복 학습으로 도달하는 오차 수준을 1.4~2.6회 만에 달성했다. 100억개의 이미지 임베딩으로 구성된 &#x27;DINO10B&#x27; 데이터셋을 약 1670만개 군집으로 묶는 작업에서도 2.5회 반복 학습만으로 k-민즈 25회 결과보다 낮은 오차를 기록했고 메타의 벡터 검색 라이브러리 &#x27;파이스(FAISS) 1.16.0&#x27;에 포함됐지만, 이는 연구진의 실험 결과이며 실제 검색·추천 서비스의 응답 속도가 같은 비율로 빨라진다는 의미는 아니다. 대규모 이미지를 비슷한 것끼리 묶는 비용이 줄어든다는 점에서, 이미지 검색과 추천으로 레퍼런스를 찾는 디자이너가 쓰는 플랫폼의 기반 기술 변화로 지켜볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-13</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217327" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-13</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-12.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-12 (목)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
