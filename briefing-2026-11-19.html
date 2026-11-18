@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-19 (목)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-18.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.18 (수)
+  </a>
+  <span class="today en">TODAY · 2026-11-19</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-19 <span class="dow">(목)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224481707331?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">100주년 맞은 &#x27;네덜란드 최고의 북디자인&#x27;, 올해 주목할 책 5권</a></h3>
+        <p class="item-summary">1926년 시작된 &#x27;네덜란드 최고의 북디자인(The Best Dutch Book Designs)&#x27;이 올해로 100주년을 맞았고, 암스테르담 스테델릭뮤지엄에서는 2025년 선정작을 소개하는 연례 전시가 11월 6일 개막해 내년 1월 10일까지 이어진다. 올해 전문 심사위원단은 총 281권의 출품작 가운데 33권을 선정했는데, 이 가운데 24권은 예술·사진·건축 분야의 책이고 가자지구 전쟁과 네덜란드의 질소 배출 위기 등 동시대 사회 문제를 다룬 책도 9권 선정됐으며, 약탈 유물 사진을 제거하고 그 자리를 비워둔 미렐레 판 튈더(Mirelle van Tulder)의 『Catalogue of Stolen Objects, Courtesy of』도 그중 하나다. 종이의 질감과 무게, 타이포그래피, 인쇄 및 제본 방식이 책의 주제와 얼마나 긴밀하게 연결되는지를 살핀 심사라는 점에서, 책의 구조와 재료를 실험하는 북·편집 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224481707331?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224481648908?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">6~7㎡ 주방에서 2040년의 주방으로, 프랑크푸르트 키친 100년 〈Triangular. New Frankfurt Kitchen 2040〉</a></h3>
+        <p class="item-summary">1926년 오스트리아 출신 건축가 마르가레테 쉬테리호츠키(Margarete Schütte-Lihotzky)가 불과 6~7㎡의 공간에 조리와 수납 기능을 집약해 설계한 &#x27;프랑크푸르트 키친&#x27;의 탄생 100주년을 맞아, 프랑크푸르트 응용미술관(Museum Angewandte Kunst)이 2040년의 주방을 모색하는 전시 〈Triangular. New Frankfurt Kitchen 2040〉을 2026년 11월 7일부터 29일까지 연다. 밀라노 폴리테크니코와 델프트 공과대학교, 이스탄불 공과대학교가 브라운(Braun), 람스 재단(rams foundation)과 협력한 국제 프로젝트 &#x27;Triangular&#x27;의 결과물로, 모형과 프로토타입으로 구현한 21개 작품과 단편 영상으로 소개하는 30개의 콘셉트가 경제·사회·인간·문화라는 네 가지 관점으로 구성됐고, 전동 모터 대신 사람의 힘으로 작동하는 바베트 코퍼르트(Babette Koppert)의 &#x27;The Turning Point&#x27; 같은 제안이 포함됐다. 효율성을 추구했던 1926년의 주방과 달리 AI와 자동화 기술이 발전하는 시대에 인간의 경험과 사회적 관계에 주목한다는 점에서, 주방과 가전을 다루는 공간·프로덕트 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224481648908?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://www.itsnicethat.com/articles/callum-abbott-other-almanac-mutt-art-review-graphic-design-publication-project-181126" target="_blank" rel="noopener">무료 폰트도 비싸 보이게, Callum Abbott의 타입 중심 출판 디자인</a></h3>
+        <p class="item-summary">독립 디자이너 Callum Abbott은 편집자 Ana Ratner와 함께 4년이 지나 리디자인 시기를 맞은 The Other Almanac을 새로 설계하면서, 새 이미지나 일러스트 없이 200페이지가 넘어야 한다는 제약 속에 오픈소스 역사 이미지와 DaFont·1001 Fonts 등에서 찾은 무료 서체를 포함한 40개의 서체로 지면을 채웠다. Mutt Art Review에서는 창립자 Kara Kazanoff와 1970년대 &quot;typographic sensibility&quot;에 맞춰 ITC 서체를 주로 쓰되 흑백 위주의 표지 위에 투명하고 컬러로 얹는 등 예상 밖의 방식으로 운용했고, Callum은 &quot;A good designer can make a free font look expensive&quot;라고 말했다. 일러스트나 사진 의뢰 예산 없이 서체만으로 출판물을 설계한 사례라는 점에서, 편집·타이포그래피 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">It&#x27;s Nice That</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://www.itsnicethat.com/articles/callum-abbott-other-almanac-mutt-art-review-graphic-design-publication-project-181126" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.creativebloq.com/news/the-nhls-virtual-logos-are-a-step-too-far-for-digital-branding" target="_blank" rel="noopener">경기장엔 없고 TV에만 있는 로고, NHL 가상 센터 로고에 시청자 반발</a></h3>
+        <p class="item-summary">Creative Bloq에 따르면 NHL이 TV 중계에서 디지털 오버레이로 아이스 중앙의 실제 센터 로고를 임시 가상 로고로 바꾸고 있는데, 경기장 관중은 홈팀의 평소 디자인을 보지만 TV 시청자에게는 일부 경기에 쓰이는 임시 대체 디자인인 Hometown Remix 로고가 보인다. 선수가 지나갈 때 모션 블러나 그림자가 없어 어색해 보이고 디자인에 검은색이 들어가면 퍽이 잠시 화면에서 사라질 수 있다는 지적이 나왔으며, 일부 시청자는 이 방식이 계속되면 시청을 그만두겠다고 말했다. 로고가 적용될 디지털 환경이 점점 넓어지는 상황에서, 실제 공간과 중계 화면의 아이덴티티를 함께 다루는 브랜드 디자이너가 지켜볼 사례다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://www.creativebloq.com/news/the-nhls-virtual-logos-are-a-step-too-far-for-digital-branding" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.creativebloq.com/news/artists-and-creators-are-leaving-etsy-in-droves-over-its-new-ai-policy" target="_blank" rel="noopener">AI 학습 조항에 창작자 이탈, Etsy 이용약관 개정 논란</a></h3>
+        <p class="item-summary">Creative Bloq에 따르면 Etsy가 이용약관 Section 5에 자사와 제3자 파트너·벤더가 이용자 콘텐츠를 AI·머신러닝 기술의 개발, 학습, 테스트, 개선에 쓸 수 있다는 조항을 추가했고, 12월 16일 시행을 앞두고 많은 창작자가 자신의 화풍으로 만든 전단과 작별 편지로 SNS에 Etsy 매장 폐쇄를 알리고 있다. Etsy 고객 운영 부사장 James Ossman은 판매자가 창작물의 소유권을 유지하며 원작을 모방하거나 창작성을 대체하도록 설계된 AI 모델 학습에는 콘텐츠를 쓰지 않는다고 밝혔지만, 승인된 파트너가 Etsy와 무관한 용도로 학습할 수 있는지는 명시하지 않았고 판매자를 위한 일반적인 옵트아웃 수단도 마련되지 않았다. 작품을 온라인 마켓에 올리는 일러스트·굿즈 디자이너라면 플랫폼 약관의 AI 학습 조항을 직접 확인해 볼 필요가 있다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://www.creativebloq.com/news/artists-and-creators-are-leaving-etsy-in-droves-over-its-new-ai-policy" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://techcrunch.com/2026/11/18/snapchat-now-lets-developers-build-ar-lenses-with-ai-coding-assistants-like-claude-code-and-cursor/" target="_blank" rel="noopener">말로 설명하면 AR 렌즈가 완성, Snapchat &#x27;Easy Lens CLI&#x27; 공개</a></h3>
+        <p class="item-summary">Snapchat이 Lens 제작자가 Claude Code, Cursor, Codex 등 이미 쓰는 AI 코딩 어시스턴트로 AR 렌즈를 만들 수 있는 Easy Lens CLI를 공개했는데, 프롬프트 하나로 렌즈를 생성하는 기존 Easy Lens 도구를 개발자의 작업 흐름으로 가져온 것이다. 제작자가 원하는 렌즈를 평이한 말로 설명하면 AI 어시스턴트가 100개 이상의 AR 빌딩 블록과 50개의 AI 에셋 생성기를 활용한 제작, 미리보기 생성, 게시와 성과 추적까지 처리하며, Snapchat은 게임을 첫 아이디어에서 게시된 렌즈까지 직접 코드를 쓰지 않고 하루 만에 만들 수 있고 에이전시와 브랜드는 기존 캠페인 영상·이미지 등 브랜드 에셋을 더 짧은 제작 기간에 AR 경험으로 바꿀 수 있다고 밝혔다. 기술 작업은 AI에 맡기고 제작자는 렌즈의 비전에 집중하게 한다는 점에서, 캠페인 에셋을 AR로 확장하려는 모션·브랜드 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://techcrunch.com/2026/11/18/snapchat-now-lets-developers-build-ar-lenses-with-ai-coding-assistants-like-claude-code-and-cursor/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217531" target="_blank" rel="noopener">전화 예약·쇼핑·결제까지 대신, 구글 제미나이 &#x27;태스크 모드&#x27; 한국에도 무료 확대</a></h3>
+        <p class="item-summary">구글이 17일(현지시간) 공식 블로그를 통해 제미나이의 &#x27;태스크 모드(Task Mode)&#x27;를 미국과 한국, 일본, 캐나다, 호주, 인도 등 6개국에서 무료 이용자까지 확대 제공한다고 밝혔는데, 사용자의 구글 계정에 연결된 이메일과 캘린더, 사진, 파일 등을 활용해 여러 단계를 거쳐야 하는 일을 대신 수행하는 에이전트 기능이다. 전화 예약 등 일부 고급 기능은 미국부터 지원하고, 결제에는 에이전트 결제 프로토콜(AP2)이 적용돼 사용자가 사전에 지출 한도를 설정할 수 있으며, 구매 등 중요한 단계에서는 사용자 확인을 거치고 웹사이트가 AI 에이전트의 접근을 차단하면 마지막 단계에서 사용자에게 조작을 넘길 수 있다. AI가 사용자를 대신해 사이트를 조작하는 기능이 무료 이용자까지 넓어지는 만큼, 사람과 에이전트가 함께 거치는 결제·예약 화면을 설계하는 UX 디자이너가 지켜볼 변화다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217531" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217543" target="_blank" rel="noopener">에이전트끼리 서로의 오류를 지적한다, 퍼플렉시티 &#x27;멀티에이전트&#x27; 출시</a></h3>
+        <p class="item-summary">퍼플렉시티가 17일(현지시간) AI 에이전트 플랫폼 &#x27;컴퓨터(Computer)&#x27;에 기존 최고 단계인 &#x27;울트라(Ultra)&#x27;보다 높은 작업 수준 &#x27;멀티에이전트(Multiagent)&#x27;를 추가해, 하나의 주도 에이전트가 최대 16개의 보조 에이전트를 운영하며 오픈AI와 앤트로픽, 구글의 AI 모델을 동시에 투입하게 했다. 보조 에이전트끼리 직접 소통하며 조사 결과를 공유하고 분석의 오류를 지적할 수 있고, 공동 작업 파일도 함께 수정해 한 에이전트가 재무 모델의 매출 전망치를 변경하면 다른 에이전트에 알려 기업가치 평가에 반영하도록 할 수 있으며, 이 기능은 웹 버전의 퍼플렉시티 맥스(Max) 구독자에게 제공된다. 사용자가 진행 중인 작업에 참여하는 에이전트와 사용 모델을 확인할 수 있게 했다는 점에서, 여러 AI의 작업 과정을 사람에게 보여주는 인터페이스를 설계하는 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217543" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://byline.network/2026/11/18_391287374/" target="_blank" rel="noopener">카톡 안에서 주문부터 결제까지, 카카오 내달 에이전틱 커머스 시연</a></h3>
+        <p class="item-summary">바이라인네트워크 단독 보도에 따르면 카카오가 내달 16일 코엑스 그랜드 인터컨티넨탈 서울 파르나스에서 에이전틱 커머스 서비스를 공개할 계획으로, 이날 배달앱·편의점·홈쇼핑·이커머스 등 약 15개사와 에이전트 사업 업무협약(MOU)을 맺고 서비스를 시연할 예정이다. 이용자가 카나나 등 카카오톡 내 AI 에이전트에서 음성이나 채팅으로 외부 제휴사 상품을 주문하고 카카오 계정과 카카오페이로 인증·결제까지 마치는 방식으로, 실제 서비스는 내년 중 운영을 시작할 전망이며 쿠팡이츠와 일부 업체는 이번 행사에 참여하지 않기로 한 것으로 알려졌다. 상품 확인부터 결제까지 카카오톡을 벗어나지 않는 흐름이라는 점에서, 대화형 커머스 경험을 설계하는 UX·브랜드 디자이너가 지켜볼 대목이다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://byline.network/2026/11/18_391287374/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/" target="_blank" rel="noopener">검색 기록에 남지 않는 AI 대화, 구글 AI Mode에 &#x27;temporary threads&#x27; 도입</a></h3>
+        <p class="item-summary">구글이 검색의 대화형 인터페이스인 AI Mode에 대화 내용이 검색 기록이나 추천 등에 다시 나타나지 않는 &#x27;temporary threads&#x27; 기능을 도입한다고 블로그에서 발표했다. 설정을 바꿀 필요 없이 AI Mode 오른쪽 위의 temporary threads 아이콘을 누르면 임시 대화를 시작할 수 있고, 세션이 계정과 분리돼 응답이 과거 선호를 반영하지 않고 이후 개인화에도 영향을 주지 않으며, 이 기능은 데스크톱과 모바일에서 지원되는 모든 언어로 전 세계에 배포되고 있다. 기록과 개인화를 대화 단위로 끊는 장치를 아이콘 하나로 노출했다는 점에서, 개인정보 설정 흐름을 설계하는 UX 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-11-18</span><a class="readmore en" href="https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-19</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-18.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-18 (수)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
