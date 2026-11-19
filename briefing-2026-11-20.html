@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-20 (금)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-19.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.19 (목)
+  </a>
+  <span class="today en">TODAY · 2026-11-20</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-20 <span class="dow">(금)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224483526000?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">손 그림·디지털·AI를 한 기준으로, 아키텍처 드로잉 프라이즈 올해 수상작 11점</a></h3>
+        <p class="item-summary">국제 공모전 &#x27;아키텍처 드로잉 프라이즈(The Architecture Drawing Prize)&#x27;가 전 세계에서 출품된 168개 작품 가운데 올해 수상작 11점을 발표했는데, 2026년부터는 손 드로잉과 디지털, 하이브리드 등 제작 유형별로 나눠 시상하던 방식을 모든 작품을 하나의 기준으로 통합해 심사하도록 바꿨고 출품자는 사용한 도구와 디지털 프로그램, AI 활용 여부 등을 제출해야 한다. 대신 올해부터 핸드 드로잉 특별상을 새로 마련해 2014년과 2018년 두 차례 화재를 겪은 글래스고 미술학교를 둘러싼 비계를 연필로 그린 로스 캐머런(Ross Cameron)의 &#x27;Glasgow School of Art 2026&#x27;에 돌아갔고, 카지노의 평면도 6장으로 도박 중독의 과정을 그린 하비에르 가르시아 고이코에체아(Javier García Goicoechea)의 &#x27;In the Eye of the Storm&#x27;도 수상작에 이름을 올렸다. 어떤 도구를 사용했는지보다 결과물이 건축에 관해 무엇을 보여주고 제안하는지를 중심에 둔 심사라는 점에서, AI 이미지 도구를 작업에 들이는 건축·공간 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224483526000?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://design.co.kr/article/182447/" target="_blank" rel="noopener">중국 그래픽 디자인 30년이 서울에, GDC 어워드 2025 순회전 〈Thirty Years, One Hour〉</a></h3>
+        <p class="item-summary">1992년 선전그래픽디자인협회(SGDA)의 주최로 시작된 중국 최초의 그래픽 디자인 공모전 GDC 어워드(Graphic Design in China)의 서울 순회전 〈Thirty Years, One Hour〉가 지난 11월 12일부터 오는 11월 27일까지 서울 서초구 두성페이퍼갤러리에서 열리고 있는데, 그간 도쿄, 파리, 뉴욕 등에서 열린 수상작 순회전이 서울에서 관객과 만나는 것은 이번이 처음이다. 전시 제목은 수상작이 서울에 닿기까지 걸린 삼십 년과 선전과 서울 사이의 한 시간 시차를 동시에 가리키며, 포스터·북 디자인·타이포그래피·브랜딩 등 GDC 어워드 2025의 주요 수상작 70여 점을 실물로 선보이고, 서울 전시를 총괄한 이재민 디자이너는 서문에서 한자라는 시각적 재료와 급격한 도시화가 만들어 낸 광폭함이 두텁게 얽혀 있다고 평했다. 한자를 현대적인 조형 언어로 해체하고 재조립한 타이포그래피를 종이의 물성과 인쇄의 질감까지 실물로 볼 수 있다는 점에서, 문자를 다루는 그래픽·타이포그래피 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://design.co.kr/article/182447/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://design.co.kr/article/182575/" target="_blank" rel="noopener">1990년대 오브제에 새 컬러웨이, 르메르×알레시 &#x27;트베르기(Twergi)&#x27; 포토 오브제</a></h3>
+        <p class="item-summary">프랑스 패션 브랜드 르메르(LEMAIRE)와 1921년 이탈리아에서 설립된 디자인 브랜드 알레시(Alessi)가 알레시의 아카이브 컬렉션 &#x27;트베르기(Twergi)&#x27;에서 두 가지 오브제를 새로운 모습으로 선보였는데, 협업은 사진을 통해 일상을 관찰한 르메르의 사진전 〈A Box of Impressions〉에서 출발해 사진을 생활 공간에서 어떻게 간직하고 경험할 수 있을지에 대한 고민으로 이어졌다. 디자인 그룹 보르톨라니 베첼리 아소치아티(Bortolani Becchelli Associati)의 포토 홀더와 쿠노 프레이(Kuno Prey)의 포토 프레임은 1990년대에 처음 디자인된 기존의 간결한 형태를 유지하면서 르메르를 위해 특별히 개발한 새로운 컬러웨이와 깊이감 있는 래커 마감을 더했고, 11월 중순부터 르메르 한남 플래그십 스토어에서 만나볼 수 있다. 형태는 그대로 두고 색과 마감만으로 아카이브 제품을 다시 내놓은 방식이라는 점에서, 브랜드 협업과 리에디션을 기획하는 프로덕트·브랜드 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">월간디자인</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://design.co.kr/article/182575/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.designboom.com/technology/nike-tuned-air-digital-ink-sneaker-cushioning/" target="_blank" rel="noopener">잉크로 쿠셔닝을 설계한다, NIKE &#x27;Tuned Air&#x27;</a></h3>
+        <p class="item-summary">designboom에 따르면 NIKE가 2026년 11월 16일 공개한 Tuned Air는 에어 유닛 내부의 특정 영역에 독자 개발한 디지털 잉크를 발라 제조 과정에서 그 부분이 접합되지 않게 하는 선택적 라미네이션(selective lamination) 방식으로, 기존 Air 유닛이 형태 유지를 위해 의존하던 내부 핀과 단단한 구조 대신 인쇄 패턴으로 어느 부분이 압축되고 반발할지를 정한다. 잡지 표지의 광택 있는 색에서 착안해 10년 넘게 다듬은 공정으로, 회사에 따르면 Advanced Product Creation Center에서 새 Air 유닛의 평균 개발 기간이 70% 줄어 3주 걸리던 프로토타입을 3일 만에 만들 수 있게 됐으며(회사 발표 수치), 첫 Tuned Air 러닝화는 2027년 말 출시 예정이다. 그래픽에 쓰이던 인쇄 기술이 신발 내부 구조를 결정하는 도구로 바뀐 사례라는 점에서, 소재·제조 공정을 다루는 프로덕트·풋웨어 디자이너가 지켜볼 대목이다.</p>
+        <div class="item-meta">
+          <span class="src">designboom</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://www.designboom.com/technology/nike-tuned-air-digital-ink-sneaker-cushioning/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.dezeen.com/2026/11/19/seaweed-earplug-grant-design-museum-prototypes/" target="_blank" rel="noopener">해조류 귀마개부터 식물성 단열재까지, 디자인 뮤지엄 친환경 프로토타입 지원작 4건</a></h3>
+        <p class="item-summary">Dezeen에 따르면 디자인 뮤지엄(Design Museum)이 Future Observatory 프로그램을 통해 영국 스튜디오 Searo Labs, WeCanMake, Local Works Studio, SY Ecofit에 총 £280,000 규모의 지원금을 나눠 주기로 했는데, 이 프로그램에 제출된 140개 프로토타입 가운데 선정된 4건이다. 버린 뒤 30일이면 물이나 흙에서 생분해되는 미세플라스틱·화학물질 없는 해조류 일회용 귀마개 SearoSoft를 비롯해, 농업 폐기물을 단열재로 바꾸는 Local Works Studio의 Ferment, 지역에서 기른 목재로 저층 아파트를 짓는 조립식 시스템인 WeCanMake의 Neighbourhood Factory Futures, 파이토마이닝 부산물로 식물성 단열재를 만드는 SY Ecofit의 PhytoFloc가 2026년 11월부터 2027년 7월까지 지원받은 뒤 시험을 거쳐 상용화 과정에 들어간다. 디자이너의 실용 연구를 지원해 친환경 전환을 이끌겠다는 프로그램이라는 점에서, 소재 개발 단계부터 참여하려는 소재·지속가능성 분야 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://www.dezeen.com/2026/11/19/seaweed-earplug-grant-design-museum-prototypes/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://www.creativebloq.com/features/adobes-democratisation-of-design-doesnt-have-to-be-the-death-of-human-creativity" target="_blank" rel="noopener">모두가 만들 수 있는 시대, 무엇이 진짜 디자인인가 — Adobe MAX 2026 이후의 고민</a></h3>
+        <p class="item-summary">Creative Bloq 스태프 라이터 Natalie Fear는 Adobe MAX 2026을 다녀온 지 일주일 뒤 쓴 칼럼에서, MAX는 초보 크리에이티브부터 인플루언서, 업계 베테랑까지 Adobe가 모두를 위한 것이라는 점을 분명히 했지만 AI가 더해지면서 민주화된 창작의 시대에 무엇이 진짜 디자인인지 묻게 된다고 썼다. 그는 그래픽 디자이너가 더 적은 자원과 시간으로 모션 디자인, 웹 개발, 소셜 미디어까지 해내야 하는 업계의 콘텐츠 수요가 AI 도입의 근거로 거듭 제시됐다고 전하면서도, Sneaks에서 본 Photoshop용 조명 인식 AI 도구 Project Deep Brush처럼 일상 작업을 매끄럽게 하는 도구와 전면적인 생성형 AI 사이에는 분명한 차이가 있다고 봤다. 칼럼은 AI 도구를 쓰든 거부하든 각자의 방식으로 계속 창작하라고 권하며 공식처럼 찍어낸 AI의 바다에서 주목받는 것은 사람이 만든 품질 높은 작업일 것이라고 맺는데, 도구 선택의 기준을 스스로 세워야 하는 그래픽 디자이너에게 생각해 볼 거리를 던진다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://www.creativebloq.com/features/adobes-democratisation-of-design-doesnt-have-to-be-the-death-of-human-creativity" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://techcrunch.com/2026/11/19/want-to-see-your-live-ai-usage-on-your-macs-icons-this-clever-new-app-lets-you/" target="_blank" rel="noopener">Dock 아이콘에 AI 사용량이 실시간으로, 디자이너 Michael Flarup의 &#x27;IconSwapper&#x27;</a></h3>
+        <p class="item-summary">코펜하겐에서 디자인 스튜디오를 운영하는 디자이너 Michael Flarup이 Mac 앱의 공식 아이콘을 직접 만든 아이콘으로 바꿀 수 있는 유틸리티 IconSwapper를 출시했는데, ChatGPT, Claude, Cursor 같은 AI 앱의 아이콘을 실시간 AI 사용량을 보여주는 &#x27;live&#x27; 아이콘으로 바꿀 수 있다. macOS가 공식 테마 기능을 지원하지 않고 시스템 아이콘을 보호하기 때문에 그는 아이콘을 교체하지 않고 그 위에 직접 그리는 방식을 고안해 커스텀 Metal 셰이더로 아이콘 아트워크를 실시간 렌더링하고 Dock 확대부터 Command-Tab 전환 화면까지 아이콘을 따라가도록 만들었으며, 앱은 출시 프로모션가 19달러 일회성 구매(이후 29달러)다. 아이콘을 정적인 그림이 아니라 데이터에 반응하는 작은 인터페이스로 다룬 사례라는 점에서, 아이콘·UI 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://techcrunch.com/2026/11/19/want-to-see-your-live-ai-usage-on-your-macs-icons-this-clever-new-app-lets-you/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/" target="_blank" rel="noopener">AI가 Mac을 대신 조작한다, 구글 Gemini 맥 앱에 컴퓨터 사용(computer use) 기능</a></h3>
+        <p class="item-summary">구글이 macOS용 Gemini 데스크톱 앱에 computer use 기능을 도입해, AI가 네이티브 Mac 앱과 웹사이트를 백그라운드에서 오가며 사용자 대신 로컬 파일·앱·웹에 걸친 여러 단계의 작업을 처리하도록 했다. 사용자는 채팅 안의 실시간 미리보기로 에이전트의 작업을 보면서도 화면과 커서를 다른 일에 쓸 수 있고 Gemini의 동작을 실행 전에 일시정지·중지·승인할 수 있으며, 구글은 양식 작성, 여러 파일에 같은 작업 반복, 기준에 따른 폴더 정리, 파일이나 온라인 대시보드 정보로 슬라이드쇼 만들기 등을 활용 예로 들었다. 미국에서 영어로 먼저 제공되고 Mac용 Gemini 앱과 Google AI Plus, Pro, Ultra 구독이 필요하며, 에이전트의 작업 과정을 사용자 화면을 빼앗지 않고 보여주는 방식이라는 점에서 에이전트 UX를 설계하는 디자이너가 지켜볼 변화다.</p>
+        <div class="item-meta">
+          <span class="src">TechCrunch</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217580" target="_blank" rel="noopener">말하는 동안 글자가 뜬다, 챗GPT &#x27;라이브 받아쓰기&#x27; 도입·10분 녹음 제한 폐지</a></h3>
+        <p class="item-summary">오픈AI가 18일(현지시간) 공식 릴리스 노트를 통해 &#x27;라이브 받아쓰기(Live Dictation)&#x27;를 전 세계 모든 챗GPT 요금제에 차례로 배포한다고 밝혔는데, iOS와 안드로이드, 웹, 데스크톱 앱이 대상이며 사용자가 말하는 동안 음성이 텍스트로 변환돼 녹음 종료 후 기다리는 시간을 줄인다. 입력창의 파형을 누르면 변환된 문장을 표시하거나 숨길 수 있고 한 번에 최대 10분까지 가능했던 녹음 제한도 폐지했지만 속도나 정확도의 개선 폭은 수치로 제시하지 않았으며, 학습용 오디오 공유를 원하지 않는 이용자는 설정의 데이터 제어에서 &#x27;오디오 녹음 포함&#x27;을 끌 수 있다. 말로 쓴 초안을 화면에서 바로 확인하고 고치는 흐름이라는 점에서, 음성 입력 인터페이스를 설계하는 UX 디자이너에게 참고가 된다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-20</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217580" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://byline.network/2026/11/19-691/" target="_blank" rel="noopener">AI 캐릭터 챗이 게임쇼에 간 이유, 뤼튼 &#x27;크랙&#x27; 지스타 2026 메인 스폰서</a></h3>
+        <p class="item-summary">바이라인네트워크에 따르면 AI 캐릭터 챗 &#x27;크랙&#x27;을 운영하는 뤼튼테크놀로지스가 지스타 2026 메인 스폰서로 참여했고, 이세영 대표는 19일 부산 벡스코 크랙 부스에서 진행한 &#x27;크랙 크리에이터즈 라이브&#x27;에서 AI의 중요한 본질 중 하나로 &#x27;상호작용&#x27;을 꼽으며 컨슈머 AI와 게임이 큰 공통 분모를 지니고 있다고 말했다. 크랙은 판타지와 무협, 역할수행게임(RPG) 등 다양한 세계관에서 이용자가 AI 캐릭터와 대화하며 직접 이야기를 만들어 가는 서비스로 현재 한국과 북미, 일본에서 운영 중이며, 뤼튼은 텍스트와 이미지 중심인 표현을 멀티모달리티로 넓히고 이용자 선택을 받은 오리지널 IP를 게임, 웹툰, 애니메이션 등으로 확장할 계획이다. 세계관과 이야기를 먼저 공개하고 이용자 반응으로 IP를 고르는 방식이라는 점에서, 캐릭터·세계관을 설계하는 일러스트·콘텐츠 디자이너가 지켜볼 대목이다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크</span><span class="sep">·</span><span class="date en">2026-11-19</span><a class="readmore en" href="https://byline.network/2026/11/19-691/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-20</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-19.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-19 (목)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
