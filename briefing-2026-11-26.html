@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief · 2026-11-26 (목)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --mr-noir:#0F0F0F;--mr-rouge:#C8102E;--mr-rouge-deep:#7A0C1C;--mr-ivoire:#F7F3EC;
+  --mr-encre:#1A1A1A;--mr-gris:#6B6459;--mr-ligne:#E2DCD2;--mr-blanc:#FBF9F5;--sheet-w:820px;
+  --font-ko:"Pretendard","Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --font-en:"Inter","Helvetica Neue",Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--font-ko);background:var(--mr-noir);color:var(--mr-encre);line-height:1.6;
+  background-image:radial-gradient(circle at 50% -10%, #1c1c1c 0%, #0F0F0F 60%);min-height:100vh;-webkit-font-smoothing:antialiased;}
+.en{font-family:var(--font-en);}
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(226,220,210,.10);}
+.toolbar-inner{max-width:var(--sheet-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;}
+.brand-mini{display:flex;align-items:center;gap:10px;color:var(--mr-ivoire);text-decoration:none;font-family:var(--font-en);font-weight:800;letter-spacing:.02em;font-size:15px;}
+.brand-mini .dot{width:9px;height:9px;border-radius:50%;background:var(--mr-rouge);display:inline-block;}
+.brand-mini:hover{opacity:.85;}
+.tool-actions{display:flex;gap:8px;}
+.tbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(226,220,210,.22);color:var(--mr-ivoire);font-family:var(--font-en);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:8px 13px;border-radius:999px;cursor:pointer;text-decoration:none;transition:.16s;}
+.tbtn:hover{border-color:var(--mr-rouge);color:#fff;background:rgba(200,16,46,.10);}
+.tbtn svg{width:14px;height:14px;}
+.toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);background:var(--mr-encre);color:var(--mr-ivoire);padding:11px 20px;border-radius:8px;font-size:13.5px;border-left:3px solid var(--mr-rouge);opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.datenav{max-width:var(--sheet-w);margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;padding:0 24px;}
+.datenav a,.datenav span{display:inline-flex;align-items:center;gap:8px;color:rgba(247,243,236,.55);text-decoration:none;font-size:13.5px;font-weight:500;transition:.16s;}
+.datenav a:hover{color:var(--mr-ivoire);}
+.datenav .today{font-family:var(--font-en);font-weight:700;letter-spacing:.06em;color:var(--mr-rouge);font-size:13px;border:1px solid rgba(200,16,46,.4);padding:5px 14px;border-radius:999px;}
+.datenav .disabled{opacity:.25;pointer-events:none;}
+.chev{width:16px;height:16px;}
+.sheet{max-width:var(--sheet-w);margin:22px auto 60px;background:var(--mr-ivoire);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.65);overflow:hidden;}
+.sheet-pad{padding:56px 64px 48px;}
+.masthead{border-bottom:2px solid var(--mr-encre);padding-bottom:22px;margin-bottom:8px;}
+.kicker{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.34em;font-size:11px;font-weight:700;color:var(--mr-rouge);margin-bottom:14px;}
+.masthead h1{font-size:34px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);line-height:1.2;}
+.masthead h1 .em{color:var(--mr-rouge);}
+.masthead-meta{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:8px;}
+.publisher{font-size:13.5px;color:var(--mr-gris);font-weight:500;}
+.publisher b{color:var(--mr-encre);font-weight:700;}
+.pubdate{font-family:var(--font-en);font-size:14px;font-weight:600;color:var(--mr-encre);letter-spacing:.02em;}
+.pubdate .dow{color:var(--mr-rouge);}
+.section{margin-top:44px;}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:6px;}
+.section-emoji{font-size:22px;line-height:1;}
+.section-head h2{font-size:20px;font-weight:800;letter-spacing:-.01em;color:var(--mr-encre);}
+.section-head .en-tag{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.22em;font-size:10.5px;font-weight:700;color:var(--mr-gris);margin-left:2px;}
+.section-head .count{margin-left:auto;font-family:var(--font-en);font-size:12px;font-weight:700;color:var(--mr-rouge);letter-spacing:.04em;}
+.section-rule{height:2px;background:var(--mr-rouge);width:100%;margin-bottom:4px;}
+.item{padding:26px 0;border-bottom:1px solid var(--mr-ligne);}
+.item:last-child{border-bottom:none;}
+.item-num{font-family:var(--font-en);font-weight:900;font-size:13px;color:var(--mr-rouge);letter-spacing:.02em;margin-bottom:9px;display:inline-block;}
+.item-body h3{font-size:18.5px;font-weight:700;line-height:1.42;color:var(--mr-encre);margin-bottom:10px;letter-spacing:-.005em;}
+.item-body h3 a{color:inherit;text-decoration:none;background-image:linear-gradient(var(--mr-rouge),var(--mr-rouge));background-size:0% 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .25s;}
+.item-body h3 a:hover{background-size:100% 1.5px;color:var(--mr-rouge-deep);}
+.item-summary{font-size:14.5px;line-height:1.62;color:#2c2a27;}
+.item-meta{margin-top:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;}
+.item-meta .src{font-weight:700;color:var(--mr-encre);}
+.item-meta .sep{color:var(--mr-ligne);}
+.item-meta .date{font-family:var(--font-en);color:var(--mr-gris);font-weight:500;}
+.item-meta .readmore{margin-left:auto;font-family:var(--font-en);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mr-rouge);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.item-meta .readmore:hover{color:var(--mr-rouge-deep);gap:7px;}
+.item-meta .readmore svg{width:12px;height:12px;}
+.sheet-foot{border-top:2px solid var(--mr-encre);margin-top:36px;padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.sig{font-size:12px;color:var(--mr-gris);letter-spacing:.01em;}
+.sig b{color:var(--mr-encre);font-family:var(--font-en);letter-spacing:.04em;font-weight:800;}
+.sig .em{color:var(--mr-rouge);}
+.foot-note{font-size:11px;color:var(--mr-gris);font-family:var(--font-en);letter-spacing:.03em;}
+.bottomnav{max-width:var(--sheet-w);margin:0 auto 70px;display:flex;gap:14px;padding:0 24px;}
+.bnav-card{flex:1;text-decoration:none;border:1px solid rgba(226,220,210,.14);border-radius:8px;padding:16px 20px;transition:.16s;}
+.bnav-card:hover{border-color:var(--mr-rouge);background:rgba(200,16,46,.06);}
+.bnav-card .dir{font-family:var(--font-en);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700;color:rgba(247,243,236,.45);margin-bottom:5px;}
+.bnav-card .t{color:var(--mr-ivoire);font-size:14px;font-weight:600;font-family:var(--font-en);}
+.bnav-card.next{text-align:right;}
+.bnav-card.disabled{opacity:.25;pointer-events:none;}
+@media (max-width:720px){
+  .sheet-pad{padding:36px 24px 32px;}
+  .datenav,.bottomnav{padding:0 16px;}
+  .masthead h1{font-size:26px;}
+  .item-meta .readmore{margin-left:0;}
+  .toolbar-inner{padding:12px 16px;}
+  .tbtn .lbl{display:none;}
+  .tbtn{padding:8px;}
+}
+@media print{
+  body{background:#fff;background-image:none;}
+  .toolbar,.datenav,.bottomnav,.toast,.item-meta .readmore{display:none!important;}
+  .sheet{box-shadow:none;margin:0;max-width:100%;border-radius:0;}
+  .sheet-pad{padding:0;}
+  .item{break-inside:avoid;page-break-inside:avoid;}
+  .section-head h2,.masthead h1{break-after:avoid;}
+  a{color:inherit;text-decoration:none;}
+}
+</style>
+</head>
+<body>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <a class="brand-mini en" href="index.html"><span class="dot"></span>&nbsp;DAILY&nbsp;BRIEF</a>
+    <div class="tool-actions">
+      <a class="tbtn" href="index.html" title="전체 아카이브">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5 12 3l9 6.5V21H3z"/><path d="M9 21v-7h6v7"/></svg>
+        <span class="lbl">아카이브</span>
+      </a>
+      <button class="tbtn" onclick="window.print()" title="인쇄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg>
+        <span class="lbl">인쇄</span>
+      </button>
+      <button class="tbtn" id="shareBtn" title="공유 링크 복사">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span class="lbl">공유</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="datenav">
+  <a href="briefing-2026-11-25.html">
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    전날 · 11.25 (수)
+  </a>
+  <span class="today en">TODAY · 2026-11-26</span>
+  <span class="disabled">
+    다음 없음
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </span>
+</nav>
+
+<main class="sheet">
+<div class="sheet-pad">
+
+  <div class="masthead">
+    <div class="kicker en">Daily Brief · Design · AI · AX · FDE</div>
+    <h1>Daily <span class="em">Brief</span></h1>
+    <div class="masthead-meta">
+      <div class="publisher">오늘의 트랙 · <b>디자인 · AI</b></div>
+      <div class="pubdate en">2026-11-26 <span class="dow">(목)</span></div>
+    </div>
+  </div>
+
+  <section class="section track-design">
+    <div class="section-head">
+      <span class="section-emoji">🎨</span>
+      <h2>디자인</h2>
+      <span class="en-tag">Design</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—01</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224489843619?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">재료로 건축의 미래를 묻다, BIG의 국내 첫 기획전 《MATERIALISM｜머티리얼리즘》</a></h3>
+        <p class="item-summary">디자인프레스에 따르면 덴마크 건축사무소 BIG(Bjarke Ingels Group)의 첫 국내 기획전 《MATERIALISM｜머티리얼리즘》이 지난 11월 7일 서울도시건축전시관에서 개막해 내년 2월 28일까지 이어지며, 설립자 비야케 잉겔스가 이탈리아 디자인 잡지 《도무스(Domus)》의 객원 편집장으로 1년간 매 호마다 하나의 소재를 집중 조명했던 경험을 바탕으로 기획됐다. 지하 2층과 3층에 걸쳐 BIG 본사와 NASA의 달 거주지 프로젝트, 노르웨이 키스테포스 뮤지엄(Kistefos Museum)의 더 트위스트(The Twist), 2016년 서펜타인 파빌리온 등 수십 개 프로젝트의 도면과 모형을 보여주고, 재료를 정육면체로 만든 &#x27;머티리얼 스툴&#x27;에 직접 앉아 질감을 만져볼 수 있으며, &#x27;10가지 재료에 대한 10가지 생각&#x27;에서는 각 재료의 특성과 그 재료를 활용한 BIG의 프로젝트를 함께 소개하는데, BIG은 플라스틱에 대한 부정적 인식이 재료 자체보다 인간의 무분별한 사용 방식에서 비롯됐다고 꼬집는다. 가상의 디지털 콘텐츠가 주를 이루는 AI 시대에 손으로 만져볼 수 있는 재료와 모형, 실험 과정을 전면에 둔 전시라는 점에서, 소재 선택이 곧 디자인 언어가 되는 건축·공간·프로덕트 디자이너가 둘러볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224489843619?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—02</span>
+        <h3><a href="https://blog.naver.com/designpress2016/224491791688?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">시계·50가지 색·3년 기록, 국내 디자인 문구 브랜드의 2027 다이어리 6종</a></h3>
+        <p class="item-summary">디자인프레스가 국내 디자인 문구 브랜드의 다이어리 6종을 모았는데, 웬아이워즈영(When I Was Young)의 만년형 다이어리 &#x27;MONTHS IN MOTION&#x27;은 표지와 내지에 시계 다이얼 그래픽을 넣어 매달 직접 시곗바늘을 그려 넣게 했고, 1976년 설립된 양지사는 창립 50주년을 맞아 대표 다이어리 &#x27;유즈어리25A&#x27;에 50가지 색상을 입혔다. 트롤스페이퍼(Trolls Paper)의 &#x27;2027 Diary&#x27;는 숫자 &#x27;27&#x27;을 레터프레스로 새기고 미색의 문켄 퓨어 120g 내지로 만년필 기록까지 고려했으며, 컴포지션스튜디오(COMPOSITION STUDIO)의 &#x27;1095&#x27;는 같은 날짜의 기록을 3년 동안 한 페이지에 쌓게 했고, 오이뮤(OIMU)의 A7 크기 6공철과 오필(OFILL)의 &#x27;2027 The Box Diary Mini&#x27;까지 소재와 제본, 형식으로 기록 경험을 달리 설계했다. 같은 다이어리라도 시간을 표현하는 그래픽, 색상 수, 종이와 제본, 기록 주기 같은 선택이 제품의 성격을 가른다는 점에서 문구·편집·패키지 디자이너가 참고할 만하다.</p>
+        <div class="item-meta">
+          <span class="src">디자인프레스</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://blog.naver.com/designpress2016/224491791688?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—03</span>
+        <h3><a href="https://www.itsnicethat.com/articles/yury-ostromentsky-backslanted-graphic-design-project-251126" target="_blank" rel="noopener">이탤릭을 거꾸로 눕히다, Yury Ostromentsky의 서체 시리즈 Backslanted</a></h3>
+        <p class="item-summary">It&#x27;s Nice That에 따르면 Ilya Ruderman과 함께 CSTM Fonts 타입 파운드리와 type.today 스토어를 공동 설립한, 모스크바 태생으로 조지아에 사는 디자이너 Yury Ostromentsky의 Backslanted는 하나의 폰트 패밀리가 아니라 스타일과 웨이트, 각도를 넘나들며 기울어진 서체를 실험하는 시리즈로, 늘 앞으로 기우는 이탤릭과 반대로 뒤로 강하게 기운다. 그는 러시아의 우크라이나 전쟁이 시작된 뒤 발밑이 꺼진 듯한 감정에서 프로젝트를 시작했고 뉴스 피드가 주요 레퍼런스라고 밝혔으며, 시리즈는 산세리프 Regular와 Super, 날카로운 모서리의 Script, 고딕 서체를 두루 참고한 Blackletter 스타일을 포함하고 수학·통화 기호와 스타일 대체 글자, 문맥 대체 글자, 합자를 갖췄다. 기울기를 때로 가독성이 무너지는 극단까지 밀어붙여 감정과 시대의 불안을 글자 형태로 옮긴 실험이라는 점에서, 타이포그래피를 표현 매체로 쓰는 그래픽·타입 디자이너가 참고할 만하다.</p>
+        <div class="item-meta">
+          <span class="src">It&#x27;s Nice That</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://www.itsnicethat.com/articles/yury-ostromentsky-backslanted-graphic-design-project-251126" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—04</span>
+        <h3><a href="https://www.designboom.com/architecture/kanal-centre-pompidou-brussels-restored-1930s-citroen-garage-em2n-noaarchitecten-sergison-bates/" target="_blank" rel="noopener">1930년대 시트로엥 차고가 미술관으로, 브뤼셀 Kanal 개관</a></h3>
+        <p class="item-summary">designboom에 따르면 EM2N, noAarchitecten, Sergison Bates architects로 구성된 Atelier Kanal이 설계한 Kanal이 2026년 11월 28일 브뤼셀에서 문을 열며, 1933–34년 Charleroi-Brussels 운하 변에 지어진 옛 시트로엥 건물을 4만 제곱미터 규모의 미술관이자 공공 문화센터로 바꾸고 누구나 자유롭게 드나들 수 있는 공공 공간을 2만 제곱미터 이상 마련했다. 기존 건물을 복원하고 내부에 새 구조물 세 개를 넣었으며 유리와 철골로 된 옛 쇼룸을 건물 정체성의 중심으로 남겼고, 2017년 시작된 Centre Pompidou와의 장기 파트너십으로 20세기 초부터 오늘날까지의 작품 350점 이상을 모은 개막전 A truly immense journey를 열며, 옛 CIVA였던 기관의 새 보금자리 Kanal Architecture가 건축 프로그램을 따로 운영한다. 산업 건축의 규모와 개방감을 지우지 않고 새로운 문화적 쓰임을 얹은 리노베이션이라는 점에서, 재생 건축과 공공 공간을 설계하는 건축·공간 디자이너가 지켜볼 프로젝트다.</p>
+        <div class="item-meta">
+          <span class="src">designboom</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://www.designboom.com/architecture/kanal-centre-pompidou-brussels-restored-1930s-citroen-garage-em2n-noaarchitecten-sergison-bates/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">D—05</span>
+        <h3><a href="https://www.dezeen.com/2026/11/25/assemble-building-blue-skac/" target="_blank" rel="noopener">산업 폐기물로 만든 파랑, Assemble의 도쿄 전시 Building Blue</a></h3>
+        <p class="item-summary">Dezeen에 따르면 영국 건축 콜렉티브 Assemble이 디자인 스튜디오 Matter at hand가 지역 폐기물로 개발한 새 안료를 보여주기 위해, 올라가 놀 수 있는 작은 일본 삼나무 건물들을 강렬한 파란색으로 덮어 도쿄 SKAC 갤러리에서 전시 Building Blue를 열었다(2027년 2월 28일까지). 안료는 도야마(Toyama)의 폐기물 흐름을 분석해 왕겨 재와 석회석 필터 분진, 재활용 유리, 구리를 물과 섞은 뒤 약 950도로 가열해 만든 것으로 cuprorivaite라는 결정상이 밝은 파랑을 내며, 일본 회사 Nikken이 Assemble이 일본 시골에 짓고 있는 캠핑장 Play Earth Park에 쓰도록 제조했고, 세 채의 미니어처 집 The Hut, The Tower, The Bird는 안료 원료를 얻은 곳 근처의 농업 건물에서 형태를 가져왔다. 지역 폐기물에서 색을 뽑아내고 그 색을 놀이 공간으로 이어 쓴다는 점에서, 소재·컬러 연구와 공간 설계를 함께 다루는 디자이너가 참고할 만하다.</p>
+        <div class="item-meta">
+          <span class="src">Dezeen</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://www.dezeen.com/2026/11/25/assemble-building-blue-skac/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="section track-ai">
+    <div class="section-head">
+      <span class="section-emoji">🤖</span>
+      <h2>AI</h2>
+      <span class="en-tag">Artificial Intelligence</span>
+      <span class="count en">05</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—01</span>
+        <h3><a href="https://byline.network/2026/11/843924802840239/" target="_blank" rel="noopener">‘딸깍’으로 되지 않았다, 138분 생성형 AI 장편 영화 〈라파엘〉 제작기</a></h3>
+        <p class="item-summary">바이라인네트워크에 따르면 25일 개봉한 영화 〈라파엘〉은 138분 러닝타임 동안 처음부터 끝까지 생성형 AI로 제작된 장편 영화로, 마테오AI스튜디오의 양익준·문신우·정주원 감독이 공동 연출했고 기획부터 완성까지 약 2년, 기획을 제외한 제작 기간만 1년 2개월 동안 감독을 포함해 평균 9명이 작업했다. 초반 복도 전투 장면은 10여 초를 뽑는 데 한 달이 넘게 걸렸고, 초기 모델이 공간과 얼굴의 일관성을 유지하지 못해 초반에는 거의 프레임 단위로 포토샵에서 이미지를 만들었으며, 초반부는 미드저니와 런웨이만으로 만들었고 주인공 얼굴은 실존 인물과 닮은 점이 없는지 세 가지 도구로 확인했다고 하며, 순제작비는 5억원 미만으로 정주원 감독은 기존 방식이라면 100억원은 필요했을 규모라고 봤다. 문신우 감독은 화면에 무엇을 담고 어떤 결과물을 쓸지는 결국 사람이 골라야 한다고, 정주원 감독은 AI가 스태프의 역할을 대체하기보다 증강시킨다고 본 만큼, 생성형 AI로 영상·비주얼을 만드는 디자이너에게 연출과 선택의 비중을 다시 보게 하는 사례다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://byline.network/2026/11/843924802840239/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—02</span>
+        <h3><a href="https://byline.network/2026/11/1124-3/" target="_blank" rel="noopener">AI 영상 도구 회사가 직접 만든다, 지로 ‘드롭샷 스튜디오’ 출범</a></h3>
+        <p class="item-summary">바이라인네트워크에 따르면 AI 영상 제작 플랫폼 ‘드롭샷 AI’를 운영하는 지로가 자체 콘텐츠 IP를 기획·제작하는 ‘드롭샷 스튜디오’를 출범하고, 내년 1분기부터 매달 1편씩 AI로 제작한 애니메이션을 공개하며 영상 제작비와 제작 기간을 기존 업계 대비 10분의 1 수준으로 줄이는 것을 목표로 한다고 이재석 공동대표가 24일 기자간담회에서 밝혔다. 지로는 이날부터 드롭샷 AI의 모든 영상 생성 모델을 원가 그대로 판매하는 ‘제로마진’ 정책을 도입했고, 자체 AI 아이돌 ‘서리아(SEORIA)’ 관련 콘텐츠는 지난 9일 기준 누적 조회수 254만회를 기록했으며, 2027년 2월에는 서리아 세계관을 바탕으로 한 장편 애니메이션을 공개하고 3월부터 3D 애니메이션 시리즈를 선보일 예정이다. 회사 측은 애니메이션이 현재 AI 영상 생성 기술로 구현할 수 있는 품질이 가장 높은 분야이고 불쾌한 골짜기 현상이 상대적으로 적다는 점을 이유로 꼽았는데, 기획·디자인·생성·편집 전 과정을 내부에서 직접 수행하는 ‘AI 네이티브’ 제작 방식이라는 점에서 영상·캐릭터 디자이너가 자기 역할의 범위를 다시 그려볼 만한 흐름이다.</p>
+        <div class="item-meta">
+          <span class="src">바이라인네트워크</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://byline.network/2026/11/1124-3/" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—03</span>
+        <h3><a href="https://www.aitimes.com/news/articleView.html?idxno=217786" target="_blank" rel="noopener">클로드로 만든 프로그램을 PC에 바로 설치, 앤트로픽 아티팩트 데스크톱 앱 베타</a></h3>
+        <p class="item-summary">AI타임스에 따르면 앤트로픽이 24일(현지시간) 클로드의 &#x27;아티팩트(Artifacts)&#x27;를 맥과 윈도우용 데스크톱 앱으로 설치할 수 있는 기능을 무료 사용자를 포함한 모든 요금제에 베타 출시해, 자연어로 요청해 만든 프로그램을 공유 메뉴의 &#x27;앱으로 설치(Install as app)&#x27;로 별도의 패키징이나 코드 서명, API 키 발급 절차 없이 설치할 수 있게 했다. 설치한 앱은 알림을 보내거나 다른 프로그램을 실행하고 PC에 저장된 파일을 읽고 수정할 수 있으며, 원본 아티팩트를 수정하면 설치된 앱에도 자동 반영되고, 보안을 위해 앱마다 PC 접근 권한을 설정하게 했으며 전체 접근 권한은 자신이 제작했거나 같은 조직의 구성원이 만든 앱에만 부여할 수 있고, 앤트로픽 직원들은 이미지 편집기와 파일 관리자, PC 성능 모니터링 도구 등을 만들었다. 자기 작업에 맞는 이미지 편집·파일 정리 도구를 코딩 없이 만들어 쓰는 길이 넓어졌다는 점에서, 디자이너라면 신뢰할 수 있는 앱에만 전체 접근 권한을 주라는 당부까지 함께 살펴볼 만하다.</p>
+        <div class="item-meta">
+          <span class="src">AI타임스</span><span class="sep">·</span><span class="date en">2026-11-26</span><a class="readmore en" href="https://www.aitimes.com/news/articleView.html?idxno=217786" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—04</span>
+        <h3><a href="https://www.theverge.com/entertainment/1042221/google-my-channel-ai-video-patent" target="_blank" rel="noopener">내가 주인공인 AI 영상 피드, 구글 ‘My Channel’ 특허가 그린 엔터테인먼트</a></h3>
+        <p class="item-summary">The Verge에 따르면 구글이 이용자에 대해 아는 정보를 바탕으로 개인 맞춤형 AI 생성 영상과 광고로 피드를 채우는 시스템 My Channel의 특허를 출원했고, Patentlyze가 처음 발견한 이 특허는 거절됐지만 구글이 불복하거나 수정본을 다시 제출할 수 있다. 특허에 따르면 My Channel은 이용자의 인구통계 데이터와 시청 기록, IP 주소·GPS 위치 같은 기기 정보로 프롬프트를 만들어 LLM에 넣고 구글 서버에서 영상을 생성하며, 다양한 장르의 영화 전체를 만들고 이용자의 사진·영상·음성으로 디지털 아바타를 만들어 콘텐츠의 주인공으로 등장시키는 내용도 담겼다. The Verge의 Charles Pulliam-Moore는 이를 상상력으로 인물에 공감하게 하지 못하는 끝없는 맞춤형 콘텐츠라고 비판했는데, 개인화가 어디까지 창작이 될 수 있는지라는 질문이 영상·콘텐츠 디자이너에게 남는다.</p>
+        <div class="item-meta">
+          <span class="src">The Verge</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://www.theverge.com/entertainment/1042221/google-my-channel-ai-video-patent" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="item no-image">
+      <div class="item-body">
+        <span class="item-num en">A—05</span>
+        <h3><a href="https://www.creativebloq.com/news/crystal-palace-tried-to-get-away-with-posting-ai-and-fans-tore-it-to-shreds" target="_blank" rel="noopener">‘Eacles’ 오타에 들통, Crystal Palace의 AI 의심 게시물 역풍</a></h3>
+        <p class="item-summary">Creative Bloq에 따르면 Crystal Palace가 홈구장 Selhurst Park가 FIFA Women’s World Cup 2035 개최 후보지라고 알린 11월 23일 게시물의 이미지에서 자기 마스코트 이름이 &#x27;Eacles&#x27;로 잘못 적힌 것이 눈에 띄면서, 팬들은 AI로 만든 이미지가 아니냐며 비판을 쏟아냈다. 팬들은 이렇게 간단한 게시물에 AI가 필요 없었다며 자기 경기장 사진도 없어서 AI로 만드느냐고 꼬집었고, 한 팬은 몇 초면 만들었을 아주 기초적인 수준의 그래픽 디자인이라고 지적했다. 시간과 자원에 쫓겨 빠른 AI 이미지 생성을 택하면 결과물의 품질을 희생할 위험이 있고 축하할 게시물이 조롱거리가 됐다는 점에서, 브랜드 소셜미디어 그래픽을 맡는 디자이너가 AI 결과물의 디테일 검수를 다시 챙겨볼 대목이다.</p>
+        <div class="item-meta">
+          <span class="src">Creative Bloq</span><span class="sep">·</span><span class="date en">2026-11-25</span><a class="readmore en" href="https://www.creativebloq.com/news/crystal-palace-tried-to-get-away-with-posting-ai-and-fans-tore-it-to-shreds" target="_blank" rel="noopener">원문 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="sheet-foot">
+    <div class="sig"><b>DAILY BRIEF</b> · 매일 아침 큐레이션 <span class="em">·</span> Design · AI · AX · FDE</div>
+    <div class="foot-note en">Archived · Daily Brief · 2026-11-26</div>
+  </div>
+
+</div>
+</main>
+
+<nav class="bottomnav">
+  <a class="bnav-card" href="briefing-2026-11-25.html">
+    <div class="dir en">‹ PREV</div>
+    <div class="t">2026-11-25 (수)</div>
+  </a>
+  <a class="bnav-card next disabled" href="#">
+    <div class="dir en">NEXT ›</div>
+    <div class="t">최신 브리핑</div>
+  </a>
+</nav>
+
+<div class="toast" id="toast">공유 링크가 복사됐습니다</div>
+
+<script>
+document.getElementById('shareBtn').addEventListener('click',function(){
+  var url=window.location.href;
+  var done=function(){
+    var t=document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2200);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(done);
+  }else{done();}
+});
+</script>
+</body>
+</html>
